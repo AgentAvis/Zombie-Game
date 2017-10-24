@@ -178,7 +178,7 @@ canFire = false;
 //Select a gun
 //Pistol
 if(spr == 1){
-dmg = 1;
+dmg = 50;
 accuracy = 3;
 firerate = 1;
 shake = 1;
@@ -188,7 +188,7 @@ offsetY = 9;
 }
 //Uzi
 if(spr == 0){
-dmg = 1;
+dmg = 6;
 accuracy = 7;
 firerate = 0.1;
 shake = 0.25;
@@ -197,7 +197,7 @@ offsetY = 10;
 }
 //SawnOff
 if(spr == 2){
-dmg = 1;
+dmg = 4;
 accuracy = 7;
 firerate = 3;
 shake = 30;
@@ -206,7 +206,7 @@ offsetY = 10;
 }
 //Ak47
 if(spr == 3){
-dmg = 1;
+dmg = 3;
 accuracy = 8;
 firerate = 0.2;
 shake = 30;
@@ -215,7 +215,7 @@ offsetY = 8;
 }
 //Double Barrel
 if(spr == 4){
-dmg = 1;
+dmg = 2;
 accuracy = 5;
 firerate = 4;
 shake = 30;
@@ -270,7 +270,7 @@ else
           <argument>
             <kind>1</kind>
             <string>draw_set_color(c_white)
-draw_text(0,0,"Ammo:" + string(ammo[spr]));
+//draw_text(0,0,"Ammo:" + string(ammo[spr]));
 </string>
           </argument>
         </arguments>

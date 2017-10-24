@@ -30,6 +30,10 @@
     </sprites>
     <sprite>sprites\s_blood</sprite>
     <sprite>sprites\s_blood_world</sprite>
+    <sprites name="_UI">
+      <sprite>sprites\s_ui_base</sprite>
+      <sprite>sprites\s_dollar_bill</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\stars</background>
@@ -80,6 +84,7 @@
       <scripts name="_enemies">
         <script>scripts\scr_enemy_walk.gml</script>
       </scripts>
+      <script>scripts\scr_make_gui.gml</script>
     </scripts>
     <scripts name="_drawing">
       <script>scripts\draw_background_tiled_horizontal.gml</script>

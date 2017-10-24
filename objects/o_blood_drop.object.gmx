@@ -29,6 +29,9 @@
 phy_speed_y = -3;
 otherSurf = noone;
 canDraw = false;
+
+otherX = 0;
+otherY = 0;
 </string>
           </argument>
         </arguments>
@@ -53,6 +56,8 @@ canDraw = false;
             <kind>1</kind>
             <string>canDraw = true;
 otherSurf = other.blood_surf;
+otherX = other.x;
+otherY = other.y;
 
 
 </string>
@@ -80,7 +85,7 @@ otherSurf = other.blood_surf;
             <string>draw_self();
 if(canDraw){
 surface_set_target(otherSurf);
-draw_sprite(s_blood,irandom_range(0,5),x-view_xview[0],y-view_yview[0]);
+draw_sprite(s_blood,irandom_range(0,5),x-otherX,y-otherY);
 surface_reset_target();
 instance_destroy();
 }

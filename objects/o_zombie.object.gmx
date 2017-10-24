@@ -106,6 +106,7 @@ hopspeed = -.5 hop = 0
 if(hp &lt;= 0){
 
 instance_create(x,y,o_coin);
+instance_create(x,y,o_dollar);
 instance_destroy();
 
 }

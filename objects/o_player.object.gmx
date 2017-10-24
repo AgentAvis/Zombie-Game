@@ -31,14 +31,17 @@ instance_create(x,y,o_camera);
 instance_create(x,y,o_gun);
 
 hp = 100;
+maxHp = 100;
 
 
 hop = 0
 hopspeed = 0
 
-money = 0.00;
+money = 0;
 
-
+xx = 0;
+yy = 0;
+ss = 1;
 //test comment 11:39 pm 10-23-2017
 </string>
           </argument>
@@ -120,7 +123,17 @@ if moving {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>draw_healthbar(124,29,470 , 51 , (hp/maxHp) * 100, c_black, c_red, c_green, 0, true, false);
+draw_sprite(s_ui_base,0,0,0);
+draw_sprite_ext(s_dollar_bill,0,147,63,1.18,1.18,1,c_white,1);
+draw_sprite_ext(s_player,image_index,71,68,6.5,6.5,1,c_white,1);
+draw_set_color(c_black);
+draw_text(191,65,"$" + string(money));
+draw_set_color(c_white);
+draw_text(0,0,"(" + string(xx) + "," + string(yy) + ")" + string(ss));
+draw_sprite_ext(s_guns,o_gun.spr,321,71,4.04,4.04,1,c_white,1);
+scr_make_gui();
+</string>
           </argument>
         </arguments>
       </action>
