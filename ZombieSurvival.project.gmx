@@ -119,6 +119,11 @@
           <object>objects\o_zombie</object>
         </objects>
       </objects>
+      <objects name="_money">
+        <object>objects\o_money</object>
+        <object>objects\o_coin</object>
+        <object>objects\o_dollar</object>
+      </objects>
     </objects>
   </objects>
   <rooms name="rooms">
