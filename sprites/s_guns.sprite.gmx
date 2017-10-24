@@ -24,5 +24,6 @@
     <frame index="1">images\s_guns_1.png</frame>
     <frame index="2">images\s_guns_2.png</frame>
     <frame index="3">images\s_guns_3.png</frame>
+    <frame index="4">images\s_guns_4.png</frame>
   </frames>
 </sprite>

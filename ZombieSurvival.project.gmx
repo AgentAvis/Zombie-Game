@@ -28,6 +28,8 @@
       <sprite>sprites\s_coins</sprite>
       <sprite>sprites\s_paper</sprite>
     </sprites>
+    <sprite>sprites\s_blood</sprite>
+    <sprite>sprites\s_blood_world</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\stars</background>
@@ -117,6 +119,9 @@
         <object>objects\o_lifeform</object>
         <objects name="_regular">
           <object>objects\o_zombie</object>
+        </objects>
+        <objects name="_gore">
+          <object>objects\o_blood_drop</object>
         </objects>
       </objects>
       <objects name="_money">
