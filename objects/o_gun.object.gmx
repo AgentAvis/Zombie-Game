@@ -52,7 +52,7 @@ offsetY = 0;
 ammo[0] = 100;
 ammo[1] = 100;
 ammo[2] = 100;
-
+ammo[3] = 100;
 </string>
           </argument>
         </arguments>
@@ -173,7 +173,7 @@ accuracy = 3;
 firerate = 1;
 shake = 1;
 knockback = 0;
-offsetX = 3;
+offsetX = 8;
 offsetY = 9;
 }
 //Uzi
@@ -182,7 +182,7 @@ dmg = 1;
 accuracy = 7;
 firerate = 0.1;
 shake = 0.25;
-offsetX = 4;
+offsetX = 9;
 offsetY = 10;
 }
 //SawnOff
@@ -191,14 +191,24 @@ dmg = 1;
 accuracy = 7;
 firerate = 3;
 shake = 30;
-offsetX = 2;
+offsetX = 7;
 offsetY = 10;
+}
+//SawnOff
+if(spr == 3){
+dmg = 1;
+accuracy = 8;
+firerate = 0.2;
+shake = 30;
+offsetX = 7;
+offsetY = 8;
 }
 
 
 if(keyboard_check_pressed(ord('H'))){
 spr += 1;
-if(spr &gt; 2){
+canFire = true;
+if(spr &gt; 3){
 spr = 0;
 }
 }
