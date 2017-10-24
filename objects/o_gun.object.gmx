@@ -281,16 +281,23 @@ draw_text(0,0,"Ammo:" + string(ammo[spr]));
           <argument>
             <kind>1</kind>
             <string>if(hasLaser){
-var mousedir = point_direction(x,y,mouse_x,mouse_y);
-draw_set_alpha(0.5);
-draw_line_width_colour(x,y,x + lengthdir_x(20,image_angle), y + lengthdir_y(20,image_angle),1,c_red, c_black);
-draw_set_alpha(1);
-acMin = -0.5;
-acMax = 0.5;
+    var mousedir = point_direction(x,y,mouse_x,mouse_y);
+    
+    //draw_line_width_colour(x,y,x + lengthdir_x(20,image_angle), y + lengthdir_y(20,image_angle),1,c_red, c_black);
+    //draw_set_color(c_red)
+    //draw_set_alpha(.15)
+    
+    lazer_point = collision_line_point(x,y,mouse_x,mouse_y,o_lifeform,true,true)
+    draw_line_ext(x,y,lazer_point[1],lazer_point[2],.5,c_red,.5,0)
+
+    draw_set_alpha(1);
+    
+    acMin = -0.5;
+    acMax = 0.5;
 
 }else{
-acMin = -1;
-acMax = 1;
+    acMin = -1;
+    acMax = 1;
 }
 
 draw_sprite_ext(s_guns,spr,x,y + 1,image_xscale,image_yscale,image_angle,c_white,1);

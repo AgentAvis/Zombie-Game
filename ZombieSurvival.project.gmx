@@ -82,6 +82,8 @@
     <scripts name="_drawing">
       <script>scripts\draw_background_tiled_horizontal.gml</script>
       <script>scripts\ScGlow.gml</script>
+      <script>scripts\draw_line_ext.gml</script>
+      <script>scripts\collision_line_point.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">
