@@ -42,6 +42,9 @@ attackSpeed = room_speed * 2;
 canHit = true;
 //For determining appearance
 type = irandom_range(0,5);
+//hop stuff
+hop = 0
+hopspeed = 0
 
 image_speed = 0;
 
@@ -92,6 +95,13 @@ alarm[0] = attackSpeed;
           <argument>
             <kind>1</kind>
             <string>scr_enemy_walk();
+
+
+hop += hopspeed
+if hop &lt; 0 { hopspeed += .05 } else {
+hopspeed = -.5 hop = 0
+}
+
 
 if(hp &lt;= 0){
 instance_destroy();
@@ -149,7 +159,7 @@ canHit = false;
           <argument>
             <kind>1</kind>
             <string>event_inherited();
-draw_sprite_ext(s_zombies_1,type,x,y,image_xscale,1,image_angle,c_white,1);
+draw_sprite_ext(s_zombies_1,type,x,y+hop,image_xscale,1,image_angle,c_white,1);
 
 </string>
           </argument>
