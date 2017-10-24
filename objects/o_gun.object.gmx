@@ -53,6 +53,12 @@ ammo[0] = 100;
 ammo[1] = 100;
 ammo[2] = 100;
 ammo[3] = 100;
+//Accuracy Modifier
+acMin = -1;
+acMax = 1;
+
+//Has laser attachment
+hasLaser = true;
 </string>
           </argument>
         </arguments>
@@ -144,7 +150,7 @@ for(i = 0; i &lt; mx; i++){
 //Create an instance of bullet
 p = instance_create(x + barrel_x,y + barrel_y,o_bullet);
 //Set that bullets variables
-p.dir = mousedir + (accuracy * random_range(1,-1));
+p.dir = mousedir + (accuracy * random_range(acMax,acMin));
 p.dmg = dmg;
 p.shake = shake;
 //Set a force
@@ -213,6 +219,10 @@ spr = 0;
 }
 }
 
+if(keyboard_check_pressed(ord('G'))){
+hasLaser = !hasLaser;
+}
+
 image_angle = mousedir;
 if (mousedir &gt;= 90 and mousedir &lt;= 270)
 {
@@ -270,8 +280,22 @@ draw_text(0,0,"Ammo:" + string(ammo[spr]));
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(s_guns,spr,x,y + 1,image_xscale,image_yscale,image_angle,c_white,1);
+            <string>if(hasLaser){
+var mousedir = point_direction(x,y,mouse_x,mouse_y);
+draw_set_alpha(0.5);
+draw_line_width_colour(x,y,x + lengthdir_x(20,image_angle), y + lengthdir_y(20,image_angle),1,c_red, c_black);
+draw_set_alpha(1);
+acMin = -0.5;
+acMax = 0.5;
+
+}else{
+acMin = -1;
+acMax = 1;
+}
+
+draw_sprite_ext(s_guns,spr,x,y + 1,image_xscale,image_yscale,image_angle,c_white,1);
 sprite_set_offset(s_guns, offsetX, offsetY);
+
 </string>
           </argument>
         </arguments>
