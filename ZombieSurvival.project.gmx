@@ -33,6 +33,8 @@
     <sprites name="_UI">
       <sprite>sprites\s_ui_base</sprite>
       <sprite>sprites\s_dollar_bill</sprite>
+      <sprite>sprites\s_guns_gui</sprite>
+      <sprite>sprites\s_guns_ammo</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -85,14 +87,21 @@
         <script>scripts\scr_enemy_walk.gml</script>
       </scripts>
       <script>scripts\scr_make_gui.gml</script>
+      <scripts name="_ui">
+        <script>scripts\scr_draw_gun_inv.gml</script>
+      </scripts>
     </scripts>
     <scripts name="_drawing">
       <script>scripts\draw_background_tiled_horizontal.gml</script>
       <script>scripts\ScGlow.gml</script>
       <script>scripts\draw_line_ext.gml</script>
       <script>scripts\collision_line_point.gml</script>
+      <script>scripts\draw_rectangle_width.gml</script>
     </scripts>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\fnt_big</font>
+  </fonts>
   <objects name="objects">
     <object>objects\obj_ex_camera</object>
     <objects name="_world">
