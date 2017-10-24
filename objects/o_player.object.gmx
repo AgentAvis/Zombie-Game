@@ -134,7 +134,7 @@ if moving {
             <string>draw_healthbar(124,29,470 , 51 , (hp/maxHp) * 100, c_black, c_red, c_green, 0, true, false);
 
 draw_set_color(c_black);
-draw_circle(xx,yy,ss + 64,false);
+draw_circle(70,70,64,false);
 draw_sprite(s_ui_base,0,0,0);
 draw_sprite_ext(s_dollar_bill,0,147,63,1.18,1.18,1,c_white,1);
 draw_sprite_ext(s_player,image_index,71,68,6.5,6.5,1,c_white,1);
