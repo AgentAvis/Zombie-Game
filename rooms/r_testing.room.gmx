@@ -64,7 +64,7 @@
     <instance objName="o_zombie" x="928" y="352" name="inst_069703C8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_zombie" x="960" y="352" name="inst_1A452981" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_zombie" x="832" y="320" name="inst_EF0FCFD9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_create_zoms" x="383" y="341" name="inst_B93C0E1D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_create_zoms" x="416" y="320" name="inst_5003E284" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>-1</PhysicsWorld>
