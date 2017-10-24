@@ -35,6 +35,9 @@ hp = 100;
 
 hop = 0
 hopspeed = 0
+
+//added for demonstration gif
+
 </string>
           </argument>
         </arguments>
