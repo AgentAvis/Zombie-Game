@@ -24,6 +24,10 @@
       <sprite>sprites\s_guns</sprite>
       <sprite>sprites\s_bullet_mask</sprite>
     </sprites>
+    <sprites name="_money">
+      <sprite>sprites\s_coins</sprite>
+      <sprite>sprites\s_paper</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\stars</background>

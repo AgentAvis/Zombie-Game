@@ -100,7 +100,7 @@ ammo[3] = 100;
           <argument>
             <kind>1</kind>
             <string>x = o_player.x;
-y = o_player.y;
+y = o_player.y + o_player.hop;
 </string>
           </argument>
         </arguments>
