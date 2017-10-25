@@ -130,7 +130,6 @@
     </objects>
     <objects name="_system">
       <objects name="_player">
-        <object>objects\o_player</object>
         <objects name="_gun">
           <object>objects\o_gun</object>
           <objects name="_bullet">
