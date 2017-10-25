@@ -153,7 +153,7 @@ apply_speeds_and_gravity()
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="&lt;undefined&gt;">
+    <event eventtype="4" ename="obj_ex_camera">
       <action>
         <libid>1</libid>
         <id>603</id>
