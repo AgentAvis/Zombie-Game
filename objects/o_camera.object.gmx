@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>ex_camera_initialize();
-ex_camera_create("main", 0, 0, 0, 256, 144, 0, 0, 0, 100, o_player, true, 0, 0, room_width, room_height);
+ex_camera_create("main", 0, 0, 0, 256, 144, 0, 0, 0, 100, o_player, false, 0, 0, room_width, room_height);
 
 </string>
           </argument>

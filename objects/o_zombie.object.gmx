@@ -26,26 +26,33 @@
           <argument>
             <kind>1</kind>
             <string>event_inherited();
+phys = false
 //Set the health
 hp = 25;
 maxHp = 25;
 //Set the distance it 'sees' the player
 sight = 180;
 //Set the speed of the enemy
-spd = random_range(0.25,0.5);
-//Set the rotation to be fixed.
-phy_fixed_rotation = true;
+walk_spd = random_range(0.25,0.5);
+if phys {
+    //Set the rotation to be fixed.
+    phy_fixed_rotation = true;
+}
 //Alarm for hitting the player and attack speed
 alarm[0] = room_speed * 1;
-attackSpeed = room_speed * 2;
+attackSpeed = room_speed * .5;
 //The can hit variable
 canHit = true;
 //For determining appearance
-type = irandom_range(0,image_index);
+type = irandom_range(0,image_number);
 //hop stuff
 hop = 0
 hopspeed = 0
-
+//set up the new speed variables
+hsp = 0
+vsp = 0
+//how heavy am i
+mass = 1
 image_speed = 0;
 
 </string>
@@ -97,6 +104,8 @@ alarm[0] = attackSpeed;
             <string>scr_enemy_walk();
 
 
+
+
 hop += hopspeed
 if hop &lt; 0 { hopspeed += .05 } else {
 hopspeed = -.5 hop = 0
@@ -104,12 +113,36 @@ hopspeed = -.5 hop = 0
 
 
 if(hp &lt;= 0){
-
-instance_create(x,y,o_coin);
-instance_create(x,y,o_dollar);
+    repeat (irandom(10)) {
+        instance_create(x,y,o_coin)
+    }
+    repeat (irandom(5)) {
+        instance_create(x,y,o_dollar);
+    }
 instance_destroy();
 
 }
+
+if(canHit){
+    if point_distance(x,y,o_player.x,o_player.y) &lt; 6 {
+        o_player.hp -= 1;
+        ex_camera_set_flash_color("main",c_red);
+        ex_camera_flash("main",0.5,15);
+        ex_camera_shake("main",4,1,0,3);
+        canHit = false;
+    }
+}
+
+
+
+
+
+apply_speeds_and_gravity()
+//x += hsp * global.timescale;
+//y += vsp * global.timescale;
+
+
+
 </string>
           </argument>
         </arguments>
@@ -132,12 +165,13 @@ instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(canHit){
-other.hp -= 1;
-ex_camera_set_flash_color("main",c_red);
-ex_camera_flash("main",0.5,15);
-ex_camera_shake("main",4,1,0,3);
-canHit = false;
+            <string>/*
+if(canHit){
+    other.hp -= 1;
+    ex_camera_set_flash_color("main",c_red);
+    ex_camera_flash("main",0.5,15);
+    ex_camera_shake("main",4,1,0,3);
+    canHit = false;
 }
 </string>
           </argument>
@@ -163,14 +197,13 @@ canHit = false;
             <kind>1</kind>
             <string>event_inherited();
 draw_sprite_ext(sprite_index,type,x,y+hop,image_xscale,1,image_angle,c_white,1);
-
 </string>
           </argument>
         </arguments>
       </action>
     </event>
   </events>
-  <PhysicsObject>-1</PhysicsObject>
+  <PhysicsObject>0</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
   <PhysicsObjectShape>1</PhysicsObjectShape>
   <PhysicsObjectDensity>0.5</PhysicsObjectDensity>
@@ -181,10 +214,5 @@ draw_sprite_ext(sprite_index,type,x,y+hop,image_xscale,1,image_angle,c_white,1);
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints>
-    <point>2.875,0</point>
-    <point>7,0</point>
-    <point>7,17.875</point>
-    <point>2.875,17.875</point>
-  </PhysicsShapePoints>
+  <PhysicsShapePoints/>
 </object>

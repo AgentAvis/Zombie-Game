@@ -25,8 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>grounded = false;
+            <string>event_inherited()
+grounded = false;
 value = 1;
+if random(5)  &lt; 1 { value = 5 }
+if random(20) &lt; 1 { value = 20 }
+if random(100)&lt; 1 { value = 100 }
+mass = .1; //light, has to do with gravity
 </string>
           </argument>
         </arguments>
@@ -49,12 +54,17 @@ value = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(!grounded){
-phy_position_x = phy_position_x + (3 * sin(y));
-}
+            <string>event_inherited()
 
-phy_speed_x = clamp(phy_speed_x,-0.1,0.1);
-phy_speed_y = clamp(phy_speed_y,-0.1,0.1);
+if y &lt; gr { image_angle += 4 }
+
+
+//if(!grounded){
+//phy_position_x = phy_position_x + (3 * sin(y));
+//}
+
+//phy_speed_x = clamp(phy_speed_x,-0.1,0.1);
+//phy_speed_y = clamp(phy_speed_y,-0.1,0.1);
 </string>
           </argument>
         </arguments>
@@ -79,14 +89,14 @@ phy_speed_y = clamp(phy_speed_y,-0.1,0.1);
             <kind>1</kind>
             <string>///Col
 
-grounded = true;
+//grounded = true;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
   </events>
-  <PhysicsObject>-1</PhysicsObject>
+  <PhysicsObject>0</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
   <PhysicsObjectShape>1</PhysicsObjectShape>
   <PhysicsObjectDensity>0.100000001490116</PhysicsObjectDensity>
@@ -97,10 +107,5 @@ grounded = true;
   <PhysicsObjectFriction>1</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints>
-    <point>3,7</point>
-    <point>6,7</point>
-    <point>6,9</point>
-    <point>3,9</point>
-  </PhysicsShapePoints>
+  <PhysicsShapePoints/>
 </object>

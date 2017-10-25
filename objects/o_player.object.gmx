@@ -25,8 +25,16 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>spd = 1;
-phy_fixed_rotation = true;
+            <string>walk_spd = 1;
+phys = false //check this to true if you are using physics
+moving = false
+
+hsp = 0 //does the same as hspeed
+vsp = 0 //does the same as vspeed
+
+if phys {
+    phy_fixed_rotation = true;
+}
 instance_create(x,y,o_camera);
 instance_create(x,y,o_gun);
 
@@ -38,6 +46,7 @@ hop = 0
 hopspeed = 0
 
 money = 0;
+mass = 1
 
 xx = 0;
 yy = 0;
@@ -76,15 +85,24 @@ height = 64;
             <string>scr_movement();
 
 //how much to hop offset
-if moving {
-    hop += hopspeed
-    if hop &lt; 0 { hopspeed += .05 } else {
-    hopspeed = -.5 hop = 0
-    }
-} else {
+
+hop += hopspeed
+if hop &lt; 0 { hopspeed += .05 } else {
+    if moving {
+        hopspeed = -.5 hop = 0
+    } else {
     hop = 0
+    }
 }
 
+if mouse_x &gt; x { image_xscale = 1 } else { image_xscale = -1 }
+
+apply_speeds_and_gravity();
+//collisions with ground
+//if y &gt; ground_level { y = ground_level vsp = 0 }
+
+//x += hsp * global.timescale //allows slomo
+//y += vsp * global.timescale 
 
 </string>
           </argument>
@@ -137,7 +155,7 @@ draw_set_color(c_black);
 draw_circle(70,70,64,false);
 draw_sprite(s_ui_base,0,0,0);
 draw_sprite_ext(s_dollar_bill,0,147,63,1.18,1.18,1,c_white,1);
-draw_sprite_ext(s_player,image_index,71,68,6.5,6.5,1,c_white,1);
+draw_sprite_ext(s_player,image_index,71,68+((18*6.5)/2),6.5,6.5,1,c_white,1);
 draw_set_color(c_black);
 draw_text(191,65,"$" + string(money));
 draw_set_color(c_white);
@@ -196,7 +214,7 @@ scr_draw_gun_inv(134,temp,4);
       </action>
     </event>
   </events>
-  <PhysicsObject>-1</PhysicsObject>
+  <PhysicsObject>0</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
   <PhysicsObjectShape>1</PhysicsObjectShape>
   <PhysicsObjectDensity>0.5</PhysicsObjectDensity>
@@ -207,10 +225,5 @@ scr_draw_gun_inv(134,temp,4);
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints>
-    <point>2,0</point>
-    <point>8,0</point>
-    <point>8,18</point>
-    <point>2,18</point>
-  </PhysicsShapePoints>
+  <PhysicsShapePoints/>
 </object>

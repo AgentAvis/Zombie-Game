@@ -113,7 +113,7 @@ hasLaser = false;
           <argument>
             <kind>1</kind>
             <string>x = o_player.x;
-y = o_player.y + o_player.hop;
+y = o_player.y + o_player.hop-(18/2);
 </string>
           </argument>
         </arguments>

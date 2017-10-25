@@ -90,6 +90,11 @@
       <scripts name="_ui">
         <script>scripts\scr_draw_gun_inv.gml</script>
       </scripts>
+      <scripts name="_custom physics">
+        <script>scripts\motion_add_custom.gml</script>
+        <script>scripts\motion_set_custom.gml</script>
+      </scripts>
+      <script>scripts\apply_speeds_and_gravity.gml</script>
     </scripts>
     <scripts name="_drawing">
       <script>scripts\draw_background_tiled_horizontal.gml</script>
@@ -145,6 +150,7 @@
         <object>objects\o_coin</object>
         <object>objects\o_dollar</object>
       </objects>
+      <object>objects\oDj</object>
     </objects>
   </objects>
   <rooms name="rooms">
