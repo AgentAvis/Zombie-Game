@@ -16,7 +16,7 @@
   <clearDisplayBuffer>-1</clearDisplayBuffer>
   <makerSettings>
     <isSet>-1</isSet>
-    <w>1000</w>
+    <w>1008</w>
     <h>600</h>
     <showGrid>0</showGrid>
     <showObjects>-1</showObjects>
@@ -26,9 +26,9 @@
     <showViews>0</showViews>
     <deleteUnderlyingObj>0</deleteUnderlyingObj>
     <deleteUnderlyingTiles>-1</deleteUnderlyingTiles>
-    <page>4</page>
-    <xoffset>1445</xoffset>
-    <yoffset>1127</yoffset>
+    <page>0</page>
+    <xoffset>77</xoffset>
+    <yoffset>-47</yoffset>
   </makerSettings>
   <backgrounds>
     <background visible="0" foreground="0" name="stars" x="0" y="0" htiled="-1" vtiled="0" hspeed="0" vspeed="0" stretch="0"/>
@@ -66,7 +66,6 @@
     <instance objName="o_create_zoms" x="416" y="320" name="inst_5003E284" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDj" x="192" y="192" name="inst_08A7C102" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_player" x="263" y="400" name="inst_633F02B9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_shop_gui" x="448" y="288" name="inst_03502E0B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>-1</PhysicsWorld>

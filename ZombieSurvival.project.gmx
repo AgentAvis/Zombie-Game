@@ -154,6 +154,7 @@
       <objects name="_enemies">
         <object>objects\o_lifeform</object>
         <objects name="_regular">
+          <object>objects\o_zombie_dead</object>
           <object>objects\o_zombie</object>
         </objects>
         <objects name="_gore">
