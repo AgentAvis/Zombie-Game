@@ -101,6 +101,7 @@
           <script>scripts\scr_buy_ammo.gml</script>
           <script>scripts\scr_draw_shop.gml</script>
           <script>scripts\scr_buy_ammo_buttons.gml</script>
+          <script>scripts\scr_buy_gun.gml</script>
         </scripts>
       </scripts>
       <scripts name="_custom physics">
@@ -119,6 +120,7 @@
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_big</font>
+    <font>fonts\base</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_ex_camera</object>

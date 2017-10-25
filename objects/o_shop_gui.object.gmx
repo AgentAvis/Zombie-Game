@@ -46,13 +46,22 @@ ammoMouseVar[b] = false;
 for(i = 0; i &lt; length; i++){
 selected[i] = false;
 }
-
+for(c = 0; c &lt; length; c++){
+buyGunButton[c] = false;
+}
 //Ammo Buttons
 ammoButton[0] = false;
 ammoButton[1] = false;
 ammoButton[2] = false;
 width = 84;
 height = 41;
+
+
+//Buy Gun Button
+gWidth = 404;
+gHeight = 68;
+gbWidth = 394;
+gbHeight = 58;
 </string>
           </argument>
         </arguments>
@@ -79,7 +88,7 @@ height = 41;
 window_x = window_mouse_get_x();
 window_y = window_mouse_get_y();
 draw_set_color(c_white);
-//draw_text(0,0,"(" + string(xx) + "," + string(yy) + ")" + string(ss) + " " + string(ammoMouseVar[0]));
+draw_text(0,0,"(" + string(xx) + "," + string(yy) + ")" + string(ss) + " " + string(ammoMouseVar[0]));
 
 
 
@@ -92,6 +101,26 @@ scr_buy_ammo(1115,224,2,0);
 scr_buy_ammo(1195,224,3,2);
 scr_buy_ammo(1275,224,4,3);
 scr_buy_ammo(1355,224,5,4);
+draw_set_font(fnt_big);
+draw_text(1002,129,"Ammo:");
+draw_text(987 + 11,284 + 102,"Weapon: ");
+draw_set_font(base);
+
+var test = 423;
+if(!o_gun.hasGun[0]){
+scr_buy_gun(997,test,0,0,15,"Mac-10");
+test += 76
+}
+if(!o_gun.hasGun[2]){
+scr_buy_gun(997,test,2,0,15,"Sawn-off");
+test += 76
+}
+if(!o_gun.hasGun[3]){
+scr_buy_gun(997,test,3,0,15,"AK-47");
+test += 76
+}
+
+
 
 
 

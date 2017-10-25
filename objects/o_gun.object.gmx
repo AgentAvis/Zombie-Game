@@ -55,10 +55,10 @@ ammo[2] = 100;
 ammo[3] = 100;
 ammo[4] = 100;
 //If they have the gun
-hasGun[0] = true;
+hasGun[0] = false;
 hasGun[1] = true;
-hasGun[2] = true;
-hasGun[3] = true;
+hasGun[2] = false;
+hasGun[3] = false;
 hasGun[4] = true;
 //Accuracy Modifier
 acMin = -1;
