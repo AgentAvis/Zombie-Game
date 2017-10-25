@@ -51,6 +51,11 @@ hopspeed = 0
 //set up the new speed variables
 hsp = 0
 vsp = 0
+
+dhsp = 0//used for ai
+
+
+
 //how heavy am i
 mass = 1
 image_speed = 0;
