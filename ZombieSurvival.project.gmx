@@ -42,6 +42,14 @@
     <background>background\city1</background>
     <background>background\city2</background>
     <background>background\city3</background>
+    <backgrounds name="group">
+      <background>background\buildings01</background>
+      <background>background\buildings0</background>
+      <background>background\buildings1</background>
+      <background>background\buildings2</background>
+      <background>background\buildings3</background>
+      <background>background\buildings4</background>
+    </backgrounds>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">

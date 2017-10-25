@@ -60,6 +60,11 @@ c1 = make_color_rgb(130,130,130);
 c2 = make_color_rgb(64,64,64);
 width = 362;
 height = 64;
+
+//inventory draw animation stuffs
+uioffset = 0//how much is the ui being offset at, used to make it sliiide
+
+
 </string>
           </argument>
         </arguments>
@@ -149,6 +154,7 @@ apply_speeds_and_gravity();
         <arguments>
           <argument>
             <kind>1</kind>
+<<<<<<< HEAD
             <string>draw_healthbar(124,29,470 , 51 , (hp/maxHp) * 100, c_black, c_red, c_green, 0, true, false);
 
 draw_set_color(c_black);
@@ -164,26 +170,60 @@ draw_sprite_ext(s_guns,o_gun.spr,321,71,4.04,4.04,1,c_white,1);
 scr_make_gui();
 
 var temp = 99;
+=======
+            <string>var temp = 99;
+>>>>>>> 0b83cdb8182a3ce0be337dea5063d40834b43b6a
 if(keyboard_check(vk_tab)){
-scr_draw_gun_inv(134,temp,1);
+    doffset = 0
+} else {
+    doffset = -400
+    //uioffset = -300
+}
+uioffset = lerp(uioffset,doffset,.05)
+
+scr_draw_gun_inv(134,temp+uioffset,1);
 if(o_gun.hasGun[0]){
 temp += height;
-scr_draw_gun_inv(134,temp,0);
+scr_draw_gun_inv(134,temp+uioffset,0);
 }
 if(o_gun.hasGun[2]){
 temp += height;
-scr_draw_gun_inv(134,temp,2);
+scr_draw_gun_inv(134,temp+uioffset,2);
 }
 if(o_gun.hasGun[3]){
 temp += height;
-scr_draw_gun_inv(134,temp,3);
+scr_draw_gun_inv(134,temp+uioffset,3);
 }
 if(o_gun.hasGun[4]){
 temp += height;
-scr_draw_gun_inv(134,temp,4);
+scr_draw_gun_inv(134,temp+uioffset,4);
 }
 
-}
+
+
+
+draw_healthbar(124,29,470 , 51 , (hp/maxHp) * 100, c_black, c_red, c_green, 0, true, false);
+
+draw_set_color(c_black);
+
+draw_sprite(s_ui_base,0,0,0);
+draw_sprite_ext(s_dollar_bill,0,147,63,1.18,1.18,1,c_white,1);
+
+draw_set_color(c_black);
+draw_text(191,65,"$" + string(money));
+draw_set_color(c_white);
+draw_text(0,0,"(" + string(xx) + "," + string(yy) + ")" + string(ss));
+draw_sprite_ext(s_guns,o_gun.spr,321,71,4.04,4.04,1,c_white,1);
+scr_make_gui();
+
+draw_set_color(c_black)
+draw_circle(70,70,64,false);
+draw_sprite_ext(s_player,image_index,71,68+((18*6.5)/2),6.5,6.5,1,c_white,1);
+draw_set_color(c_white)
+
+
+
+
 </string>
           </argument>
         </arguments>
