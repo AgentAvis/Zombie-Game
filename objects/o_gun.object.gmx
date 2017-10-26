@@ -59,13 +59,29 @@ hasGun[0] = false;
 hasGun[1] = true;
 hasGun[2] = false;
 hasGun[3] = false;
-hasGun[4] = true;
+hasGun[4] = false;
 //Accuracy Modifier
 acMin = -1;
 acMax = 1;
 
-//Has laser attachment
+//Has attachment
 hasLaser = false;
+hasScope = false;
+hasSilencer = false;
+hasClip = false;
+hasExploseive = false;
+
+
+//expansions
+for(i = 0; i &lt; o_gun.image_number; i++){
+for(b = 0; b &lt; 2; b++){
+expansion[i,b] = 0;
+}
+}
+
+
+
+
 </string>
           </argument>
         </arguments>
@@ -191,6 +207,7 @@ shake = 1;
 knockback = 0;
 offsetX = 8;
 offsetY = 9;
+scr_check_expansion(1);
 }
 //Uzi
 if(spr == 0){
@@ -200,6 +217,7 @@ firerate = 0.1;
 shake = 0.25;
 offsetX = 9;
 offsetY = 10;
+scr_check_expansion(0);
 }
 //SawnOff
 if(spr == 2){
@@ -209,6 +227,7 @@ firerate = 3;
 shake = 30;
 offsetX = 7;
 offsetY = 10;
+scr_check_expansion(2);
 }
 //Ak47
 if(spr == 3){
@@ -218,6 +237,7 @@ firerate = 0.2;
 shake = 30;
 offsetX = 7;
 offsetY = 8;
+scr_check_expansion(3)
 }
 //Double Barrel
 if(spr == 4){
@@ -227,6 +247,7 @@ firerate = 4;
 shake = 30;
 offsetX = 3;
 offsetY = 10;
+scr_check_expansion(4);
 }
 
 //Switching the weapons

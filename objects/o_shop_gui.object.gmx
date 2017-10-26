@@ -62,6 +62,10 @@ gWidth = 404;
 gHeight = 68;
 gbWidth = 394;
 gbHeight = 58;
+
+//Adding Expansion
+adding = false;
+whichExpansion = 0;
 </string>
           </argument>
         </arguments>
@@ -88,7 +92,7 @@ gbHeight = 58;
 window_x = window_mouse_get_x();
 window_y = window_mouse_get_y();
 draw_set_color(c_white);
-draw_text(0,0,"(" + string(xx) + "," + string(yy) + ")" + string(ss) + " " + string(ammoMouseVar[0]));
+draw_text(0,100,"(" + string(xx) + "," + string(yy) + ")" + string(ss) + " " + string(ammoMouseVar[0]));
 
 
 
@@ -120,8 +124,19 @@ scr_buy_gun(997,test,3,0,15,"AK-47");
 test += 76
 }
 
+if(adding){
+draw_sprite_ext(s_expansion_UI,whichExpansion,window_x,window_y,3.28,3.28,0,c_white,1);
+if(mouse_check_button_pressed(mb_right)){
+adding = false;
+}
+}
 
+scr_buy_extension(1442,453,1,0);
+scr_buy_extension(1442 + 78,453,2,0);
 
+scr_buy_extension(1442,453 + 77,3,0);
+scr_buy_extension(1442 + 78,453 + 77,4,0);
+scr_buy_extension(1442 + 78,453 + 77 + 77,5,0);
 
 
 

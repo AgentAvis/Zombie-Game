@@ -58,11 +58,23 @@ ss = 1;
 //Variables for the inventory
 c1 = make_color_rgb(130,130,130);
 c2 = make_color_rgb(64,64,64);
+c3 = make_color_rgb(142,142,142);
+c4 = make_color_rgb(117,117,117);
+c5 = make_color_rgb(150,150,150);
 width = 362;
 height = 64;
 
 //inventory draw animation stuffs
 uioffset = 0//how much is the ui being offset at, used to make it sliiide
+
+//ExpansionSlotButtons
+for(i = 0; i &lt; o_gun.image_number; i++){
+for(b = 0; b &lt; 2; b++){
+eB[i,b] = false;
+}
+}
+expansion_width = sprite_get_width(s_expansion_UI)/2;
+expansion_height = sprite_get_height(s_expansion_UI)/2;
 
 
 </string>
@@ -154,12 +166,15 @@ apply_speeds_and_gravity();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var temp = 99;
+            <string>scr_make_gui();
+window_x = window_mouse_get_x();
+window_y = window_mouse_get_y();
+var temp = 99;
 if(keyboard_check(vk_tab)){
     doffset = 0
 } else {
     doffset = -400
-    //uioffset = -300
+    //uioffset = -400
 }
 uioffset = lerp(uioffset,doffset,.05)
 
@@ -202,6 +217,8 @@ draw_set_color(c_black)
 draw_circle(70,70,64,false);
 draw_sprite_ext(s_player,image_index,71,68+((18*6.5)/2),6.5,6.5,1,c_white,1);
 draw_set_color(c_white)
+
+//draw_text(0,0,"(" + string(xx) + "," + string(yy) + ")" + string(eB[0,0]));
 
 
 

@@ -35,6 +35,7 @@
       <sprite>sprites\s_dollar_bill</sprite>
       <sprite>sprites\s_guns_gui</sprite>
       <sprite>sprites\s_guns_ammo</sprite>
+      <sprite>sprites\s_expansion_UI</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -102,6 +103,7 @@
           <script>scripts\scr_draw_shop.gml</script>
           <script>scripts\scr_buy_ammo_buttons.gml</script>
           <script>scripts\scr_buy_gun.gml</script>
+          <script>scripts\scr_buy_extension.gml</script>
         </scripts>
       </scripts>
       <scripts name="_custom physics">
@@ -109,6 +111,9 @@
         <script>scripts\motion_set_custom.gml</script>
       </scripts>
       <script>scripts\apply_speeds_and_gravity.gml</script>
+      <scripts name="_guns">
+        <script>scripts\scr_check_expansion.gml</script>
+      </scripts>
     </scripts>
     <scripts name="_drawing">
       <script>scripts\draw_background_tiled_horizontal.gml</script>

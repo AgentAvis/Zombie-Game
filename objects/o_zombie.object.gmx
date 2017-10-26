@@ -92,6 +92,7 @@ with (instance_create(x,y,o_zombie_dead)) {
 
     sprite_index = other.sprite_index
     image_index = other.type
+    image_yscale = other.image_xscale;
     //vsp = -1
     
 }
