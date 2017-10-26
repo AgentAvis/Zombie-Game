@@ -366,12 +366,25 @@ else
     draw_set_alpha(1);
     
     acMin = -0.5;
-    acMax = 0.5;
+    acMax = 0.5;                            
 
 }else{
     acMin = -1;
     acMax = 1;
 }
+if hasSilencer {
+    sprite_set_offset(s_guns_silencer, offsetX, offsetY);
+    draw_sprite_ext(s_guns_silencer,spr,x,y + 1,image_xscale,image_yscale,image_angle,c_white,1);
+}
+if hasScope {
+    sprite_set_offset(s_guns_scope, offsetX, offsetY);
+    draw_sprite_ext(s_guns_scope,spr,x,y + 1,image_xscale,image_yscale,image_angle,c_white,1);
+}
+if hasClip {
+    sprite_set_offset(s_guns_clip, offsetX, offsetY);
+    draw_sprite_ext(s_guns_clip,spr,x,y + 1,image_xscale,image_yscale,image_angle,c_white,1);
+}
+
 
 draw_sprite_ext(s_guns,spr,x,y + 1,image_xscale,image_yscale,image_angle,c_white,1);
 sprite_set_offset(s_guns, offsetX, offsetY);

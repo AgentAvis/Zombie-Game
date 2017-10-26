@@ -22,6 +22,9 @@
     </sprites>
     <sprites name="_guns">
       <sprite>sprites\s_guns</sprite>
+      <sprite>sprites\s_guns_clip</sprite>
+      <sprite>sprites\s_guns_scope</sprite>
+      <sprite>sprites\s_guns_silencer</sprite>
       <sprite>sprites\s_bullet_mask</sprite>
     </sprites>
     <sprites name="_money">
