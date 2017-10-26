@@ -40,6 +40,9 @@
       <sprite>sprites\s_guns_ammo</sprite>
       <sprite>sprites\s_expansion_UI</sprite>
     </sprites>
+    <sprites name="_equipmen">
+      <sprite>sprites\s_medkit</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\stars</background>
@@ -107,6 +110,7 @@
           <script>scripts\scr_buy_ammo_buttons.gml</script>
           <script>scripts\scr_buy_gun.gml</script>
           <script>scripts\scr_buy_extension.gml</script>
+          <script>scripts\scr_buy_medkits.gml</script>
         </scripts>
       </scripts>
       <scripts name="_custom physics">
@@ -124,6 +128,7 @@
       <script>scripts\draw_line_ext.gml</script>
       <script>scripts\collision_line_point.gml</script>
       <script>scripts\draw_rectangle_width.gml</script>
+      <script>scripts\draw_text_font.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
