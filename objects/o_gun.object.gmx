@@ -371,6 +371,12 @@ else
 }else{
     acLaser = 0;
 }
+
+//draw the gun
+draw_sprite_ext(s_guns,spr,x,y + 1,image_xscale,image_yscale,image_angle,c_white,1);
+sprite_set_offset(s_guns, offsetX, offsetY);
+
+//draw the attatchments over it
 if hasSilencer {
     sprite_set_offset(s_guns_silencer, offsetX, offsetY);
     draw_sprite_ext(s_guns_silencer,spr,x,y + 1,image_xscale,image_yscale,image_angle,c_white,1);
@@ -391,8 +397,7 @@ if hasClip {
 }
 
 
-draw_sprite_ext(s_guns,spr,x,y + 1,image_xscale,image_yscale,image_angle,c_white,1);
-sprite_set_offset(s_guns, offsetX, offsetY);
+
 
 </string>
           </argument>
