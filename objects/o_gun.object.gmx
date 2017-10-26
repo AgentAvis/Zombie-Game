@@ -32,7 +32,7 @@ image_angle = 0;
 barrel_length = -3;
 barrel_height = -1;
 //Sprite index/Gun selected
-spr = 0;
+spr = 1;
 //Gun Damage
 dmg = 1;
 //Accuracy(1-10)
@@ -61,8 +61,9 @@ hasGun[2] = false;
 hasGun[3] = false;
 hasGun[4] = false;
 //Accuracy Modifier
-acMin = -1;
-acMax = 1;
+acSilence = 0.1;
+acLaser = 0.3;
+acScope = 0.4;
 
 //Has attachment
 hasLaser = false;
@@ -176,7 +177,7 @@ for(i = 0; i &lt; mx; i++){
 //Create an instance of bullet
 p = instance_create(x + barrel_x,y + barrel_y,o_bullet);
 //Set that bullets variables
-p.dir = mousedir + (accuracy * random_range(acMax,acMin));
+p.dir = mousedir + (accuracy * random_range(1 - acSilence - acLaser - acScope,-1 + acSilence + acLaser + acScope));
 p.dmg = dmg;
 p.shake = shake;
 //Set a force
@@ -205,7 +206,7 @@ accuracy = 3;
 firerate = 1;
 shake = 1;
 knockback = 0;
-offsetX = 8;
+offsetX = 11;
 offsetY = 9;
 scr_check_expansion(1);
 }
@@ -215,7 +216,7 @@ dmg = 6;
 accuracy = 7;
 firerate = 0.1;
 shake = 0.25;
-offsetX = 9;
+offsetX = 12;
 offsetY = 10;
 scr_check_expansion(0);
 }
@@ -225,7 +226,7 @@ dmg = 4;
 accuracy = 7;
 firerate = 3;
 shake = 30;
-offsetX = 7;
+offsetX = 10;
 offsetY = 10;
 scr_check_expansion(2);
 }
@@ -235,7 +236,7 @@ dmg = 3;
 accuracy = 8;
 firerate = 0.2;
 shake = 30;
-offsetX = 7;
+offsetX = 10;
 offsetY = 8;
 scr_check_expansion(3)
 }
@@ -245,7 +246,7 @@ dmg = 2;
 accuracy = 5;
 firerate = 4;
 shake = 30;
-offsetX = 3;
+offsetX = 6;
 offsetY = 10;
 scr_check_expansion(4);
 }
@@ -364,21 +365,25 @@ else
     draw_line_ext(x,y,lazer_point[1],lazer_point[2],.5,c_red,.5,0)
 
     draw_set_alpha(1);
-    
-    acMin = -0.5;
-    acMax = 0.5;                            
+    acLaser = 0.1;
+                           
 
 }else{
-    acMin = -1;
-    acMax = 1;
+    acLaser = 0;
 }
 if hasSilencer {
     sprite_set_offset(s_guns_silencer, offsetX, offsetY);
     draw_sprite_ext(s_guns_silencer,spr,x,y + 1,image_xscale,image_yscale,image_angle,c_white,1);
+    acSilence = 0.1;
+}else{
+    acSilence = 0;
 }
 if hasScope {
     sprite_set_offset(s_guns_scope, offsetX, offsetY);
     draw_sprite_ext(s_guns_scope,spr,x,y + 1,image_xscale,image_yscale,image_angle,c_white,1);
+    acScope = 0.4;
+}else{
+    acScope = 0;
 }
 if hasClip {
     sprite_set_offset(s_guns_clip, offsetX, offsetY);

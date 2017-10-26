@@ -7,8 +7,8 @@
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
-  <bbox_left>5</bbox_left>
-  <bbox_right>12</bbox_right>
+  <bbox_left>8</bbox_left>
+  <bbox_right>15</bbox_right>
   <bbox_top>8</bbox_top>
   <bbox_bottom>14</bbox_bottom>
   <HTile>0</HTile>
@@ -17,7 +17,7 @@
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>21</width>
+  <width>28</width>
   <height>18</height>
   <frames>
     <frame index="0">images\s_guns_clip_0.png</frame>
