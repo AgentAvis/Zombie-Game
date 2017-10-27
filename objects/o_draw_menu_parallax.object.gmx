@@ -50,33 +50,48 @@ tracker[20] = 0;
           <argument>
             <kind>1</kind>
             <string>draw_background_tiled_horizontal(stars,0,0)
-spd = 0.1;
-tracker[0] -= spd;
-draw_background_tiled_horizontal(clouds0,0 + tracker[0],0);
-spd = 0.2;
-tracker[1] -= spd;
-draw_background_tiled_horizontal(clouds1,0 + tracker[1],0);
-spd = 0.3;
-tracker[2] -= spd;
-draw_background_tiled_horizontal(clouds2,0 + tracker[2],0);
-spd = 0.4;
-tracker[3] -= spd;
-draw_background_tiled_horizontal(clouds3,0 + tracker[3],0);
-spd = 0.5;
+spdmult = .25
+cloudhoffset = -10
+cityhoffset = -15
+
+
+
+spd = 0.1 * spdmult;
 tracker[4] -= spd;
-draw_background_tiled_horizontal(buildings0,0 + tracker[4],0);
-spd = 0.6;
+draw_background_tiled_horizontal(buildings0,0 + tracker[4],cityhoffset);
+
+spd = 0.1 * spdmult;
+tracker[0] -= spd;
+draw_background_tiled_horizontal(clouds3,0 + tracker[0],cloudhoffset);
+
+spd = 0.3 * spdmult;
 tracker[5] -= spd;
-draw_background_tiled_horizontal(buildings1,0 + tracker[5],0);
-spd = 0.7;
+draw_background_tiled_horizontal(buildings1,0 + tracker[5],cityhoffset);
+
+spd = 0.2 * spdmult;
+tracker[1] -= spd;
+draw_background_tiled_horizontal(clouds2,0 + tracker[1],cloudhoffset);
+
+spd = 0.4 * spdmult;
 tracker[6] -= spd;
-draw_background_tiled_horizontal(buildings2,0 + tracker[6],0);
-spd = 0.8;
+draw_background_tiled_horizontal(buildings2,0 + tracker[6],cityhoffset);
+
+spd = 0.3 * spdmult;
+tracker[2] -= spd;
+draw_background_tiled_horizontal(clouds1,0 + tracker[2],cloudhoffset);
+
+spd = 0.5 * spdmult;
 tracker[7] -= spd;
-draw_background_tiled_horizontal(buildings3,0 + tracker[7],0);
-spd = 0.9;
+draw_background_tiled_horizontal(buildings3,0 + tracker[7],cityhoffset);
+
+spd = 0.4 * spdmult;
+tracker[3] -= spd;
+draw_background_tiled_horizontal(clouds0,0 + tracker[3],cloudhoffset);
+
+spd = 0.6 * spdmult;
 tracker[8] -= spd;
-draw_background_tiled_horizontal(buildings4,0 + tracker[8],0);
+draw_background_tiled_horizontal(buildings4,0 + tracker[8],cityhoffset);
+
 </string>
           </argument>
         </arguments>
