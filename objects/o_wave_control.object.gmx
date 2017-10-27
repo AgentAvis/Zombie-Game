@@ -2,8 +2,8 @@
 <object>
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
-  <visible>0</visible>
-  <depth>-1</depth>
+  <visible>-1</visible>
+  <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,47 +25,85 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>xx = 0;
-yy = 0;
-ss = 0;
+            <string>wave = 1;
+enemies = 0;
+maxEnemies = 5;
 
-//Variables for the inventory
-c1 = make_color_rgb(130,130,130);
-c2 = make_color_rgb(64,64,64);
-c3 = make_color_rgb(142,142,142);
-c4 = make_color_rgb(117,117,117);
-c5 = make_color_rgb(150,150,150);
+wave_cool_down = room_speed * 10;
+countingDown = true;
+secondsLeft = 10;
 
+alarm[0] = wave_cool_down;
+alarm[1] = room_speed * 1;
 
-
-//Variables for Shop Window
-length = o_gun.image_number;
-for(b = 0; b &lt; length; b++){
-ammoMouseVar[b] = false;
+leftOrRight = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(countingDown){
+b = instance_create(0,0,wave_draw)
+b.count = true;
+b.num = secondsLeft;
+secondsLeft--;
+alarm[1] = room_speed * 1;
 }
-for(i = 0; i &lt; length; i++){
-selected[i] = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>countingDown = false;
+p = instance_create(0,0,wave_draw);
+p.count = false;
+p.num = wave;
+
+for(i = 0; i&lt;maxEnemies; i++){
+if(leftOrRight){
+instance_create(o_spawn_1.x,o_spawn_1.y,o_zombie);
+
+}else{
+instance_create(o_spawn_2.x,o_spawn_2.y,o_zombie);
+
 }
-for(c = 0; c &lt; length; c++){
-buyGunButton[c] = false;
+
+leftOrRight = !leftOrRight;
 }
-//Ammo Buttons
-ammoButton[0] = false;
-ammoButton[1] = false;
-ammoButton[2] = false;
-width = 84;
-height = 41;
-
-
-//Buy Gun Button
-gWidth = 404;
-gHeight = 68;
-gbWidth = 394;
-gbHeight = 58;
-
-//Adding Expansion
-adding = false;
-whichExpansion = 0;
 </string>
           </argument>
         </arguments>
@@ -88,9 +126,14 @@ whichExpansion = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(keyboard_check_pressed(ord('V'))){
-visible = !visible;
-
+            <string>if(enemies &gt;= maxEnemies){
+wave++;
+enemies = 0;
+maxEnemies += 10;
+alarm[0] = wave_cool_down;
+alarm[1] = room_speed * 1;
+secondsLeft = 10;
+countingDown = true;
 }
 </string>
           </argument>
@@ -114,60 +157,11 @@ visible = !visible;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_make_gui();
-window_x = window_mouse_get_x();
-window_y = window_mouse_get_y();
-draw_set_color(c_white);
-draw_text(0,100,"(" + string(xx) + "," + string(yy) + ")" + string(ss) + " " + string(ammoMouseVar[0]));
+            <string>draw_set_color(c_white);
 
+//draw_text(0,200,string(enemies));
 
-
-draw_set_color(c1);
-draw_rectangle(990,104,1566 , 862 , false);
-draw_set_color(c5);
-draw_rectangle(996,186,1395,382,false);
-scr_buy_ammo(1035,224,1,1);
-scr_buy_ammo(1115,224,2,0);
-scr_buy_ammo(1195,224,3,2);
-scr_buy_ammo(1275,224,4,3);
-scr_buy_ammo(1355,224,5,4);
-draw_set_font(fnt_big);
-draw_text(1002,129,"Ammo:");
-draw_text(987 + 11,284 + 102,"Weapon: ");
-draw_set_font(base);
-
-var test = 423;
-if(!o_gun.hasGun[0]){
-scr_buy_gun(997,test,0,0,15,"Mac-10");
-test += 76
-}
-if(!o_gun.hasGun[2]){
-scr_buy_gun(997,test,2,0,15,"Sawn-off");
-test += 76
-}
-if(!o_gun.hasGun[3]){
-scr_buy_gun(997,test,3,0,15,"AK-47");
-test += 76
-}
-
-if(adding){
-draw_sprite_ext(s_expansion_UI,whichExpansion,window_x,window_y,3.28,3.28,0,c_white,1);
-if(mouse_check_button_pressed(mb_right)){
-adding = false;
-}
-}
-
-scr_buy_extension(1442,453,1,0);
-scr_buy_extension(1442 + 78,453,2,0);
-
-scr_buy_extension(1442,453 + 77,3,0);
-scr_buy_extension(1442 + 78,453 + 77,4,0);
-scr_buy_extension(1442 + 78,453 + 77 + 77,5,0);
-
-scr_buy_medkits(1477,286,4.26,20);
-
-
-
+draw_healthbar(0,window_get_height() - 100,window_get_width(),window_get_height(),(enemies/maxEnemies) * 100, c_black, c_yellow, c_yellow, 0, true, true);
 </string>
           </argument>
         </arguments>

@@ -28,7 +28,8 @@
             <string>walk_spd = 1;
 phys = false //check this to true if you are using physics
 moving = false
-
+globalvar occupied;
+occupied = false;
 hsp = 0 //does the same as hspeed
 vsp = 0 //does the same as vspeed
 
@@ -105,8 +106,9 @@ healthkits = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_movement();
-
+            <string>if(!occupied){
+scr_movement();
+}
 //how much to hop offset
 
 hop += hopspeed

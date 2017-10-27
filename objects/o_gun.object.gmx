@@ -153,7 +153,10 @@ y = o_player.y + o_player.hop-(18/2);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//A direction variable pointing to the mouse.
+            <string>if(!occupied){
+
+
+//A direction variable pointing to the mouse.
 var mousedir = point_direction(x,y,mouse_x,mouse_y);
 
 //Always draw above the player
@@ -292,6 +295,9 @@ spr = 4;
 
 }
 
+
+
+
 //Something for the Has Laser vsriable
 if(keyboard_check_pressed(ord('G'))){
 hasLaser = !hasLaser;
@@ -307,6 +313,9 @@ else
 {
     image_yscale = 1;
     depth = -y-7;
+}
+
+//End bracket for occupied
 }
 </string>
           </argument>

@@ -19,6 +19,9 @@
     </sprites>
     <sprites name="_environment">
       <sprite>sprites\s_street</sprite>
+      <sprites name="_buildings">
+        <sprite>sprites\s_store</sprite>
+      </sprites>
     </sprites>
     <sprites name="_guns">
       <sprite>sprites\s_guns</sprite>
@@ -142,6 +145,9 @@
         <object>objects\o_solid</object>
         <object>objects\o_street</object>
       </objects>
+      <objects name="_buildings">
+        <object>objects\o_shop</object>
+      </objects>
     </objects>
     <objects name="_system">
       <objects name="_player">
@@ -182,6 +188,12 @@
       <object>objects\oDj</object>
       <objects name="_UI">
         <object>objects\o_shop_gui</object>
+      </objects>
+      <objects name="_wave_system">
+        <object>objects\o_wave_control</object>
+        <object>objects\o_spawn_1</object>
+        <object>objects\o_spawn_2</object>
+        <object>objects\wave_draw</object>
       </objects>
     </objects>
   </objects>

@@ -25,25 +25,21 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>hsp = 0
-vsp = -1
-mass = 1
-image_speed = 0
-image_angle = 90
+            <string>count = false;
+alph = 0;
 
-image_blend = merge_color(c_red,c_white,.75)
+num = 10;
 
-c = false
+if(count = true){
+alph = 1;
 
-if(instance_exists(o_wave_control)){
-o_wave_control.enemies++;
 }
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -60,23 +56,38 @@ o_wave_control.enemies++;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if !c {
-    x += sprite_height/2
-    y -= sprite_width
-    c = true
+            <string>draw_set_color(c_white);
+
+if(!count){
+
+alph += 0.01;
+draw_set_alpha(alph);
+draw_set_halign(fa_center);
+draw_set_valign(fa_middle);
+draw_text(window_get_width()/2,window_get_height()/2,"Wave " + string(num));
+draw_set_halign(fa_left);
+draw_set_valign(fa_top);
+draw_set_alpha(1);
+
+if(alph &gt; 1){
+instance_destroy();
 }
+}else{
 
 
-image_alpha *= .99
-if image_alpha &lt; .05 { instance_destroy() }
+alph -= 0.01;
+//draw_set_alpha(alph);
+draw_set_halign(fa_center);
+draw_set_valign(fa_middle);
+draw_text(window_get_width()/2,window_get_height()/2,string(num));
+draw_set_halign(fa_left);
+draw_set_valign(fa_top);
+//draw_set_alpha(1);
 
-
-
-
-
-
-
-apply_speeds_and_gravity()
+if(alph &lt; 0){
+instance_destroy();
+}
+}
 
 
 </string>
