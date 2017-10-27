@@ -63,7 +63,9 @@ time = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>if(y &lt; 0){
+exit
+}
 repeat (irandom_range(1,5))
 with (instance_create(x,y,o_blood_drop)) {
     motion_set_custom(random_range(1,3),random(360))
@@ -140,7 +142,7 @@ with (o_lifeform) {
         }
     } 
 }
-if _die or time &gt; room_speed*15 { instance_destroy() }
+if _die or time &gt; room_speed*5 { instance_destroy() }
 
 
 </string>
