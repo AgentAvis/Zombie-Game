@@ -206,7 +206,7 @@ canFire = false;
 if(spr == 1){
 dmg = 10;
 accuracy = 3;
-firerate = 1;
+firerate = .5;
 shake = 1;
 knockback = 0;
 offsetX = 11;

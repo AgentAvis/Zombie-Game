@@ -1,0 +1,2 @@
+fix countdown glitchyness
+make zombies hop not in sync

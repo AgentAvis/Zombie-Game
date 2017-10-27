@@ -25,15 +25,55 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>hp = 100;
+            <string>phys = false
+
+hp = 100;
 maxHp = 100;
 ammount = 0;
+
+//Set the distance it 'sees' the player
+sight = 1000;
+
+//Set the speed of the enemy
+walk_spd = 0;
+
+//Alarm for hitting the player and attack speed
+alarm[0] = room_speed * 1;
+
+attackSpeed = room_speed * .5;
+
+//The can hit variable
+canHit = true;
+
+//For determining appearance
+type = irandom_range(0,image_number);
+
+//hop stuff
+hop = 0
+hopspeed = 0
+
+//set up the new speed variables
+hsp = 0
+vsp = 0
+
+dhsp = 0//used for ai
+
+//how heavy am i
+mass = 1
+
+//money multiplier
+wealth = 1
+image_speed = 0;
+
+hops = true //use hop system
+
+damage = 1
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="o_solid">
+    <event eventtype="1" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -50,7 +90,106 @@ ammount = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Col
+            <string>repeat (irandom_range(5,20))
+with (instance_create(x,y,o_blood_drop)) {
+    motion_set_custom(random_range(2,6),random(360))
+    
+}
+
+with (instance_create(x,y,o_zombie_dead)) {
+
+    sprite_index = other.sprite_index
+    image_index = other.type
+    image_yscale = other.image_xscale;
+    //vsp = -1
+    
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>canHit = true;
+alarm[0] = attackSpeed;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>scr_enemy_walk();
+
+if hops {
+    hop += hopspeed
+    if hop &lt; 0 { hopspeed += .05 } else {
+    hopspeed = -.5 hop = 0
+    }
+}
+
+
+if(hp &lt;= 0){
+    repeat (irandom(10)) {
+        instance_create(x,y,o_coin)
+    }
+    repeat (irandom(5*wealth)) {
+        instance_create(x,y,o_dollar);
+    }
+instance_destroy();
+}
+
+if(canHit){
+    if point_distance(x,y,o_player.x,o_player.y) &lt; 6 {
+        o_player.hp -= damage;
+        ex_camera_set_flash_color("main",c_red);
+        ex_camera_flash("main",0.5,15);
+        ex_camera_shake("main",4,1,0,3);
+        canHit = false;
+    }
+}
+
+
+
+
+
+apply_speeds_and_gravity()
+//x += hsp * global.timescale;
+//y += vsp * global.timescale;
+
+
+
 </string>
           </argument>
         </arguments>

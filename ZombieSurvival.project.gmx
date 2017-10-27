@@ -3,6 +3,25 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
+  <datafiles number="1" name="datafiles">
+    <datafile>
+      <name>notes.txt</name>
+      <exists>-1</exists>
+      <size>0</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>notes.txt</filename>
+    </datafile>
+  </datafiles>
   <NewExtensions>
     <extension index="0">extensions\exCamera</extension>
   </NewExtensions>
@@ -14,6 +33,7 @@
     <sprites name="_enemies">
       <sprite>sprites\s_zombies_1</sprite>
       <sprite>sprites\s_zombies_2</sprite>
+      <sprite>sprites\s_zombies_fat</sprite>
       <sprite>sprites\s_zombies_3</sprite>
       <sprite>sprites\s_zombies_4</sprite>
     </sprites>
@@ -21,6 +41,9 @@
       <sprite>sprites\s_street</sprite>
       <sprites name="_buildings">
         <sprite>sprites\s_store</sprite>
+        <sprite>sprites\s_apartments</sprite>
+        <sprite>sprites\s_firehouse</sprite>
+        <sprite>sprites\s_gas_station</sprite>
       </sprites>
     </sprites>
     <sprites name="_guns">
@@ -176,7 +199,8 @@
         <object>objects\o_lifeform</object>
         <objects name="_regular">
           <object>objects\o_zombie_dead</object>
-          <object>objects\o_zombie</object>
+          <object>objects\o_zombie_normal</object>
+          <object>objects\o_zombie_fat</object>
         </objects>
         <objects name="_gore">
           <object>objects\o_blood_drop</object>

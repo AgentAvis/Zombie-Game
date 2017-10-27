@@ -93,16 +93,22 @@ p = instance_create(0,0,wave_draw);
 p.count = false;
 p.num = wave;
 
-for(i = 0; i&lt;maxEnemies; i++){
-if(leftOrRight){
-instance_create(o_spawn_1.x,o_spawn_1.y,o_zombie);
-
-}else{
-instance_create(o_spawn_2.x,o_spawn_2.y,o_zombie);
-
+repeat (maxEnemies){
+    if(leftOrRight){
+        instance_create(o_spawn_1.x,o_spawn_1.y,o_zombie_normal);
+    }else{
+        instance_create(o_spawn_2.x,o_spawn_2.y,o_zombie_normal);
+    }
+    leftOrRight = !leftOrRight;
 }
 
-leftOrRight = !leftOrRight;
+repeat (maxEnemies){
+    if(leftOrRight){
+        instance_create(o_spawn_1.x,o_spawn_1.y,o_zombie_fat);
+    }else{
+        instance_create(o_spawn_2.x,o_spawn_2.y,o_zombie_fat);
+    }
+    leftOrRight = !leftOrRight;
 }
 </string>
           </argument>
