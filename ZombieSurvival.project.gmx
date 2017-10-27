@@ -226,6 +226,7 @@
         <object>objects\o_shop_gui</object>
       </objects>
       <objects name="_wave_system">
+        <object>objects\o_wave_control_avis</object>
         <object>objects\o_wave_control</object>
         <object>objects\o_spawn_1</object>
         <object>objects\o_spawn_2</object>

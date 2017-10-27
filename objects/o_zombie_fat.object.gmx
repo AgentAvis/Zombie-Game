@@ -26,12 +26,12 @@
           <argument>
             <kind>1</kind>
             <string>event_inherited();
-hp = 75;
+hp = 125;
 maxHp = 75;
 //Set the distance it 'sees' the player
-sight = 750;
+sight = 2000;
 
-walk_spd = random_range(0.1,0.2);
+walk_spd = random_range(0.3,0.4);
 
 attackSpeed = room_speed * .5; //attacks per second essentially
 
