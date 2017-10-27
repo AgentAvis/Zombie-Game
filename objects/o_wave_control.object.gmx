@@ -133,13 +133,13 @@ repeat (maxEnemies){
           <argument>
             <kind>1</kind>
             <string>if(enemies &gt;= maxEnemies){
-wave++;
-enemies = 0;
-maxEnemies += 10;
-alarm[0] = wave_cool_down;
-alarm[1] = room_speed * 1;
-secondsLeft = 10;
-countingDown = true;
+    wave++;
+    enemies = 0;
+    maxEnemies += 10;
+    alarm[0] = wave_cool_down;
+    alarm[1] = room_speed * 1;
+    secondsLeft = 10;
+    countingDown = true;
 }
 </string>
           </argument>
