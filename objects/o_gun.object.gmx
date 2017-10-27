@@ -228,7 +228,7 @@ scr_check_expansion(0);
 if(spr == 2){
 dmg = 24;
 accuracy = 7;
-firerate = 3;
+firerate = 3/2;
 shake = 30;
 offsetX = 10;
 offsetY = 10;

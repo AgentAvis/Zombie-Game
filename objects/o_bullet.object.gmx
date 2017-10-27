@@ -40,6 +40,7 @@ vsp = 0 //used for collisions only
 oldx = x
 oldy = y
 explosive = false
+time = 0
 </string>
           </argument>
         </arguments>
@@ -116,7 +117,7 @@ with (instance_create(x,y,o_blood_drop)) {
           <argument>
             <kind>1</kind>
             <string>//physics_apply_force(phy_position_x,phy_position_y,0,phy_mass*10*-1)
-
+time ++
 hsp = x-oldx
 vsp = y-oldy
 oldx = x
@@ -139,7 +140,9 @@ with (o_lifeform) {
         }
     } 
 }
-if _die { instance_destroy() }
+if _die or time &gt; room_speed*15 { instance_destroy() }
+
+
 </string>
           </argument>
         </arguments>
