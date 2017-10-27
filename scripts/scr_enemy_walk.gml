@@ -1,4 +1,4 @@
-if collision_circle(x,y,sight,o_player,true,false) and random (15) < 1
+if y >= gr-1//if collision_circle(x,y,sight,o_player,true,false) and random (15) < 1
 {
     
     if !phys {
@@ -25,6 +25,7 @@ if collision_circle(x,y,sight,o_player,true,false) and random (15) < 1
         image_xscale = -1;
         }
     }
-
-}
+    
 hsp = lerp(hsp,dhsp,.01)
+}
+

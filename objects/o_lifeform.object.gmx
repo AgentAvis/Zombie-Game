@@ -67,7 +67,13 @@ image_speed = 0;
 
 hops = true //use hop system
 
+explodeamt = 0 //counts down from the last time exploded
+
 damage = 1
+
+ehsp = 0
+evsp = 0
+
 </string>
           </argument>
         </arguments>
@@ -101,7 +107,10 @@ with (instance_create(x,y,o_zombie_dead)) {
     sprite_index = other.sprite_index
     image_index = other.type
     image_yscale = other.image_xscale;
-    //vsp = -1
+    hsp = other.hsp
+    vsp = other.vsp
+    vsp -= .5
+    mass = other.mass
     
 }
 </string>
@@ -152,6 +161,10 @@ alarm[0] = attackSpeed;
             <kind>1</kind>
             <string>scr_enemy_walk();
 
+explodeamt -= 1
+explodeamt = clamp(explodeamt,0,1000)
+
+
 if hops {
     hop += hopspeed
     if hop &lt; 0 { hopspeed += .05 } else {
@@ -180,15 +193,14 @@ if(canHit){
     }
 }
 
-
-
-
-
 apply_speeds_and_gravity()
 //x += hsp * global.timescale;
 //y += vsp * global.timescale;
 
-
+if y &gt;= gr {
+    //hsp = clamp(hsp,-walk_spd,walk_spd)
+    if abs(hsp) &gt; walk_spd { hsp *= .9 }
+} 
 
 </string>
           </argument>

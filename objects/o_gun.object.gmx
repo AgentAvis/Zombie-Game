@@ -164,39 +164,40 @@ depth = o_player.depth - 1;
 
 //Firing the gun
 if(canFire and mouse_check_button(mb_left) and ammo[spr] &gt; 0){
-//Setting up the for loop
-var i = 0;
-var mx = 1;
-//For the shotgun
-if(spr == 2){
-mx = 5;
-}
-if(spr == 4){
-mx = 8;
-}
-barrel_x = lengthdir_x(barrel_length, mousedir);
-barrel_y = lengthdir_y(barrel_height, mousedir);
-for(i = 0; i &lt; mx; i++){
-//Create an instance of bullet
-p = instance_create(x + barrel_x,y + barrel_y,o_bullet);
-//Set that bullets variables
-p.dir = mousedir + (accuracy * random_range(1 - acSilence - acLaser - acScope,-1 + acSilence + acLaser + acScope));
-p.dmg = dmg;
-p.shake = shake;
-//Set a force
-var xforce = lengthdir_x(5, p.dir);
-var yforce = lengthdir_y(5, p.dir);
-//Apply the force.
-with(p){
-        physics_apply_impulse(x,y,xforce,yforce);
-       }
-}
-//Decrease the ammo
-ammo[spr]--;
-//Set the alarm for the fire rate
-alarm[0] = firerate * room_speed;
-//Set can fire to false
-canFire = false;
+    //Setting up the for loop
+    var i = 0;
+    var mx = 1;
+    //For the shotgun
+    if(spr == 2){
+    mx = 5;
+    }
+    if(spr == 4){
+    mx = 8;
+    }
+    barrel_x = lengthdir_x(barrel_length, mousedir);
+    barrel_y = lengthdir_y(barrel_height, mousedir);
+    for(i = 0; i &lt; mx; i++){
+    //Create an instance of bullet
+    p = instance_create(x + barrel_x,y + barrel_y,o_bullet);
+    //Set that bullets variables
+    p.dir = mousedir + (accuracy * random_range(1 - acSilence - acLaser - acScope,-1 + acSilence + acLaser + acScope));
+    p.dmg = dmg;
+    p.shake = shake;
+    p.explosive = hasExploseive
+    //Set a force
+    var xforce = lengthdir_x(5, p.dir);
+    var yforce = lengthdir_y(5, p.dir);
+    //Apply the force.
+    with(p){
+            physics_apply_impulse(x,y,xforce,yforce);
+           }
+    }
+    //Decrease the ammo
+    ammo[spr]--;
+    //Set the alarm for the fire rate
+    alarm[0] = firerate * room_speed;
+    //Set can fire to false
+    canFire = false;
 
 }
 

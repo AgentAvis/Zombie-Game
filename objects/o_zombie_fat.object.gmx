@@ -38,9 +38,11 @@ attackSpeed = room_speed * .5; //attacks per second essentially
 //For determining appearance
 type = irandom_range(0,image_number);
 
-mass = 3
+mass = 1.75
 
 damage = 3
+
+wealth = random_range(.5,4)
 </string>
           </argument>
         </arguments>
@@ -64,6 +66,7 @@ damage = 3
           <argument>
             <kind>1</kind>
             <string>event_inherited();
+clamp(hsp,-2,2)
 </string>
           </argument>
         </arguments>

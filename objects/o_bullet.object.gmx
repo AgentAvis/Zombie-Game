@@ -39,6 +39,7 @@ hsp = 0
 vsp = 0 //used for collisions only
 oldx = x
 oldy = y
+explosive = false
 </string>
           </argument>
         </arguments>
@@ -129,6 +130,13 @@ with (o_lifeform) {
         //hitid = temp_hitid
         hp -= me.dmg
         _die = true
+        if me.explosive {
+            with (instance_create(me.x,me.y,o_explosion)) {
+                damage = me.dmg * random_range(1,3)
+                radius = 10
+                //y += 5
+            }
+        }
     } 
 }
 if _die { instance_destroy() }

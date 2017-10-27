@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>hsp = 0
-vsp = -1
+//vsp = -1
 mass = 1
 image_speed = 0
 image_angle = 90
@@ -77,7 +77,7 @@ if image_alpha &lt; .05 { instance_destroy() }
 
 
 apply_speeds_and_gravity()
-
+if y &gt;= gr { hsp *= .75 }
 
 </string>
           </argument>
