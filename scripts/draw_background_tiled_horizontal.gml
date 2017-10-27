@@ -1,4 +1,5 @@
 #define draw_background_tiled_horizontal
+///draw_background_tiled_horizontal(back,x,y)
 /***************************************************
   Usage :   draw_background_tiled_horizontal(back,x,y)
   Arguments :   argument0   ==  background

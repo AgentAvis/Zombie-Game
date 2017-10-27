@@ -70,6 +70,10 @@
       <sprite>sprites\s_medkit</sprite>
     </sprites>
     <sprite>sprites\sBuilding_placeholder</sprite>
+    <sprites name="_explosions">
+      <sprite>sprites\s_explosion_1</sprite>
+      <sprite>sprites\s_explosion_2</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\stars</background>
@@ -83,6 +87,12 @@
       <background>background\buildings2</background>
       <background>background\buildings3</background>
       <background>background\buildings4</background>
+      <backgrounds name="_clouds">
+        <background>background\clouds0</background>
+        <background>background\clouds1</background>
+        <background>background\clouds2</background>
+        <background>background\clouds3</background>
+      </backgrounds>
     </backgrounds>
   </backgrounds>
   <paths name="paths"/>
@@ -221,9 +231,16 @@
         <object>objects\o_spawn_2</object>
         <object>objects\wave_draw</object>
       </objects>
+      <objects name="_explosion_system">
+        <object>objects\o_explosion</object>
+      </objects>
+      <objects name="_main_menu">
+        <object>objects\o_draw_menu_parallax</object>
+      </objects>
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\r_menu</room>
     <rooms name="_debug">
       <room>rooms\r_testing</room>
     </rooms>
