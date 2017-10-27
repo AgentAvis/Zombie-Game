@@ -46,6 +46,7 @@
     <sprites name="_equipmen">
       <sprite>sprites\s_medkit</sprite>
     </sprites>
+    <sprite>sprites\sBuilding_placeholder</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\stars</background>
@@ -146,6 +147,7 @@
         <object>objects\o_street</object>
       </objects>
       <objects name="_buildings">
+        <object>objects\oBuilding</object>
         <object>objects\o_shop</object>
       </objects>
     </objects>
