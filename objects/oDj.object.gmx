@@ -32,6 +32,8 @@ global.grav = .1
 globalvar gr; 
 gr = 400;
 
+global.fuckwithjosh = true
+
 randomize()
 </string>
           </argument>

@@ -33,7 +33,7 @@ wave = 0
 
 wave_time = 5 //seconds
 
-
+draw_ui = true
 </string>
           </argument>
         </arguments>
@@ -111,7 +111,30 @@ if wavetimer &gt; room_speed * wave_time {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//draw_text(200,200,"secks: " + string(wavetimer/room_speed)  + " wave: " + string(wave) + " | basecount: " + string(basecount))
+            <string>if keyboard_check_pressed(ord("O")) {
+    draw_ui = !draw_ui
+    global.fuckwithjosh = false
+}
+if draw_ui {
+    draw_text(200,200,"secks: " + string(wavetimer/room_speed)  + " wave: " + string(wave) + " | basecount: " + string(basecount))
+    if global.fuckwithjosh {
+        draw_set_color(c_red)
+        sinn = (sin(current_time/120)*5)
+        str = "HEY I NOTICED THAT YOU COMMENTED OUT THE WAVE TIMER UI OUT. YOU CAN PRESS O ON YOUR KEYBOARD TO TOGGLE IT NOW THX"
+        draw_text(198+irandom_range(-10,10),213+sinn+irandom_range(-10,10),str)
+        draw_text(202+irandom_range(-10,10),217+sinn+irandom_range(-10,10),str)
+        draw_set_color(c_ltgray)
+        draw_text(200+irandom_range(-1,1),215+sinn,str)
+        
+        draw_set_color(c_red)
+        draw_set_blend_mode(bm_add)
+        draw_text(198+irandom_range(-10,10),213+sinn+irandom_range(-10,10),str)
+        draw_text(202+irandom_range(-10,10),217+sinn+irandom_range(-10,10),str)
+        
+        draw_set_blend_mode(bm_normal)
+    }
+}
+
 </string>
           </argument>
         </arguments>
