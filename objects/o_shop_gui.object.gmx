@@ -157,12 +157,12 @@ adding = false;
 }
 }
 
-scr_buy_extension(1442,453,1,0);
-scr_buy_extension(1442 + 78,453,2,0);
+scr_buy_extension(1442,453,1,0,"Laser Attachment","Increases the accuracy of your guns");
+scr_buy_extension(1442 + 78,453,2,0,"Tacti-Cool Scope","A sick nasty looking scope that improves your aim");
 
-scr_buy_extension(1442,453 + 77,3,0);
-scr_buy_extension(1442 + 78,453 + 77,4,0);
-scr_buy_extension(1442 + 78,453 + 77 + 77,5,0);
+scr_buy_extension(1442,453 + 77,3,0,"Silencer, barely Know 'er","Adds a silencer to your gun that can quiet your shots and prevent you from alerting the horde. Also adds small accuracy bonus.");
+scr_buy_extension(1442 + 78,453 + 77,4,0,"Extendo Grip, more like Extendo Clip","You can hold more bullets, thats literally it.");
+scr_buy_extension(1442 + 78,453 + 77 + 77,5,0,"Explosive Bullets","Fuck shit up.");
 
 scr_buy_medkits(1477,286,4.26,20);
 

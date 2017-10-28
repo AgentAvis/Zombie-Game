@@ -111,7 +111,7 @@ if wavetimer &gt; room_speed * wave_time {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_text(200,200,"secks: " + string(wavetimer/room_speed)  + " wave: " + string(wave) + " | basecount: " + string(basecount))
+            <string>//draw_text(200,200,"secks: " + string(wavetimer/room_speed)  + " wave: " + string(wave) + " | basecount: " + string(basecount))
 </string>
           </argument>
         </arguments>

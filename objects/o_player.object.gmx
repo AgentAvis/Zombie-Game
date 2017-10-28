@@ -84,6 +84,9 @@ alph_target = 0;
 //Healthkits
 healthkits = 1;
 
+
+//Agument price
+augmentprice = 0;
 </string>
           </argument>
         </arguments>
@@ -241,7 +244,7 @@ draw_circle(70,70,64,false);
 draw_sprite_ext(s_player,image_index,71,68+((18*6.5)/2),6.5,6.5,1,c_white,1);
 draw_set_color(c_white)
 
-//draw_text(0,0,"(" + string(xx) + "," + string(yy) + ")" + string(eB[0,0]));
+draw_text(0,0,"(" + string(xx) + "," + string(yy) + ")" + string(eB[0,0]));
 
 
 

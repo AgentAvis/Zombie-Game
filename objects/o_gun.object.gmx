@@ -48,6 +48,8 @@ canFire = true;
 //Offsets for gun handling
 offsetX = 0;
 offsetY = 0;
+//Sell Price of a gun
+sellPrice = 0;
 //Ammo for each of the guns
 ammo[0] = 1000000000;
 ammo[1] = 100;
@@ -80,6 +82,14 @@ expansion[i,b] = 0;
 }
 }
 
+
+
+//Reloading system;
+clipSize = 3;
+reloadTime = room_speed * 0.6;;
+reload = 0;
+bulletsFired = 0;
+reloading = false;
 
 
 
@@ -162,8 +172,28 @@ var mousedir = point_direction(x,y,mouse_x,mouse_y);
 //Always draw above the player
 depth = o_player.depth - 1;
 
+
+//Reloading
+if(reloading){
+canFire = false;
+reload++;
+if(reload &gt; reloadTime){
+reload = 0;
+reloading = false;
+canFire = true;
+}
+
+}
+
 //Firing the gun
-if(canFire and mouse_check_button(mb_left) and ammo[spr] &gt; 0){
+if(canFire and mouse_check_button(mb_left) and ammo[spr] &gt; 0 and !reloading){
+    bulletsFired++;
+    if(bulletsFired &gt; clipSize){
+    bulletsFired = 0;
+    reloading = true;
+    exit;
+    }
+
     //Setting up the for loop
     var i = 0;
     var mx = 1;
@@ -218,7 +248,7 @@ scr_check_expansion(1);
 if(spr == 0){
 dmg = 6;
 accuracy = 7;
-firerate = 0.01;
+firerate = 0.1;
 shake = 0.25;
 offsetX = 12;
 offsetY = 10;
@@ -342,9 +372,13 @@ else
             <kind>1</kind>
             <string>draw_set_color(c_white)
 //draw_text(0,0,"Ammo:" + string(ammo[spr]));
-draw_text(0,400,string(fps_real));
-draw_text(0,432,string(fps));
-draw_text(0,464,string(instance_number(o_bullet)));
+//draw_text(0,400,string(fps_real));
+//draw_text(0,432,string(fps));
+draw_text(0,464,string(instance_number(reload)));
+
+
+
+
 </string>
           </argument>
         </arguments>
@@ -409,6 +443,7 @@ if hasClip {
     draw_sprite_ext(s_guns_clip,spr,x,y + 1,image_xscale,image_yscale,image_angle,c_white,1);
 }
 
+draw_healthbar(x,y,x + 100,y + 10,(reload/reloadTime) * 100, c_black,c_yellow,c_yellow,0,true,true);
 
 
 

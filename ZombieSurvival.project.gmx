@@ -148,6 +148,7 @@
           <script>scripts\scr_buy_gun.gml</script>
           <script>scripts\scr_buy_extension.gml</script>
           <script>scripts\scr_buy_medkits.gml</script>
+          <script>scripts\scr_draw_expansion_desc.gml</script>
         </scripts>
       </scripts>
       <scripts name="_custom physics">
