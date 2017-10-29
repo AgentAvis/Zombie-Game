@@ -59,8 +59,8 @@ ammo[4] = 100;
 //If they have the gun
 hasGun[0] = false; //uzi
 hasGun[1] = true; //pistol
-hasGun[2] = false; 
-hasGun[3] = false;
+hasGun[2] = false; //sawnoff
+hasGun[3] = false; //ak47
 hasGun[4] = false;
 //Accuracy Modifier
 acSilence = 0.1;

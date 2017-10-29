@@ -40,6 +40,50 @@ randomize()
         </arguments>
       </action>
     </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if keyboard_check(vk_shift) and keyboard_check_pressed(ord("C")) {
+    str = get_string("Type in your cheats here yo","")
+    
+    if str = "makeitrain" { o_player.money += 5000 } //gives you 5,000$
+    if str = "jackpot" { o_player.money += 1000000 } //gives you a million dollars
+    if str = "megajackpot" { o_player.money += 10000000 } //gives you a ten million dollars
+    if str = "lifeline" { o_player.hp = o_player.maxHp } //returns player to full health
+    if str = "ammogod" { //gives 10,000 of all ammo types
+        o_gun.ammo[0] = 10000
+        o_gun.ammo[1] = 10000    
+        o_gun.ammo[2] = 10000
+        o_gun.ammo[3] = 10000
+        o_gun.ammo[4] = 10000   
+    }
+    if str = "pistola" { o_gun.hasGun[1] = true } //gives pistol
+    if str = "oozy" { o_gun.hasGun[0] = true } //gives mac10
+    if str = "shotty" { o_gun.hasGun[2] = true } //gives sawnoff
+    if str = "ruralrifle" { o_gun.hasGun[3] = true } //gives ak47
+    if str = "nowaves" { if instance_exists(o_wave_control_avis) { with (o_wave_control_avis) { instance_destroy() } }  } //perminantly disables the wave system
+    
+    
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
   </events>
   <PhysicsObject>0</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
