@@ -76,7 +76,7 @@ randomize()
     if str = "shotty" { o_gun.hasGun[2] = true } //gives sawnoff
     if str = "ruralrifle" { o_gun.hasGun[3] = true } //gives ak47
     if str = "nowaves" { if instance_exists(o_wave_control_avis) { with (o_wave_control_avis) { instance_destroy() } }  } //perminantly disables the wave system
-    
+    if str = "slay" { with (o_lifeform) { hp = 0 } } //kills everything    
     
 }
 </string>

@@ -74,7 +74,7 @@ if age &lt; maxage {
     with(o_lifeform){
         if explodeamt = 0 {
             if(collision_circle(me.x,me.y,me.radius,id,false,false)){
-                motion_add_custom(me.force,point_direction(me.x,me.y,x,y));
+                motion_set_custom(me.force,point_direction(me.x,me.y,x,y));
                 y -= 1
                 vsp = - (me.force/2)
                 //motion_add_custom(me.force * 2,90);

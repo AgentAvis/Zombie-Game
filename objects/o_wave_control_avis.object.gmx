@@ -30,10 +30,18 @@ wavetimer = 0
 zombie_number = 0 //init
 wave = 0
 
+delay = 20
+delaytimer = 0
 
 wave_time = 5 //seconds
 
+zombie_current = 0 //how many zombies are there right now
+
 draw_ui = true
+
+z_normal = 0
+z_fat = 0
+
 </string>
           </argument>
         </arguments>
@@ -56,38 +64,64 @@ draw_ui = true
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if keyboard_check_pressed(ord('L')) {
-    wave ++
+            <string>if keyboard_check_pressed(ord('L')) { 
+    wave ++ //debug comand used to force advance the wave by one
     wavetimer = 0
     basecount += 2.5
 }
 
-if instance_number(o_lifeform) &lt;= 0 {
-    wavetimer ++    
+if zombie_current &lt;= 0 {
+    wavetimer ++ //if there are no zombies, count up towards the next wave
 }
 
 if wavetimer &gt; room_speed * wave_time {
-    
 
+    //setup how many of each zomb you want
+    z_normal = (clamp(floor(basecount*1),0,25))
+    z_fat = (clamp(floor(basecount*.1),0,10))
     
-    repeat (clamp(floor(basecount*1),0,25)) {
-        instance_create(o_spawn_1.x,o_spawn_1.y,o_zombie_normal)
-        instance_create(o_spawn_2.x,o_spawn_2.y,o_zombie_normal)    
-    }
-    repeat (clamp(floor(basecount*.1),0,10)) {
-        instance_create(o_spawn_1.x,o_spawn_1.y,o_zombie_fat)
-        instance_create(o_spawn_2.x,o_spawn_2.y,o_zombie_fat)       
-    }
-     
-    zombie_number = instance_number(o_lifeform)
+    //add each zomb into the zombie_max
+    zombie_max = z_normal + z_fat//instance_number(o_lifeform)
+    
+    //zombie_current should be equal to zombie_max at this point
+    zombie_current = instance_number(o_lifeform) + zombie_max
+    
+    //reset the timer
     wavetimer = 0
+    
+    //incriment the amount of zombs to spawn
     basecount += 2.5
+    
+    //set the delay to spawn zombs at
+    delay = (-((wave/100)-1))*20
+    
+    //increase the wave number
     wave ++
 }
 
+//update the amount of zombies alive/to be spawned
+zombie_current = instance_number(o_lifeform) + z_normal + z_fat
 
 
+delaytimer ++
 
+//spawn the zombies if its been delay long enough
+if delaytimer &gt; delay {
+    delaytimer = 0
+    //spawn fat zombs
+    if z_fat &gt;= 1 {
+        z_fat --
+        instance_create(o_spawn_1.x,o_spawn_1.y,o_zombie_fat)
+        instance_create(o_spawn_2.x,o_spawn_2.y,o_zombie_fat)       
+    }
+    //if the fat zombs are done spawning, and we need to spawn reg zombs, spawn them
+    if z_normal &gt;= 1 and z_fat &lt; 1{
+        z_normal --
+        instance_create(o_spawn_1.x,o_spawn_1.y,o_zombie_normal)
+        instance_create(o_spawn_2.x,o_spawn_2.y,o_zombie_normal)    
+    }
+
+}
 
 </string>
           </argument>
@@ -117,24 +151,7 @@ if wavetimer &gt; room_speed * wave_time {
 }
 if draw_ui {
     draw_text(200,200,"secks: " + string(wavetimer/room_speed)  + " wave: " + string(wave) + " | basecount: " + string(basecount))
-    if global.fuckwithjosh {
-        draw_set_color(c_red)
-        sinn = (sin(current_time/120)*5)
-        str = "HEY I NOTICED THAT YOU COMMENTED OUT THE WAVE TIMER UI OUT. YOU CAN PRESS O ON YOUR KEYBOARD TO TOGGLE IT NOW THX"
-        draw_text(198+irandom_range(-10,10),213+sinn+irandom_range(-10,10),str)
-        draw_text(202+irandom_range(-10,10),217+sinn+irandom_range(-10,10),str)
-        draw_set_color(c_ltgray)
-        draw_text(200+irandom_range(-1,1),215+sinn,str)
-        
-        draw_set_color(c_red)
-        draw_set_blend_mode(bm_add)
-        draw_text(198+irandom_range(-10,10),213+sinn+irandom_range(-10,10),str)
-        draw_text(202+irandom_range(-10,10),217+sinn+irandom_range(-10,10),str)
-        
-        draw_set_blend_mode(bm_normal)
-    }
 }
-
 </string>
           </argument>
         </arguments>
