@@ -42,7 +42,7 @@ oldy = y
 explosive = false
 time = 0
 
-knockback = .5
+knockback = 0
 </string>
           </argument>
         </arguments>
@@ -131,7 +131,7 @@ var _die = false;
 var me = id;
 with (o_lifeform) {
     temp_hitid = collision_line(me.x,me.y,me.x-me.hsp,me.y-me.vsp,id,false,false)
-    if temp_hitid != noone and !_die {
+    if temp_hitid != noone and !_die and hp &gt; 0 {
         //hitid = temp_hitid
         hp -= me.dmg
         hsp += (sign(me.hsp)*me.knockback)
@@ -148,30 +148,6 @@ with (o_lifeform) {
 if _die or time &gt; room_speed*5 { instance_destroy() }
 
 
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="o_lifeform">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>//other.hp -= dmg;
-//instance_destroy();
 </string>
           </argument>
         </arguments>
