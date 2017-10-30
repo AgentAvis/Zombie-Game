@@ -33,7 +33,7 @@ wave = 0
 delay = 20
 delaytimer = 0
 
-wave_time = 5 //seconds
+wave_time = 10 //seconds
 
 zombie_current = 0 //how many zombies are there right now
 
@@ -77,8 +77,8 @@ if zombie_current &lt;= 0 {
 if wavetimer &gt; room_speed * wave_time {
 
     //setup how many of each zomb you want
-    z_normal = (clamp(floor(basecount*1),0,25))
-    z_fat = (clamp(floor(basecount*.1),0,10))
+    z_normal = (clamp(floor(basecount*.75),1,50))
+    z_fat = (clamp(floor(basecount*.2),0,20))
     
     //add each zomb into the zombie_max
     zombie_max = z_normal + z_fat//instance_number(o_lifeform)
@@ -90,10 +90,10 @@ if wavetimer &gt; room_speed * wave_time {
     wavetimer = 0
     
     //incriment the amount of zombs to spawn
-    basecount += 2.5
+    basecount += 1
     
     //set the delay to spawn zombs at
-    delay = (-((wave/100)-1))*20
+    delay = (-((wave/100)-1))*room_speed
     
     //increase the wave number
     wave ++

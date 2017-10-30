@@ -72,6 +72,13 @@ randomize()
         o_gun.ammo[3] = 10000
         o_gun.ammo[4] = 10000   
     }
+    if str = "gungod" { //gives you the first 5 guns
+        o_gun.hasGun[0] = true
+        o_gun.hasGun[1] = true    
+        o_gun.hasGun[2] = true
+        o_gun.hasGun[3] = true
+        o_gun.hasGun[4] = true   
+    }
     if str = "pistola" { o_gun.hasGun[1] = true } //gives pistol
     if str = "oozy" { o_gun.hasGun[0] = true } //gives mac10
     if str = "shotty" { o_gun.hasGun[2] = true } //gives sawnoff

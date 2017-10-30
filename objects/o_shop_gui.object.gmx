@@ -29,6 +29,7 @@
 yy = 0;
 ss = 0;
 
+
 //Variables for the inventory
 c1 = make_color_rgb(130,130,130);
 c2 = make_color_rgb(64,64,64);
@@ -131,11 +132,11 @@ draw_set_color(c1);
 draw_rectangle(990,104,1566 , 862 , false);
 draw_set_color(c5);
 draw_rectangle(996,186,1395,382,false);
-scr_buy_ammo(1035,224,1,1);
-scr_buy_ammo(1115,224,2,0);
-scr_buy_ammo(1195,224,3,2);
-scr_buy_ammo(1275,224,4,3);
-scr_buy_ammo(1355,224,5,4);
+scr_buy_ammo(1035,224,.25,1);
+scr_buy_ammo(1115,224,.5,0);
+scr_buy_ammo(1195,224,1,2);
+scr_buy_ammo(1275,224,2,3);
+scr_buy_ammo(1355,224,3,4);
 draw_set_font(fnt_big);
 draw_text(1002,129,"Ammo:");
 draw_text(987 + 11,284 + 102,"Weapon: ");

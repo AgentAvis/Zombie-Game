@@ -54,7 +54,7 @@ yy = 0;
 ss = 1;
 //test comment 11:39 pm 10-23-2017
 
-
+inventory_open = false//is the inventory gui open
 
 //Variables for the inventory
 c1 = make_color_rgb(130,130,130);
@@ -116,12 +116,13 @@ scr_movement();
 
 hop += hopspeed
 if hop &lt; 0 { hopspeed += .05 } else {
-    if moving {
+    if moving and !occupied{
         hopspeed = -.5 hop = 0
     } else {
     hop = 0
     }
 }
+
 
 if mouse_x &gt; x { image_xscale = 1 } else { image_xscale = -1 }
 
@@ -185,16 +186,21 @@ scr_make_gui();
 window_x = window_mouse_get_x();
 window_y = window_mouse_get_y();
 var temp = 99;
-if(keyboard_check(vk_tab)){
+if keyboard_check_pressed(vk_tab) {
+    inventory_open = !inventory_open
+}
+
+
+if((inventory_open) or (o_shop_gui.visible)){
     doffset = 0
-    alph_target = 1;
+    alph_target = .9;
 } else {
-    doffset = -400
+    doffset = -600
     //uioffset = -400
     alph_target = 0;
 }
-uioffset = lerp(uioffset,doffset,.05);
-alph = lerp(alph,alph_target,0.05);
+uioffset = lerp(uioffset,doffset,.4);
+alph = lerp(alph,alph_target,0.03);
 
 
 
@@ -205,22 +211,22 @@ draw_sprite_ext(s_medkit,0,44 + 12,168 + uioffset,2.96,2.96,0,c_white,1);
 draw_set_color(c_black);
 draw_text(84,162 + uioffset,"x" + string(healthkits));
 
-scr_draw_gun_inv(134,temp+uioffset,1);
+scr_draw_gun_inv(134+uioffset,temp,1);
 if(o_gun.hasGun[0]){
 temp += height;
-scr_draw_gun_inv(134,temp+uioffset,0);
+scr_draw_gun_inv(134+uioffset,temp,0);
 }
 if(o_gun.hasGun[2]){
 temp += height;
-scr_draw_gun_inv(134,temp+uioffset,2);
+scr_draw_gun_inv(134+uioffset,temp,2);
 }
 if(o_gun.hasGun[3]){
 temp += height;
-scr_draw_gun_inv(134,temp+uioffset,3);
+scr_draw_gun_inv(134+uioffset,temp,3);
 }
 if(o_gun.hasGun[4]){
 temp += height;
-scr_draw_gun_inv(134,temp+uioffset,4);
+scr_draw_gun_inv(134+uioffset,temp,4);
 }
 draw_set_alpha(1);
 

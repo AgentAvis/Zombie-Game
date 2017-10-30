@@ -41,6 +41,8 @@ oldx = x
 oldy = y
 explosive = false
 time = 0
+
+knockback = .5
 </string>
           </argument>
         </arguments>
@@ -132,6 +134,7 @@ with (o_lifeform) {
     if temp_hitid != noone and !_die {
         //hitid = temp_hitid
         hp -= me.dmg
+        hsp += (sign(me.hsp)*me.knockback)
         _die = true
         if me.explosive {
             with (instance_create(me.x,me.y,o_explosion)) {
