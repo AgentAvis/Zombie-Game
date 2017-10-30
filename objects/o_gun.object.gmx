@@ -51,17 +51,17 @@ offsetY = 0;
 //Sell Price of a gun
 sellPrice = 0;
 //Ammo for each of the guns
-ammo[0] = 1000000000;
+ammo[0] = 0;
 ammo[1] = 100;
-ammo[2] = 100;
-ammo[3] = 100;
-ammo[4] = 100;
+ammo[2] = 0;
+ammo[3] = 0;
+ammo[4] = 0;
 //If they have the gun
 hasGun[0] = false; //uzi
 hasGun[1] = true; //pistol
 hasGun[2] = false; //sawnoff
 hasGun[3] = false; //ak47
-hasGun[4] = false;
+hasGun[4] = false; 
 //Accuracy Modifier
 acSilence = 0.1;
 acLaser = 0.3;

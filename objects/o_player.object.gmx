@@ -125,7 +125,9 @@ if hop &lt; 0 { hopspeed += .05 } else {
 
 if mouse_x &gt; x { image_xscale = 1 } else { image_xscale = -1 }
 
-apply_speeds_and_gravity();
+if !occupied {
+    apply_speeds_and_gravity();
+}
 //collisions with ground
 //if y &gt; ground_level { y = ground_level vsp = 0 }
 
@@ -177,7 +179,9 @@ apply_speeds_and_gravity();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_make_gui();
+            <string>draw_set_font(-1) //set the font
+
+scr_make_gui();
 window_x = window_mouse_get_x();
 window_y = window_mouse_get_y();
 var temp = 99;
@@ -236,6 +240,15 @@ draw_text(191,65,"$" + string(money));
 draw_set_color(c_white);
 //draw_text(0,0,"(" + string(xx) + "," + string(yy) + ")" + string(ss));
 draw_sprite_ext(s_guns,o_gun.spr,321,71,4.04,4.04,1,c_white,1);
+
+
+draw_set_color(c_yellow)
+draw_text(321+88,71-10,"|||");
+
+draw_set_color(c_white)
+draw_text(321+88+string_width("|||"),71-10,": " + string(o_gun.ammo[o_gun.spr]));
+
+
 scr_make_gui();
 
 

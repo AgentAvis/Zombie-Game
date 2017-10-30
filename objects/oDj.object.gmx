@@ -63,6 +63,7 @@ randomize()
     if str = "makeitrain" { o_player.money += 5000 } //gives you 5,000$
     if str = "jackpot" { o_player.money += 1000000 } //gives you a million dollars
     if str = "megajackpot" { o_player.money += 10000000 } //gives you a ten million dollars
+    if str = "bankrupt" { o_player.money = 0 } //gives you a ten million dollars
     if str = "lifeline" { o_player.hp = o_player.maxHp } //returns player to full health
     if str = "ammogod" { //gives 10,000 of all ammo types
         o_gun.ammo[0] = 10000

@@ -36,7 +36,12 @@ c3 = make_color_rgb(142,142,142);
 c4 = make_color_rgb(117,117,117);
 c5 = make_color_rgb(150,150,150);
 
-
+//setup gun prices
+gunprice[0] = 125
+gunprice[1] = 250
+gunprice[2] = 500
+gunprice[3] = 1000
+gunprice[4] = 2000
 
 //Variables for Shop Window
 length = o_gun.image_number;
@@ -137,16 +142,29 @@ draw_text(987 + 11,284 + 102,"Weapon: ");
 draw_set_font(base);
 
 var test = 423;
-if(!o_gun.hasGun[0]){
-scr_buy_gun(997,test,0,0,15,"Mac-10");
+var _type;
+
+_type = 0
+if(!o_gun.hasGun[_type]){
+scr_buy_gun(997,test,_type,gunprice[_type],32,"Uzi");
 test += 76
 }
-if(!o_gun.hasGun[2]){
-scr_buy_gun(997,test,2,0,15,"Sawn-off");
+
+_type = 2
+if(!o_gun.hasGun[_type]){
+scr_buy_gun(997,test,_type,gunprice[_type],4,"Sawn-off");
 test += 76
 }
-if(!o_gun.hasGun[3]){
-scr_buy_gun(997,test,3,0,15,"AK-47");
+
+_type = 3
+if(!o_gun.hasGun[_type]){
+scr_buy_gun(997,test,_type,gunprice[_type],32,"Assault Rifle");
+test += 76
+}
+
+_type = 4
+if(!o_gun.hasGun[_type]){
+scr_buy_gun(997,test,_type,gunprice[_type],8,"Double-Barrel");
 test += 76
 }
 

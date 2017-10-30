@@ -170,6 +170,7 @@
     </scripts>
   </scripts>
   <fonts name="fonts">
+    <font>fonts\font_bold</font>
     <font>fonts\fnt_big</font>
     <font>fonts\base</font>
   </fonts>
