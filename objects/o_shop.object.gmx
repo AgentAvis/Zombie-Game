@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>1000</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>oBuilding</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="3" enumb="0">
@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(place_meeting(x,y,o_player) and keyboard_check_pressed(ord('E'))){
+            <string>event_inherited()
+if(place_meeting(x,y,o_player) and keyboard_check_pressed(ord('E'))){
 o_shop_gui.visible = !o_shop_gui.visible;
 occupied = !occupied;
 }

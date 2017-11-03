@@ -27,6 +27,10 @@
             <kind>1</kind>
             <string>spd = 0;
 tracker[20] = 0;
+angle = 0
+
+
+
 </string>
           </argument>
         </arguments>
@@ -49,7 +53,13 @@ tracker[20] = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_background_tiled_horizontal(stars,0,0)
+            <string>//draw_background_tiled_horizontal(stars,0,0)
+
+angle += .003
+draw_background_ext(stars,room_width/2,room_height/2,1.1,1.1,angle,c_white,1)
+draw_background_ext(stars,room_width/2,room_height/2,1.1,1.1,angle-90,c_white,1)
+draw_background_ext(stars,room_width/2,room_height/2,1.1,1.1,angle-180,c_white,1)
+draw_background_ext(stars,room_width/2,room_height/2,1.1,1.1,angle-270,c_white,1)
 spdmult = .25
 cloudhoffset = -10
 cityhoffset = -15

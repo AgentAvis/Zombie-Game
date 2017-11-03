@@ -35,6 +35,11 @@ gr = 400;
 global.fuckwithjosh = true
 
 randomize()
+
+instance_create(x,y,oCamera)
+
+global.debug = false
+
 </string>
           </argument>
         </arguments>
@@ -57,7 +62,9 @@ randomize()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if keyboard_check(vk_shift) and keyboard_check_pressed(ord("C")) {
+            <string>if room = rInit { room_goto_next() }
+
+if keyboard_check(vk_shift) and keyboard_check_pressed(ord("C")) {
     str = get_string("Type in your cheats here yo","")
     
     if str = "makeitrain" { o_player.money += 5000 } //gives you 5,000$

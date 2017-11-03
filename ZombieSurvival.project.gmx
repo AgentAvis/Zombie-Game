@@ -22,9 +22,7 @@
       <filename>notes.txt</filename>
     </datafile>
   </datafiles>
-  <NewExtensions>
-    <extension index="0">extensions\exCamera</extension>
-  </NewExtensions>
+  <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprites name="_player">
@@ -36,6 +34,7 @@
       <sprite>sprites\s_zombies_fat</sprite>
       <sprite>sprites\s_zombies_3</sprite>
       <sprite>sprites\s_zombies_4</sprite>
+      <sprite>sprites\s_zombie_little</sprite>
     </sprites>
     <sprites name="_environment">
       <sprite>sprites\s_street</sprite>
@@ -175,7 +174,6 @@
     <font>fonts\base</font>
   </fonts>
   <objects name="objects">
-    <object>objects\obj_ex_camera</object>
     <objects name="_world">
       <objects name="_ground">
         <object>objects\o_solid</object>
@@ -184,6 +182,8 @@
       <objects name="_buildings">
         <object>objects\oBuilding</object>
         <object>objects\o_shop</object>
+        <object>objects\o_apartment</object>
+        <object>objects\object30</object>
       </objects>
     </objects>
     <objects name="_system">
@@ -196,7 +196,7 @@
           </objects>
         </objects>
         <objects name="_camera">
-          <object>objects\o_camera</object>
+          <object>objects\oCamera</object>
         </objects>
       </objects>
       <objects name="_graphics">
@@ -212,6 +212,7 @@
         <objects name="_regular">
           <object>objects\o_zombie_dead</object>
           <object>objects\o_zombie_normal</object>
+          <object>objects\o_zombie_little</object>
           <object>objects\o_zombie_fat</object>
         </objects>
         <objects name="_gore">
@@ -243,6 +244,7 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rInit</room>
     <rooms name="_debug">
       <room>rooms\r_testing</room>
       <room>rooms\r_menu</room>

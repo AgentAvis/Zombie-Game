@@ -36,7 +36,7 @@ vsp = 0 //does the same as vspeed
 if phys {
     phy_fixed_rotation = true;
 }
-instance_create(x,y,o_camera);
+//instance_create(x,y,o_camera);
 instance_create(x,y,o_gun);
 
 hp = 100;

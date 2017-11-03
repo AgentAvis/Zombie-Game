@@ -31,7 +31,7 @@ dir = 0;
 vis_speed = 10;
 speed_actual = 1;
 shake = 1;
-ex_camera_shake("main",shake,shake,0,room_speed * 0.25 + (shake/100));
+//ex_camera_shake("main",shake,shake,0,room_speed * 0.25 + (shake/100));
 dmg = 1;
 alarm[0] = room_speed * 4;
 

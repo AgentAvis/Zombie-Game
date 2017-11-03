@@ -41,6 +41,8 @@ draw_ui = true
 
 z_normal = 0
 z_fat = 0
+z_little = 0
+
 
 </string>
           </argument>
@@ -77,11 +79,12 @@ if zombie_current &lt;= 0 {
 if wavetimer &gt; room_speed * wave_time {
 
     //setup how many of each zomb you want
-    z_normal = (clamp(floor(basecount*.75),1,50))
+    z_normal = (clamp(floor(basecount*.75),0,50))
     z_fat = (clamp(floor(basecount*.2),0,20))
+    z_little = (clamp(floor(basecount*1),1,20))
     
     //add each zomb into the zombie_max
-    zombie_max = z_normal + z_fat//instance_number(o_lifeform)
+    zombie_max = z_normal + z_fat + z_little//instance_number(o_lifeform)
     
     //zombie_current should be equal to zombie_max at this point
     zombie_current = instance_number(o_lifeform) + zombie_max
@@ -100,7 +103,7 @@ if wavetimer &gt; room_speed * wave_time {
 }
 
 //update the amount of zombies alive/to be spawned
-zombie_current = instance_number(o_lifeform) + z_normal + z_fat
+zombie_current = instance_number(o_lifeform) + z_normal + z_fat + z_little
 
 
 delaytimer ++
@@ -120,7 +123,12 @@ if delaytimer &gt; delay {
         instance_create(o_spawn_1.x,o_spawn_1.y,o_zombie_normal)
         instance_create(o_spawn_2.x,o_spawn_2.y,o_zombie_normal)    
     }
-
+    
+    if z_little &gt;= 1 and z_normal &lt; 1{
+        z_little --
+        instance_create(o_spawn_1.x,o_spawn_1.y,o_zombie_little)
+        instance_create(o_spawn_2.x,o_spawn_2.y,o_zombie_little)    
+    }
 }
 
 </string>
