@@ -31,12 +31,16 @@
 canDraw = false;
 image_index = irandom(image_number)
 image_speed = 0
-image_alpha = .75
+//image_alpha = .75
+
+alpha = .75
+scale = 1
 
 otherX = 0;
 otherY = 0;
 _floor = noone
 time = 0
+depth = -1000
 </string>
           </argument>
         </arguments>
@@ -102,19 +106,20 @@ y += vsp
             <kind>1</kind>
             <string>
 //draw_self();
-draw_set_alpha(.25)
+draw_set_alpha(.25*image_alpha)
 draw_circle_colour(x,y,3,c_red,merge_color(c_red,c_black,.5),false)
 draw_set_alpha(1)
 
 if(canDraw) and instance_exists(_floor) {
     if !surface_exists(_floor.blood_surf) { with (_floor) { blood_surf = surface_create(sprite_width,sprite_height) } }
     surface_set_target(_floor.blood_surf);
-    draw_sprite_ext(sprite_index,irandom(image_number),hitx, hity,image_xscale,image_yscale,image_angle+random(360),image_blend,image_alpha);
+    draw_sprite_ext(sprite_index,irandom(image_number),hitx, hity,image_xscale,image_yscale,random(360),image_blend,image_alpha);
     image_xscale *= .95
     image_yscale *= .95
     image_alpha *= .85
     if image_alpha &lt; .05 { instance_destroy() }
-    //draw_sprite(sprite_index,irandom(5),x,y,)
+    bloodcol = c_white
+    //draw_sprite_ext(sprite_index,irandom(5),x,y,scale,scale,random(360),bloodcol,alpha)
     surface_reset_target();
     //instance_destroy();
 }
