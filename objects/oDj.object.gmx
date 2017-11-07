@@ -38,7 +38,10 @@ randomize()
 
 instance_create(x,y,oCamera)
 
-global.debug = false
+global.debug = false;
+
+globalvar GUISCALE;
+GUISCALE = window_get_width()/1600;
 
 </string>
           </argument>

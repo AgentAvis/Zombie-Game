@@ -87,6 +87,10 @@ healthkits = 1;
 
 //Agument price
 augmentprice = 0;
+
+
+//GUI SCALE
+GUISCALE = window_get_width()/1600;
 </string>
           </argument>
         </arguments>
@@ -112,6 +116,8 @@ augmentprice = 0;
             <string>if(!occupied){
 scr_movement();
 }
+
+//display_set_gui_size(view_wport[0], view_hport[0]);
 //how much to hop offset
 
 hop += hopspeed
