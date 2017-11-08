@@ -26,19 +26,19 @@
           <argument>
             <kind>1</kind>
             <string>/*
-draw_background_tiled_horizontal(stars,view_xview[view_current] ,median(200,view_yview[view_current]/1+0,200));
-draw_background_tiled_horizontal(city1,view_xview[view_current]/1.4 ,median(200,view_yview[view_current]/1+0,200));
-draw_background_tiled_horizontal(city2,view_xview[view_current]/1.5 ,median(200,view_yview[view_current]/1+0,200));
-draw_background_tiled_horizontal(city3,view_xview[view_current]/1.6 ,median(200,view_yview[view_current]/1+0,200));
+draw_background_tiled_horizontal(stars,oCamera.truex ,median(200,oCamera.truey/1+0,200));
+draw_background_tiled_horizontal(city1,oCamera.truex/1.4 ,median(200,oCamera.truey/1+0,200));
+draw_background_tiled_horizontal(city2,oCamera.truex/1.5 ,median(200,oCamera.truey/1+0,200));
+draw_background_tiled_horizontal(city3,oCamera.truex/1.6 ,median(200,oCamera.truey/1+0,200));
 */
 
 yoffset = 280
-draw_background_tiled_ext(stars,view_xview[view_current] ,median(200,view_yview[view_current]/1+0,200),1,1,c_white,1);
-draw_background_tiled_horizontal(buildings01,view_xview[view_current]/1.3 ,gr-yoffset)
-draw_background_tiled_horizontal(buildings1,view_xview[view_current]/1.4 ,gr-yoffset)
-draw_background_tiled_horizontal(buildings2,view_xview[view_current]/1.5 ,gr-yoffset)
-draw_background_tiled_horizontal(buildings3,view_xview[view_current]/1.6 ,gr-yoffset)
-draw_background_tiled_horizontal(buildings4,view_xview[view_current]/1.7 ,gr-yoffset)
+draw_background_tiled_ext(stars,oCamera.truex ,median(200,oCamera.truey/1+0,200),1,1,c_white,1);
+draw_background_tiled_horizontal(buildings01,oCamera.truex/1.3 ,gr-yoffset)
+draw_background_tiled_horizontal(buildings1,oCamera.truex/1.4 ,gr-yoffset)
+draw_background_tiled_horizontal(buildings2,oCamera.truex/1.5 ,gr-yoffset)
+draw_background_tiled_horizontal(buildings3,oCamera.truex/1.6 ,gr-yoffset)
+draw_background_tiled_horizontal(buildings4,oCamera.truex/1.7 ,gr-yoffset)
 
 </string>
           </argument>
