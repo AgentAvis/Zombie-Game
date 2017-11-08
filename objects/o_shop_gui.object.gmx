@@ -146,26 +146,38 @@ var test = 423;
 var _type;
 
 _type = 0
-if(!o_gun.hasGun[_type]){
-scr_buy_gun(997,test,_type,gunprice[_type],32,"Uzi");
+if(!o_gun.hasGun[_type,0]){
+scr_buy_gun(997,test,_type,gunprice[_type],32,"Uzi",0,0);
+test += 76
+}
+
+_type = 1
+if(!o_gun.hasGun[_type,1]){
+scr_buy_gun(997,test,_type,gunprice[_type],32,"Glock",1,5);
+test += 76
+}
+
+_type = 1
+if(!o_gun.hasGun[_type,0]){
+scr_buy_gun(997,test,_type,0,32,"Basic Pistol",0,1);
 test += 76
 }
 
 _type = 2
-if(!o_gun.hasGun[_type]){
-scr_buy_gun(997,test,_type,gunprice[_type],4,"Sawn-off");
+if(!o_gun.hasGun[_type,0]){
+scr_buy_gun(997,test,_type,gunprice[_type],4,"Sawn-off",0,2);
 test += 76
 }
 
 _type = 3
-if(!o_gun.hasGun[_type]){
-scr_buy_gun(997,test,_type,gunprice[_type],32,"Assault Rifle");
+if(!o_gun.hasGun[_type,0]){
+scr_buy_gun(997,test,_type,gunprice[_type],32,"Assault Rifle",0,3);
 test += 76
 }
 
 _type = 4
-if(!o_gun.hasGun[_type]){
-scr_buy_gun(997,test,_type,gunprice[_type],8,"Double-Barrel");
+if(!o_gun.hasGun[_type,0]){
+scr_buy_gun(997,test,_type,gunprice[_type],8,"Double-Barrel",0,4);
 test += 76
 }
 

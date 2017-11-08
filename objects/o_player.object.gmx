@@ -217,22 +217,28 @@ draw_sprite_ext(s_medkit,0,44 + 12,168 + uioffset,2.96,2.96,0,c_white,1);
 draw_set_color(c_black);
 draw_text(84,162 + uioffset,"x" + string(healthkits));
 
-scr_draw_gun_inv(134+uioffset,temp,1);
-if(o_gun.hasGun[0]){
-temp += height;
-scr_draw_gun_inv(134+uioffset,temp,0);
+
+if(o_gun.hasGun[1,0]){
+scr_draw_gun_inv(134+uioffset,temp,1,1);
 }
-if(o_gun.hasGun[2]){
-temp += height;
-scr_draw_gun_inv(134+uioffset,temp,2);
+if(o_gun.hasGun[1,1]){
+scr_draw_gun_inv(134+uioffset,temp,1,5);
 }
-if(o_gun.hasGun[3]){
+if(o_gun.hasGun[0,0]){
 temp += height;
-scr_draw_gun_inv(134+uioffset,temp,3);
+scr_draw_gun_inv(134+uioffset,temp,0,0);
 }
-if(o_gun.hasGun[4]){
+if(o_gun.hasGun[2,0]){
 temp += height;
-scr_draw_gun_inv(134+uioffset,temp,4);
+scr_draw_gun_inv(134+uioffset,temp,2,2);
+}
+if(o_gun.hasGun[3,0]){
+temp += height;
+scr_draw_gun_inv(134+uioffset,temp,3,3);
+}
+if(o_gun.hasGun[4,0]){
+temp += height;
+scr_draw_gun_inv(134+uioffset,temp,4,4);
 }
 draw_set_alpha(1);
 
@@ -258,7 +264,7 @@ draw_set_color(c_yellow)
 draw_text(321+88,71-10,"|||");
 
 draw_set_color(c_white)
-draw_text(321+88+string_width("|||"),71-10,": " + string(o_gun.ammo[o_gun.spr]));
+draw_text(321+88+string_width("|||"),71-10,": " + string(o_gun.ammo[o_gun.type]));
 
 
 scr_make_gui();

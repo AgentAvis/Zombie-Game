@@ -1,11 +1,11 @@
-///scr_draw_gun_inv(x,y,id)
+///scr_draw_gun_inv(x,y,type,id)
 eB[argument2,0] = point_in_rectangle(window_x,window_y,250 + argument0 - 3.28 * sprite_get_width(s_expansion_UI)/2, 31 + argument1 - 3.28 * sprite_get_height(s_expansion_UI)/2,250 + argument0 + 3.28 * sprite_get_width(s_expansion_UI)/2, 31 + argument1 + 3.28 * sprite_get_height(s_expansion_UI)/2);
 eB[argument2,1] = point_in_rectangle(window_x,window_y,250 + 72 + argument0 - 3.28 * sprite_get_width(s_expansion_UI)/2, 31 + argument1 - 3.28 * sprite_get_height(s_expansion_UI)/2,250 + 72 + argument0 + 3.28 * sprite_get_width(s_expansion_UI)/2, 31 + argument1 + 3.28 * sprite_get_height(s_expansion_UI)/2);
 sellButton[argument2] = point_in_rectangle(window_x,window_y,argument0 + 376, argument1 + 22, argument0 + 376 + 20, argument1 + 22 + 20);
 
 draw_set_color(c1);
 draw_rectangle(argument0,argument1,argument0 + width, argument1 + height, false);
-draw_sprite_ext(s_guns_gui,argument2,argument0 + 165,argument1 + 23,4.84,4.84,1,c_white,1);
+draw_sprite_ext(s_guns_gui,argument3,argument0 + 165,argument1 + 23,4.84,4.84,1,c_white,1);
 draw_sprite_ext(s_guns_ammo,argument2,argument0 + 32, argument1 + 26, 3.54, 3.54 ,1, c_white,1);
 draw_set_color(c_black);
 draw_text_transformed(argument0 + 44, argument1 + 17, "X" + string(o_gun.ammo[argument2]),1.54,1.54,0);
