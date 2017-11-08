@@ -6,7 +6,7 @@ if(spr == 1){
     dmg = 10;
     accuracy = 3;
     firerate = .4;
-    shake = 1;
+    shake = 0.5;
     knockback = .7;
     offsetX = 11;
     offsetY = 9;
@@ -32,7 +32,7 @@ if(spr == 2){
     dmg = random_range(10,25);
     accuracy = 7;
     firerate = 0.1;
-    shake = 30;
+    shake = 0.2;
     knockback = .8;
     offsetX = 10;
     offsetY = 10;
@@ -45,7 +45,7 @@ if(spr == 3){
     dmg = 18;
     accuracy = 8;
     firerate = 0.1;
-    shake = 30;
+    shake = 0.3;
     knockback = .6;
     offsetX = 10;
     offsetY = 8;
@@ -58,7 +58,7 @@ if(spr == 4){
     dmg = 48;
     accuracy = 5;
     firerate = .5;
-    shake = 30;
+    shake = 1;
     knockback = .9;
     offsetX = 6;
     offsetY = 10;
