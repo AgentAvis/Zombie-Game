@@ -32,6 +32,9 @@ vis_speed = 10;
 speed_actual = 1;
 shake = 1;
 //ex_camera_shake("main",shake,shake,0,room_speed * 0.25 + (shake/100));
+
+c = false
+
 dmg = 1;
 alarm[0] = room_speed * 4;
 
@@ -121,6 +124,9 @@ with (instance_create(x,y,o_blood_drop)) {
           <argument>
             <kind>1</kind>
             <string>//physics_apply_force(phy_position_x,phy_position_y,0,phy_mass*10*-1)
+if !c { c = true shake_screen(10,shake*10) }
+
+
 time ++
 hsp = x-oldx
 vsp = y-oldy
