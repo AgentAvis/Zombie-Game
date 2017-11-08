@@ -50,7 +50,9 @@ if(sellButton[argument2]){
 draw_set_color(c4);
 if(mouse_check_button_pressed(mb_left)){
 o_player.money += o_gun.sellPrice;
-o_gun.hasGun[argument2] = false;
+for(i = 0; i < 20; i++){
+o_gun.hasGun[argument2,i] = false;
+}
 o_gun.spr = 1;
 }
 }
