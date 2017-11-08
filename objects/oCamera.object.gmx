@@ -28,6 +28,9 @@
             <string>x = 0
 y = 0
 
+truex = x
+truey = y
+
 screenshake = false
 cam_x = 0
 cam_y = 0
@@ -190,6 +193,12 @@ view_xview[0] = (x - ((view_wview[0])/2))
 view_yview[0] = y - ((view_hview[0])/2)
 
 if view_yview[0] &gt; gr - ((view_hview[0]-32)) { view_yview[0] = gr - ((view_hview[0]-32)) }
+
+hspd = x - xprevious
+vspd = y - yprevious
+truex += hspd
+truey += vspd
+
 
 </string>
           </argument>
