@@ -1,4 +1,5 @@
 ///scr_check_expansion(gun)
+type = argument0;
 hasLaser = false;
 hasScope = false;
 hasSilencer = false;

@@ -158,6 +158,7 @@
       <scripts name="_guns">
         <script>scripts\scr_check_expansion.gml</script>
       </scripts>
+      <script>scripts\check_guns.gml</script>
     </scripts>
     <scripts name="_drawing">
       <script>scripts\draw_background_tiled_horizontal.gml</script>

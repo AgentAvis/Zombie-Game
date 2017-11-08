@@ -1,9 +1,9 @@
-///scr_buy_gun(x,y,gunId,price,initialAmmo,name)
+///scr_buy_gun(x,y,gunId,price,initialAmmo,name,type,sprID)
 buyGunButton[argument2] = point_in_rectangle(window_x,window_y,argument0 + 277, argument1 + 8, argument0 + gbWidth , argument1 + gbHeight);
 
 draw_set_color(c5);
 draw_rectangle(argument0, argument1, argument0 + gWidth, argument1 + gHeight, false);
-draw_sprite_ext(s_guns_gui,argument2,argument0 + 163,argument1 + 25,6.84,6.84,0,c_white,1);
+draw_sprite_ext(s_guns_gui,argument7,argument0 + 163,argument1 + 25,6.84,6.84,0,c_white,1);
 draw_sprite_ext(s_guns_ammo,argument2,argument0 + 32,argument1 + 34,3.64,3.64,0,c_white,true);
 draw_set_color(c_black);
 draw_text(argument0 + 59, argument1 + 32,"x" + string(argument4));
@@ -26,7 +26,17 @@ draw_set_halign(fa_left);
 if(buyGunButton[argument2]){
 if(mouse_check_button_pressed(mb_left)){
 if(o_player.money >= argument3){
-o_gun.hasGun[argument2] = true;
+
+for(g = 0; g < 20; g++){
+if(g != argument6){
+o_gun.hasGun[argument2,g]= false;
+}
+}
+
+o_gun.expansion[argument2,0] = 0;
+o_gun.expansion[argument2,1] = 0;
+
+o_gun.hasGun[argument2,argument6]= true;
 o_player.money -= argument3;
 o_gun.ammo[argument2] += argument4;
 }
