@@ -74,7 +74,7 @@ if(spr == 5){
     firerate = .2;
     shake = 1;
     knockback = .7;
-    offsetX = 12;
+    offsetX = 9;
     offsetY = 9;
     scr_check_expansion(1);
 }

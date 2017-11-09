@@ -91,6 +91,12 @@ augmentprice = 0;
 
 //GUI SCALE
 GUISCALE = window_get_width()/1600;
+
+global.focus = o_player;
+with(oCamera){
+mode = 1;
+}
+
 </string>
           </argument>
         </arguments>

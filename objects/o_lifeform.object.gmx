@@ -74,6 +74,14 @@ damage = 1
 ehsp = 0
 evsp = 0
 
+
+//Knockback Resistance
+k_r = 1;
+
+
+//If they are a boss or not
+isBoss = false;
+name = "";
 </string>
           </argument>
         </arguments>
@@ -207,6 +215,31 @@ if y &gt;= gr {
         </arguments>
       </action>
     </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(isBoss){
+draw_boss_health_bar(32,25,name, 100);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -226,7 +259,9 @@ if y &gt;= gr {
             <kind>1</kind>
             <string>//draw_self();
 //commented out because children draw over this
+if(!isBoss){
 draw_healthbar(x - sprite_width/2, y - sprite_height - 4, x + sprite_width/2, y - sprite_height - 2, (hp/maxHp) * 100, c_black, c_red, c_green, 1, true, false);
+}
 </string>
           </argument>
         </arguments>

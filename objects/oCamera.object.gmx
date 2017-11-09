@@ -57,7 +57,7 @@ YESYES = false
 t = noone
 ot = t
 
-mode = 1
+mode = 0
 
 tarx = x
 tary = y
@@ -77,6 +77,8 @@ MC = false
 oldmode = mode
 
 shakemag = 10
+
+
 
 </string>
           </argument>
@@ -158,9 +160,8 @@ shakemag = 10
           <argument>
             <kind>1</kind>
             <string>
-mode = 0
-global.focus = noone
-if instance_exists(o_player) { global.focus = o_player mode = 1}
+
+//if instance_exists(o_player) { global.focus = o_player mode = 1}
 
 //if keyboard_check_pressed(ord("K")) { screenshake = !screenshake } 
 
@@ -185,9 +186,15 @@ if mode = 0 { cam_x = room_width/2 cam_y = room_height/2 }
 //center on the player
 if mode = 1 {
     //figure out where we want the camera to be
-    tarx = global.focus.x tary = global.focus.y
+    if(!mousemode){
+    cam_x = global.focus.x 
+    cam_y = global.focus.y
+    }else{
+    tarx = global.focus.x 
+    tary = global.focus.y
     cam_x = lerp(tarx,mouse_x,.2)
     cam_y = lerp(tary,mouse_y,.2)
+    }
 
 }
 
