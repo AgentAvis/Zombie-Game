@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>event_inherited();
 hp = 12;
-maxHp = 11;
+maxHp = 12;
 //Set the distance it 'sees' the player
 sight = 2000;
 

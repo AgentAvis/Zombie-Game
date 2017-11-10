@@ -72,7 +72,7 @@ if(spr == 5){
     dmg = 6;
     accuracy = 3;
     firerate = .2;
-    shake = 1;
+    shake = 0.05;
     knockback = .7;
     offsetX = 9;
     offsetY = 9;
