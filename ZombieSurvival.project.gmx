@@ -76,6 +76,7 @@
       <sprite>sprites\s_explosion_1</sprite>
       <sprite>sprites\s_explosion_2</sprite>
     </sprites>
+    <sprite>sprites\sRoof_top</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\stars</background>
@@ -184,6 +185,7 @@
       <objects name="_ground">
         <object>objects\o_solid</object>
         <object>objects\o_street</object>
+        <object>objects\oRoof_top</object>
       </objects>
       <objects name="_buildings">
         <object>objects\oBuilding</object>

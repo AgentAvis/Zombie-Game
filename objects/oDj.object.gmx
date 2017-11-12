@@ -30,7 +30,9 @@
 global.timescale = 1; //later, we can change this to slow down or speed up time! :o
 global.grav = .1 
 globalvar gr; 
-gr = 400;
+gr = 400; //where is the ground at
+global.termvel = 6
+
 
 global.fuckwithjosh = true
 

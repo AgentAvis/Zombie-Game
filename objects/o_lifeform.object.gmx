@@ -27,6 +27,8 @@
             <kind>1</kind>
             <string>phys = false
 
+grounded = false //am i on the ground? purely an initialization variable, dont change this plz thx
+
 hp = 100;
 maxHp = 100;
 ammount = 0;
@@ -205,7 +207,7 @@ apply_speeds_and_gravity()
 //x += hsp * global.timescale;
 //y += vsp * global.timescale;
 
-if y &gt;= gr {
+if grounded {
     //hsp = clamp(hsp,-walk_spd,walk_spd)
     if abs(hsp) &gt; walk_spd { hsp *= .9 }
 } 

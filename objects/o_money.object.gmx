@@ -29,6 +29,7 @@
 vsp = 0
 y -= 18/2
 motion_set_custom(random_range(0,1.25),random(360))
+grounded = false
 </string>
           </argument>
         </arguments>
@@ -60,7 +61,7 @@ if point_distance(x,y,o_player.x,o_player.y-(18/2)) &lt; 20 {
         }
         following = true
 }
-
+/*
 if y &gt; gr {
     if !following {
         vsp = 0 y = gr
@@ -72,8 +73,14 @@ if y &gt; gr {
 
 x += hsp * global.timescale
 y += vsp * global.timescale
-//apply_speeds_and_gravity()
-
+*/
+if !following {
+    apply_speeds_and_gravity()
+} else {
+    x += hsp
+    y += vsp
+}
+if grounded { hsp *= .85 }
 </string>
           </argument>
         </arguments>

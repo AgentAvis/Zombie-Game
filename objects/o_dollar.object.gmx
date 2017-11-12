@@ -3,7 +3,7 @@
   <spriteName>s_paper</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-2</depth>
   <persistent>0</persistent>
   <parentName>o_money</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -56,7 +56,7 @@ mass = .1; //light, has to do with gravity
             <kind>1</kind>
             <string>event_inherited()
 
-if y &lt; gr { image_angle += 4 }
+if !grounded { image_angle += 4 hsp *= .75}
 
 
 //if(!grounded){
@@ -65,31 +65,6 @@ if y &lt; gr { image_angle += 4 }
 
 //phy_speed_x = clamp(phy_speed_x,-0.1,0.1);
 //phy_speed_y = clamp(phy_speed_y,-0.1,0.1);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="o_solid">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Col
-
-//grounded = true;
 </string>
           </argument>
         </arguments>

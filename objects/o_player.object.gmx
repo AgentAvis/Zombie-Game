@@ -120,7 +120,9 @@ mode = 1;
           <argument>
             <kind>1</kind>
             <string>if(!occupied){
-scr_movement();
+    scr_movement();
+    jump_speed = 2
+    if keyboard_check_pressed(vk_space) { vsp -= jump_speed y -= clamp(jump_speed,3,50)}
 }
 
 //display_set_gui_size(view_wport[0], view_hport[0]);
@@ -141,6 +143,8 @@ if mouse_x &gt; x { image_xscale = 1 } else { image_xscale = -1 }
 if !occupied {
     apply_speeds_and_gravity();
 }
+
+
 //collisions with ground
 //if y &gt; ground_level { y = ground_level vsp = 0 }
 
