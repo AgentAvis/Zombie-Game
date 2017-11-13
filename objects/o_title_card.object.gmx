@@ -37,7 +37,7 @@ yy = 160;
 for(i = 0; i &lt; 4; i++){
 p = instance_create(x,yy,o_menu_buttons);
 p.spr = i;
-yy += sprite_get_height(s_menu_buttons);
+yy += 10 + sprite_get_height(s_menu_buttons);
 }
 </string>
           </argument>

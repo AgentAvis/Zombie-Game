@@ -34,7 +34,7 @@ gr = 400; //where is the ground at
 global.termvel = 6
 
 
-global.fuckwithjosh = true
+global.fuckwithjosh = false
 
 randomize()
 
