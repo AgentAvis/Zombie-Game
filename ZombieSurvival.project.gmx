@@ -237,6 +237,7 @@
         </objects>
         <objects name="_gore">
           <object>objects\o_blood_drop</object>
+          <object>objects\oVomit</object>
         </objects>
         <objects name="_bosses">
           <object>objects\o_boss_test</object>

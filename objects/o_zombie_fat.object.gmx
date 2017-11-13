@@ -51,6 +51,8 @@ k_r = 2;
 sprite = s_zombies_fat
 
 hashpbar = true
+
+pukecount = 0
 </string>
           </argument>
         </arguments>
@@ -75,6 +77,24 @@ hashpbar = true
             <kind>1</kind>
             <string>event_inherited();
 clamp(hsp,-2,2)
+
+if random(120*clamp(instance_number(o_zombie_fat)*.5,1,9999)) &lt; 1 { pukecount = 20}
+
+if y = o_player.y { pukecount -= 5 }
+pukecount -= 1
+
+//pukecount = clamp(pukecount,0,120)
+
+if pukecount &gt;= 0{
+    if point_distance(x,y-sprite_height+4,o_player.x,o_player.y-20) &lt; 300 {
+        with (instance_create(x,y-sprite_height+4,oVomit)) {
+            repeat (3) {
+                motion_set_custom(random(5),point_direction(x,y-sprite_height+4,o_player.x,o_player.y-20)+random_range(-5,5))
+            }
+        }    
+    }
+}
+
 </string>
           </argument>
         </arguments>
@@ -98,7 +118,15 @@ clamp(hsp,-2,2)
           <argument>
             <kind>1</kind>
             <string>event_inherited();
-draw_sprite_ext(sprite_index,type,x,y+hop,image_xscale,1,image_angle,c_white,1);
+pukescale = 1
+if pukecount &gt;= 0 {
+    pukescale = .75//random_range(.75,1.25)
+}
+draw_sprite_ext(sprite_index,type,x,y+hop,image_xscale,1*pukescale,image_angle,c_white,1);
+
+
+draw_text(x,y,string(pukecount))
+
 </string>
           </argument>
         </arguments>
