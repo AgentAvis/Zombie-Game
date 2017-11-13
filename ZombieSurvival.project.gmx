@@ -82,6 +82,7 @@
       <sprite>sprites\s_title</sprite>
       <sprite>sprites\s_menu_buttons</sprite>
     </sprites>
+    <sprite>sprites\sprite35</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\stars</background>

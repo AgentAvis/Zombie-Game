@@ -27,6 +27,9 @@
             <kind>1</kind>
             <string>color = c_white;
 spr = 0;
+scale = 1
+image_xscale = .85
+image_yscale = .85
 
 x = room_width/2;
 </string>
@@ -51,12 +54,20 @@ x = room_width/2;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-color = c_white;
-if(place_meeting(x,y,o_mouse)){
-color = c_ltgray;
-}
+            <string>color = c_gray;
 
+scale = lerp(scale,.85,.1)
+
+if(place_meeting(x,y,o_mouse)){
+    color = c_white;
+    scale = lerp(scale,1.25,.1)
+    if mouse_check_button_pressed(mb_any) {
+        
+        if spr = 0 { room_goto_next() }
+        
+        
+    }   
+}
 
 </string>
           </argument>
@@ -82,7 +93,9 @@ color = c_ltgray;
             <kind>1</kind>
             <string>
 
-draw_sprite_ext(s_menu_buttons,spr,x,y,1,1,0,color,1);
+draw_sprite_ext(s_menu_buttons,spr,x,y,scale,scale,0,color,1);
+
+
 </string>
           </argument>
         </arguments>
