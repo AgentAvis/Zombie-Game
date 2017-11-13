@@ -42,7 +42,9 @@ mass = 1
 
 damage = 1
 
+canclimb = true
 
+climbspeed = .25
 </string>
           </argument>
         </arguments>

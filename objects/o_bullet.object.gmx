@@ -140,6 +140,7 @@ with (o_lifeform) {
     if temp_hitid != noone and !_die and hp &gt; 0 {
         //hitid = temp_hitid
         hp -= me.dmg
+        shotcount += 15
         hsp += (sign(me.hsp)*me.knockback/k_r)
         _die = true
         if me.explosive {

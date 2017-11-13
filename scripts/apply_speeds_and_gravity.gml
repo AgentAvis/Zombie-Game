@@ -12,22 +12,23 @@ if y >= gr {
 x += hsp * global.timescale
 y += vsp * global.timescale
 
-
-with (oRoof_top) { 
-    if place_meeting(x,y,other) {
-        with (other) {
-            if vsp < 0 {
-                //we're going up, so ignore roof collisions
-            } else {
-                if y > other.y+9 {
-                    //we're half way under, just fall
+if !grounded { //if we aren't on the ground, check for roof collisions
+    with (oRoof_top) { 
+        if place_meeting(x,y,other) {
+            with (other) {
+                if vsp < 0 {
+                    //we're going up, so ignore roof collisions
                 } else {
-                    //snap us onto the roof and cancel out all vsp
-                    vsp = 0
-                    y = other.y+8
-                    grounded = true
+                    if y > other.y+9 {
+                        //we're over half way under, just fall
+                    } else {
+                        //snap us onto the roof and cancel out all vsp
+                        vsp = 0
+                        y = other.y+8
+                        grounded = true
+                    }
                 }
-            }
-        }    
+            }    
+        }
     }
 }

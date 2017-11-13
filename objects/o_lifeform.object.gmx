@@ -29,6 +29,9 @@
 
 grounded = false //am i on the ground? purely an initialization variable, dont change this plz thx
 
+canclimb = false
+climbspeed = 1
+
 hp = 100;
 maxHp = 100;
 ammount = 0;
@@ -76,6 +79,7 @@ damage = 1
 ehsp = 0
 evsp = 0
 
+shotcount = 0 //jumps up when shot and then counts back down
 
 //Knockback Resistance
 k_r = 1;
@@ -203,7 +207,16 @@ if(canHit){
     }
 }
 
+shotcount --
+shotcount = clamp(shotcount,0,60)
+
+
+if y+10 &gt; o_player.y and canclimb and shotcount &lt;= 0 {
+    if place_meeting(x,y+8,oBuilding) { vsp = 0 y -= climbspeed }
+} 
 apply_speeds_and_gravity()
+
+
 //x += hsp * global.timescale;
 //y += vsp * global.timescale;
 

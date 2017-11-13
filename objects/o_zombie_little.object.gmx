@@ -43,6 +43,10 @@ mass = .75
 damage = 1
 
 wealth = .5
+
+canclimb = true
+
+climbspeed = .5
 </string>
           </argument>
         </arguments>
