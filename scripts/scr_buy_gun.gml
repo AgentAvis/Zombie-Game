@@ -35,7 +35,7 @@ o_gun.hasGun[argument2,g]= false;
 
 o_gun.expansion[argument2,0] = 0;
 o_gun.expansion[argument2,1] = 0;
-
+o_gun.spr = argument7;
 o_gun.hasGun[argument2,argument6]= true;
 o_player.money -= argument3;
 o_gun.ammo[argument2] += argument4;
