@@ -31,6 +31,8 @@ maxHp = 1000;
 //Set the distance it 'sees' the player
 sight = 2000;
 
+blood_color = merge_color(c_red,c_green,.75)
+
 walk_spd = random_range(0.3,0.4);
 
 attackSpeed = room_speed * .5; //attacks per second essentially

@@ -49,6 +49,8 @@ climbspeed = .25
 sprite = s_zombies_3
 
 sprite_climb = s_zombies_3_climb
+
+blood_color = merge_color(c_red,c_green,.55)
 </string>
           </argument>
         </arguments>

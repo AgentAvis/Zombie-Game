@@ -29,6 +29,8 @@
 
 grounded = false //am i on the ground? purely an initialization variable, dont change this plz thx
 
+blood_color = c_red
+
 canclimb = false
 climbspeed = 1
 
@@ -117,6 +119,7 @@ hashpbar = false
             <kind>1</kind>
             <string>repeat (irandom_range(5,20))
 with (instance_create(x,y,o_blood_drop)) {
+    blood_color = other.blood_color
     motion_set_custom(random_range(2,6),random(360))
     
 }

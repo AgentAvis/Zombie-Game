@@ -72,7 +72,7 @@ GUISCALE = window_get_width()/1600;
 if keyboard_check(vk_shift) and keyboard_check_pressed(ord("C")) {
     str = get_string("Type in your cheats here yo","")
     
-    if str = "makeitrain" { repeat ( 1000 ) { instance_create(o_player.x+random_range(-100,100),y,o_dollar) }} //gives you 5,000$
+    if str = "makeitrain" { repeat ( 1000 ) { with instance_create(o_player.x+random_range(-100,100),o_player.y - 200,o_dollar) { vsp = random(30) }}} //gives you 5,000$
     if str = "jackpot" { o_player.money += 1000000 } //gives you a million dollars
     if str = "megajackpot" { o_player.money += 10000000 } //gives you a ten million dollars
     if str = "bankrupt" { o_player.money = 0 } //gives you a ten million dollars
