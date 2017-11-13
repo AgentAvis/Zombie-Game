@@ -45,6 +45,10 @@ damage = 3
 wealth = random_range(.5,4);
 
 k_r = 2;
+
+sprite = s_zombies_fat
+
+hashpbar = true
 </string>
           </argument>
         </arguments>

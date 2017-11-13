@@ -56,6 +56,8 @@ image_speed = 0.05;
 with(oCamera){
 mousemode = false;
 }
+
+sprite = s_boss_test
 </string>
           </argument>
         </arguments>

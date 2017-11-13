@@ -32,7 +32,7 @@ global.grav = .1
 globalvar gr; 
 gr = 400; //where is the ground at
 global.termvel = 6
-
+global.epilepsy = false
 
 global.fuckwithjosh = false
 
@@ -72,7 +72,7 @@ GUISCALE = window_get_width()/1600;
 if keyboard_check(vk_shift) and keyboard_check_pressed(ord("C")) {
     str = get_string("Type in your cheats here yo","")
     
-    if str = "makeitrain" { o_player.money += 5000 } //gives you 5,000$
+    if str = "makeitrain" { repeat ( 1000 ) { instance_create(o_player.x+random_range(-100,100),y,o_dollar) }} //gives you 5,000$
     if str = "jackpot" { o_player.money += 1000000 } //gives you a million dollars
     if str = "megajackpot" { o_player.money += 10000000 } //gives you a ten million dollars
     if str = "bankrupt" { o_player.money = 0 } //gives you a ten million dollars
@@ -97,7 +97,8 @@ if keyboard_check(vk_shift) and keyboard_check_pressed(ord("C")) {
     if str = "ruralrifle" { o_gun.hasGun[3] = true } //gives ak47
     if str = "nowaves" { if instance_exists(o_wave_control_avis) { with (o_wave_control_avis) { instance_destroy() } }  } //perminantly disables the wave system
     if str = "slay" { with (o_lifeform) { hp = 0 } } //kills everything    
-    
+    if str = "Rhoth"{ instance_create(mouse_x,gr-100,o_boss_test) }
+    if str = "epilepsy" { global.epilepsy = !global.epilepsy }
 }
 </string>
           </argument>

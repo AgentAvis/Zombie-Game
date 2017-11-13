@@ -153,12 +153,14 @@ if delaytimer &gt; delay {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if keyboard_check_pressed(ord("O")) {
+            <string>
+draw_set_color(c_white)
+if keyboard_check_pressed(ord("O")) {
     draw_ui = !draw_ui
     global.fuckwithjosh = false
 }
 if draw_ui {
-    draw_text(200,200,"secks: " + string(wavetimer/room_speed)  + " wave: " + string(wave) + " | basecount: " + string(basecount))
+    draw_text_outlined(200,200,"secks: " + string(wavetimer/room_speed)  + " wave: " + string(wave) + " | basecount: " + string(basecount),c_white,c_black)
 }
 </string>
           </argument>

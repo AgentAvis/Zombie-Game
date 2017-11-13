@@ -45,6 +45,10 @@ damage = 1
 canclimb = true
 
 climbspeed = .25
+
+sprite = s_zombies_3
+
+sprite_climb = s_zombies_3_climb
 </string>
           </argument>
         </arguments>

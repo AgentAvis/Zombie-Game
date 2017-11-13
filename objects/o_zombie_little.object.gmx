@@ -47,6 +47,10 @@ wealth = .5
 canclimb = true
 
 climbspeed = .5
+
+sprite = s_zombie_little
+
+sprite_climb = s_zombie_little_climb
 </string>
           </argument>
         </arguments>

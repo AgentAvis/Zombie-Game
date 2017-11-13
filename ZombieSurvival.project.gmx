@@ -33,7 +33,11 @@
       <sprite>sprites\s_zombies_2</sprite>
       <sprite>sprites\s_zombies_fat</sprite>
       <sprite>sprites\s_zombies_3</sprite>
+      <sprite>sprites\s_zombie_little_climb</sprite>
+      <sprite>sprites\s_zombies_3_climb</sprite>
       <sprite>sprites\s_zombies_4</sprite>
+      <sprite>sprites\sNull</sprite>
+      <sprite>sprites\sNull_lifeform</sprite>
       <sprite>sprites\s_zombie_little</sprite>
       <sprites name="_bosses">
         <sprite>sprites\s_boss_test</sprite>
@@ -178,6 +182,7 @@
       <script>scripts\draw_rectangle_width.gml</script>
       <script>scripts\draw_text_font.gml</script>
       <script>scripts\draw_boss_health_bar.gml</script>
+      <script>scripts\draw_text_outlined.gml</script>
     </scripts>
     <script>scripts\check_guns.gml</script>
   </scripts>

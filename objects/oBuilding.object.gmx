@@ -73,7 +73,10 @@ height = sprite_get_height(sprite_index)-8
           <argument>
             <kind>1</kind>
             <string>draw_self()
-draw_line(x,y,x,y-height)
+draw_set_color(make_color_rgb(random(255),random(255),random(255)))
+if global.epilepsy {
+    draw_line_width(x,y,x,y-height,sprite_width)
+}
 </string>
           </argument>
         </arguments>
