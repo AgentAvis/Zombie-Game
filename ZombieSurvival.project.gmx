@@ -264,8 +264,8 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\r_menu</room>
     <room>rooms\rInit</room>
+    <room>rooms\r_menu</room>
     <rooms name="_debug">
       <room>rooms\r_testing</room>
     </rooms>
