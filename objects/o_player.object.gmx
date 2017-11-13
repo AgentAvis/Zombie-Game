@@ -30,10 +30,13 @@ phys = false //check this to true if you are using physics
 moving = false
 globalvar occupied;
 occupied = false;
+
+grounded = false
+
 hsp = 0 //does the same as hspeed
 vsp = 0 //does the same as vspeed
-
-if phys {
+wasonladder = false 
+if phys { 
     phy_fixed_rotation = true;
 }
 //instance_create(x,y,o_camera);
@@ -122,7 +125,9 @@ mode = 1;
             <string>if(!occupied){
     scr_movement();
     jump_speed = 2
-    if keyboard_check_pressed(vk_space) { vsp -= jump_speed y -= clamp(jump_speed,3,50)}
+    if grounded {
+        if keyboard_check(vk_space) { vsp -= jump_speed y -= clamp(jump_speed,3,50)}
+    }
 }
 
 //display_set_gui_size(view_wport[0], view_hport[0]);
@@ -140,9 +145,40 @@ if hop &lt; 0 { hopspeed += .05 } else {
 
 if mouse_x &gt; x { image_xscale = 1 } else { image_xscale = -1 }
 
-if !occupied {
-    apply_speeds_and_gravity();
+up = false
+ladder = false
+
+
+if place_meeting(x,y,oLadder) {
+    ladder = true
+    
+    if (keyboard_check_pressed(ord("W")) or keyboard_check_pressed(ord("S"))) {//or ((keyboard_check(ord("W"))) or (keyboard_check(ord("S"))) and (!oldladder)) {
+        x = instance_nearest(x,y,oLadder).x + 4
+    }
+
+    
+    if keyboard_check(ord("W")) {
+        up = true
+        y -= 1
+        wasonladder = true
+        vsp = 0
+        //hsp = 0
+    }
+    if keyboard_check(ord("S")) {  
+        up = true
+        y += .5
+        wasonladder = true
+        vsp = 0
+        //hsp = 0
+    }
 }
+if !occupied {
+    if !up {
+        apply_speeds_and_gravity();
+    } else {
+        x += hsp
+    }
+} else { wasonladder = false }
 
 
 //collisions with ground
@@ -150,7 +186,7 @@ if !occupied {
 
 //x += hsp * global.timescale //allows slomo
 //y += vsp * global.timescale 
-
+oldladder = ladder
 </string>
           </argument>
         </arguments>

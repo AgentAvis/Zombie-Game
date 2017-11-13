@@ -40,6 +40,7 @@
       </sprites>
     </sprites>
     <sprites name="_environment">
+      <sprite>sprites\sLadder</sprite>
       <sprite>sprites\s_street</sprite>
       <sprites name="_buildings">
         <sprite>sprites\s_store</sprite>
@@ -192,6 +193,7 @@
         <object>objects\o_shop</object>
         <object>objects\o_apartment</object>
         <object>objects\object30</object>
+        <object>objects\oLadder</object>
       </objects>
     </objects>
     <objects name="_system">
