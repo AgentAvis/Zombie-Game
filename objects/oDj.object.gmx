@@ -45,6 +45,24 @@ global.debug = false;
 globalvar GUISCALE;
 GUISCALE = window_get_width()/1600;
 
+
+//Setting the options
+fullscreen = 0;
+blood = 1;
+resolutionW = 1600;
+resolutionH = 900;
+parallax = 1;
+
+if(!file_exists("graphics.ini")){
+scr_save_options();
+}
+
+scr_load_options();
+
+
+if(fullscreen == 1){
+window_set_fullscreen(true);
+}
 </string>
           </argument>
         </arguments>

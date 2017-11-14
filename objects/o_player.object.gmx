@@ -100,6 +100,9 @@ with(oCamera){
 mode = 1;
 }
 
+//Turns back on zooming that I turned off for menus
+oCamera.room_Actual = false;
+
 </string>
           </argument>
         </arguments>
@@ -179,6 +182,14 @@ if !occupied {
         x += hsp
     }
 } else { wasonladder = false }
+
+
+//Health Upgrades
+hp = clamp(hp,-100,100);
+if(keyboard_check_pressed(ord('M')) and healthkits &gt; 0){
+hp += 20;
+healthkits--;
+}
 
 
 //collisions with ground

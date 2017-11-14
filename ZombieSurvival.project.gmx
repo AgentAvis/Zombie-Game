@@ -85,8 +85,15 @@
     <sprites name="_menu">
       <sprite>sprites\s_title</sprite>
       <sprite>sprites\s_menu_buttons</sprite>
+      <sprites name="_options">
+        <sprite>sprites\options_title</sprite>
+        <sprite>sprites\back_button</sprite>
+        <sprite>sprites\options_list</sprite>
+        <sprite>sprites\options_check</sprite>
+      </sprites>
     </sprites>
     <sprite>sprites\sprite35</sprite>
+    <sprite>sprites\sprite43</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\stars</background>
@@ -185,6 +192,10 @@
       <script>scripts\draw_text_outlined.gml</script>
     </scripts>
     <script>scripts\check_guns.gml</script>
+    <scripts name="_saving">
+      <script>scripts\scr_save_options.gml</script>
+      <script>scripts\scr_load_options.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_bold</font>
@@ -267,12 +278,25 @@
         <object>objects\o_title_card</object>
         <object>objects\o_menu_buttons</object>
         <object>objects\o_mouse</object>
+        <objects name="_options_menu">
+          <object>objects\o_options_title_card</object>
+          <object>objects\o_options_screen_back</object>
+          <object>objects\o_options_list</object>
+          <objects name="options_buttons">
+            <object>objects\o_fullscreen_option</object>
+            <object>objects\o_blood_option</object>
+            <object>objects\o_parallax_option</object>
+          </objects>
+        </objects>
       </objects>
     </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rInit</room>
-    <room>rooms\r_menu</room>
+    <rooms name="_main_menu">
+      <room>rooms\r_menu</room>
+      <room>rooms\r_options</room>
+    </rooms>
     <rooms name="_debug">
       <room>rooms\r_testing</room>
     </rooms>

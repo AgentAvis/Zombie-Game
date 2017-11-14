@@ -1,6 +1,7 @@
 ///scr_buy_gun(x,y,gunId,price,initialAmmo,name,type,sprID)
 buyGunButton[argument2] = point_in_rectangle(window_x,window_y,argument0 + 277, argument1 + 8, argument0 + gbWidth , argument1 + gbHeight);
 
+
 draw_set_color(c5);
 draw_rectangle(argument0, argument1, argument0 + gWidth, argument1 + gHeight, false);
 draw_sprite_ext(s_guns_gui,argument7,argument0 + 163,argument1 + 25,6.84,6.84,0,c_white,1);

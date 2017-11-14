@@ -10,7 +10,9 @@ draw_text(argument0 + (width/2),argument1 - 20,"10x");
 draw_set_halign(fa_left);
 draw_set_color(c3);
 if(ammoButton[0]){
+draw_set_color(c4);
 if(mouse_check_button_pressed(mb_left)){
+draw_set_color(c2);
 if(o_player.money >= (argument2 * 10)){
 o_gun.ammo[argument3] += 10;
 o_player.money -= argument2 * 10;
@@ -33,9 +35,9 @@ draw_text(argument0+ 150 + (width/2),argument1 - 20,"50x");
 draw_set_halign(fa_left);
 draw_set_color(c3);
 if(ammoButton[1]){
-
+draw_set_color(c4);
 if(mouse_check_button_pressed(mb_left)){
-
+draw_set_color(c2);
 if(o_player.money >= (argument2 * 50)){
 
 o_gun.ammo[argument3] += 50;
@@ -60,9 +62,9 @@ draw_text(argument0+ 300 + (width/2),argument1 - 20,"100x");
 draw_set_halign(fa_left);
 draw_set_color(c3);
 if(ammoButton[2]){
-
+draw_set_color(c4);
 if(mouse_check_button_pressed(mb_left)){
-
+draw_set_color(c2);
 if(o_player.money >= (argument2 * 100)){
 
 o_gun.ammo[argument3] += 100;
