@@ -9,8 +9,7 @@ if y >= gr {
     if vsp > global.termvel { vsp *= .99 } //air drag
 }
 
-x += hsp * global.timescale
-y += vsp * global.timescale
+
 
 if !grounded { //if we aren't on the ground, check for roof collisions
     with (oRoof_top) { 
@@ -32,3 +31,7 @@ if !grounded { //if we aren't on the ground, check for roof collisions
         }
     }
 }
+
+x += hsp * global.timescale
+y += vsp * global.timescale
+

@@ -16,7 +16,7 @@
   <clearDisplayBuffer>-1</clearDisplayBuffer>
   <makerSettings>
     <isSet>-1</isSet>
-    <w>1016</w>
+    <w>1008</w>
     <h>600</h>
     <showGrid>0</showGrid>
     <showObjects>-1</showObjects>
@@ -27,8 +27,8 @@
     <deleteUnderlyingObj>0</deleteUnderlyingObj>
     <deleteUnderlyingTiles>-1</deleteUnderlyingTiles>
     <page>0</page>
-    <xoffset>1562</xoffset>
-    <yoffset>277</yoffset>
+    <xoffset>1822</xoffset>
+    <yoffset>1301</yoffset>
   </makerSettings>
   <backgrounds>
     <background visible="0" foreground="0" name="stars" x="0" y="0" htiled="-1" vtiled="0" hspeed="0" vspeed="0" stretch="0"/>
@@ -56,7 +56,6 @@
     <instance objName="o_street" x="768" y="400" name="inst_24FEE1D7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_street" x="0" y="400" name="inst_75AE18D8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_parallax" x="960" y="-32" name="inst_A27661D6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_create_zoms" x="416" y="320" name="inst_5003E284" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_player" x="1024" y="160" name="inst_633F02B9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_shop_gui" x="992" y="-32" name="inst_6DFD7668" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_street" x="1024" y="400" name="inst_AEF39D81" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -68,7 +67,6 @@
     <instance objName="o_spawn_2" x="1984" y="320" name="inst_044CC5A7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_wave_control_avis" x="1024" y="-32" name="inst_99104FE6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_apartment" x="896" y="400" name="inst_956E6124" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_zombie_fat" x="832" y="96" name="inst_74EE38FC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oRoof_top" x="816" y="256" name="inst_D5DCEC3F" locked="0" code="" scaleX="10" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oRoof_top" x="976" y="336" name="inst_2DE52F56" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="object30" x="720" y="400" name="inst_2ABF88B8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -116,7 +114,6 @@
     <instance objName="oLadder" x="976" y="256" name="inst_0E401E53" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oLadder" x="976" y="248" name="inst_EAC95658" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oLadder" x="1040" y="336" name="inst_C6E9FC75" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_zombie_little" x="1176" y="392" name="inst_E5FBB179" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_ufo_boss" x="1020" y="282" name="inst_2A36CABB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>

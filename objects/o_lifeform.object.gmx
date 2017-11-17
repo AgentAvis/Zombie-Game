@@ -27,6 +27,8 @@
             <kind>1</kind>
             <string>phys = false
 
+organic = true //do i bleed
+
 grounded = false //am i on the ground? purely an initialization variable, dont change this plz thx
 
 blood_color = c_red

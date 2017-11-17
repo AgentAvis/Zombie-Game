@@ -37,6 +37,8 @@
       <sprite>sprites\s_zombies_3_climb</sprite>
       <sprite>sprites\s_zombies_4</sprite>
       <sprite>sprites\sNull</sprite>
+      <sprite>sprites\sUfo_parts</sprite>
+      <sprite>sprites\sUfo_bottom</sprite>
       <sprite>sprites\sNull_lifeform</sprite>
       <sprite>sprites\s_zombie_little</sprite>
       <sprites name="_bosses">
@@ -254,6 +256,7 @@
         </objects>
         <objects name="_bosses">
           <object>objects\o_boss_test</object>
+          <object>objects\oPart</object>
           <object>objects\o_ufo_boss</object>
         </objects>
       </objects>
