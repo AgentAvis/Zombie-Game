@@ -3,7 +3,7 @@
   <spriteName>s_zombies_fat</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-1</depth>
   <persistent>0</persistent>
   <parentName>o_lifeform</parentName>
   <maskName>&lt;undefined&gt;</maskName>

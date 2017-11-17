@@ -41,6 +41,7 @@
       <sprite>sprites\s_zombie_little</sprite>
       <sprites name="_bosses">
         <sprite>sprites\s_boss_test</sprite>
+        <sprite>sprites\ufo_boss</sprite>
       </sprites>
     </sprites>
     <sprites name="_environment">
@@ -249,9 +250,11 @@
         <objects name="_gore">
           <object>objects\o_blood_drop</object>
           <object>objects\oVomit</object>
+          <object>objects\oLaser</object>
         </objects>
         <objects name="_bosses">
           <object>objects\o_boss_test</object>
+          <object>objects\o_ufo_boss</object>
         </objects>
       </objects>
       <objects name="_money">
@@ -281,7 +284,7 @@
         <objects name="_options_menu">
           <object>objects\o_options_title_card</object>
           <object>objects\o_options_screen_back</object>
-          <object>objects\o_options_list</object>
+          <object>objects\o_options_buttons</object>
           <objects name="options_buttons">
             <object>objects\o_fullscreen_option</object>
             <object>objects\o_blood_option</object>

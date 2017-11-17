@@ -33,6 +33,14 @@ scale = 0;
 
 x = room_width/2;
 
+
+
+yy = 96;
+for(i = 0; i &lt; 4; i++){
+p = instance_create(4,yy,o_options_buttons);
+p.spr = i;
+yy += 6 + sprite_get_height(options_list);
+}
 </string>
           </argument>
         </arguments>

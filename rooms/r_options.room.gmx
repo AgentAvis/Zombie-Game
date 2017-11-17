@@ -55,10 +55,9 @@
     <instance objName="o_draw_menu_parallax" x="0" y="0" name="inst_D0210DE9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_options_title_card" x="224" y="32" name="inst_89E2F41A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_options_screen_back" x="399" y="241" name="inst_A52E8038" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_options_list" x="3" y="87" name="inst_448953E8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_fullscreen_option" x="205" y="97" name="inst_68A119B9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_blood_option" x="205" y="125" name="inst_4FEC337A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_parallax_option" x="205" y="184" name="inst_E09A747B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_blood_option" x="210" y="135" name="inst_4FEC337A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_parallax_option" x="211" y="184" name="inst_E09A747B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
