@@ -114,7 +114,7 @@
     <instance objName="oLadder" x="976" y="256" name="inst_0E401E53" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oLadder" x="976" y="248" name="inst_EAC95658" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oLadder" x="1040" y="336" name="inst_C6E9FC75" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_ufo_boss" x="1020" y="282" name="inst_2A36CABB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_boss_test" x="768" y="368" name="inst_F312FB00" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>-1</PhysicsWorld>

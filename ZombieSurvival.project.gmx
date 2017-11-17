@@ -22,7 +22,9 @@
       <filename>notes.txt</filename>
     </datafile>
   </datafiles>
-  <NewExtensions/>
+  <NewExtensions>
+    <extension index="0">extensions\Gradual Turret Turn</extension>
+  </NewExtensions>
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprites name="_player">
@@ -44,6 +46,8 @@
       <sprites name="_bosses">
         <sprite>sprites\s_boss_test</sprite>
         <sprite>sprites\ufo_boss</sprite>
+        <sprite>sprites\rothnor_head</sprite>
+        <sprite>sprites\rothnor_head_open</sprite>
       </sprites>
     </sprites>
     <sprites name="_environment">
@@ -194,11 +198,12 @@
       <script>scripts\draw_boss_health_bar.gml</script>
       <script>scripts\draw_text_outlined.gml</script>
     </scripts>
-    <script>scripts\check_guns.gml</script>
     <scripts name="_saving">
       <script>scripts\scr_save_options.gml</script>
       <script>scripts\scr_load_options.gml</script>
     </scripts>
+    <script>scripts\check_guns.gml</script>
+    <script>scripts\angle_rotate_towards.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_bold</font>
@@ -258,6 +263,7 @@
           <object>objects\o_boss_test</object>
           <object>objects\oPart</object>
           <object>objects\o_ufo_boss</object>
+          <object>objects\o_rothnor_head</object>
         </objects>
       </objects>
       <objects name="_money">
