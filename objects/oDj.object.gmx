@@ -120,6 +120,7 @@ if keyboard_check(vk_shift) and keyboard_check_pressed(ord("C")) {
     if str = "nowaves" { if instance_exists(o_wave_control_avis) { with (o_wave_control_avis) { instance_destroy() } }  } //perminantly disables the wave system
     if str = "slay" { with (o_lifeform) { hp = 0 } } //kills everything    
     if str = "rhoth"{ instance_create(mouse_x,gr-100,o_boss_test) }
+    if str = "ufo"{ instance_create(mouse_x,gr-100,o_ufo_boss) }
     if str = "epilepsy" { global.epilepsy = !global.epilepsy }
     
     

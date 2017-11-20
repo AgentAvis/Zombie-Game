@@ -29,6 +29,7 @@
   <sprites name="sprites">
     <sprites name="_player">
       <sprite>sprites\s_player</sprite>
+      <sprite>sprites\s_player_dead</sprite>
     </sprites>
     <sprites name="_enemies">
       <sprite>sprites\s_zombies_1</sprite>
