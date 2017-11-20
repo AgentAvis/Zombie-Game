@@ -78,6 +78,10 @@ if zombie_current &lt;= 0 {
 
 if wavetimer &gt; room_speed * wave_time {
 
+    p = instance_create(x,y,wave_draw);
+    p.count = true;
+    p.num = wave;
+
     //setup how many of each zomb you want
     z_normal = (clamp(floor(basecount*.75),0,50))
     z_fat = (clamp(floor(basecount*.2),0,20))
@@ -161,7 +165,11 @@ if keyboard_check_pressed(ord("O")) {
 }
 if draw_ui {
     draw_text_outlined(200,200,"secks: " + string(wavetimer/room_speed)  + " wave: " + string(wave) + " | basecount: " + string(basecount),c_white,c_black)
+
 }
+    if((wavetimer/room_speed) != 0){
+    draw_healthbar((window_get_width()/2) - 100,(window_get_height()/2) - 25,(window_get_width()/2) + 100,(window_get_height()/2) + 25,((wavetimer/room_speed)/10) * 100, c_black, c_green, c_green, 0 ,true, true);
+    }
 </string>
           </argument>
         </arguments>

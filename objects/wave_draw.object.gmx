@@ -25,15 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>count = false;
-alph = 0;
-
-num = 10;
-
-if(count = true){
+            <string>num = 0;
 alph = 1;
-
-}
 </string>
           </argument>
         </arguments>
@@ -56,39 +49,20 @@ alph = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_color(c_white);
-
-if(!count){
-
-alph += 0.01;
-draw_set_alpha(alph);
+            <string>draw_set_alpha(alph);
+alph -= 0.01;
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
-draw_text(window_get_width()/2,window_get_height()/2,"Wave " + string(num));
+draw_text_outlined(window_get_width()/2,window_get_height()/2,"Wave " + string(num + 1), c_white, c_black);
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
+
+
 draw_set_alpha(1);
 
-if(alph &gt; 1){
+if(alph &lt;= 0){
 instance_destroy();
 }
-}else{
-
-
-alph -= 0.01;
-//draw_set_alpha(alph);
-draw_set_halign(fa_center);
-draw_set_valign(fa_middle);
-draw_text(window_get_width()/2,window_get_height()/2,string(num));
-draw_set_halign(fa_left);
-draw_set_valign(fa_top);
-//draw_set_alpha(1);
-
-if(alph &lt; 0){
-instance_destroy();
-}
-}
-
 
 </string>
           </argument>
