@@ -26,8 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>event_inherited();
-hp = 1000;
-maxHp = 1000;
+hp = 3000;
+maxHp = 3000;
 //Set the distance it 'sees' the player
 sight = 2000;
 
@@ -47,7 +47,7 @@ damage = 6
 wealth = random_range(100,200)
 
 isBoss = true;
-name = "Rothnor - Consumer of Flesh";
+name = "Rothnor - Consumer of the small";
 
 
 
@@ -206,27 +206,28 @@ if(dir2 &gt;= 90 and dir2 &lt;= 270){
 
 
 if(canpuke){
-var scale = 1;
-if(target_dir &gt;= 90 and target_dir &lt;= 270){
-    scale = -1;
-}else{
-    scale = 1;
-}
+    var scale = 1;
+    if(target_dir &gt;= 90 and target_dir &lt;= 270){
+        scale = -1;
+    }else{
+        scale = 1;
+    }
+    
+    target_dir = 90;
+    
+    
+    if(dir2 = 90){
+        target_sprite = rothnor_head_open;
+        canpuke = false;
+        alarm[2] = room_speed * 1;
+        repeat(3){
+            p = instance_create(x, y-52,o_zombie_little)
+            with(p){
+                motion_set_custom(3+random_range(-.5,1.5),90+random_range(-10,10));
+            }
 
-target_dir = 90;
-
-
-if(dir2 = 90){
-target_sprite = rothnor_head_open;
-repeat(2){
-p = instance_create(x, y-52,o_zombie_little)
-with(p){
-motion_set_custom(3,90);
-}
-canpuke = false;
-alarm[2] = room_speed * 1;
-}
-}
+        }
+    }
 }
 
 dir2 = angle_rotate_towards(dir2,target_dir,turnspeed);

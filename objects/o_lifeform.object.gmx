@@ -224,11 +224,12 @@ sprite_index = sprite
 
 if y &lt; o_player.y+1 and y &gt; o_player.y-1 { shotcount += 10 }
 
-if y+10 &gt; o_player.y and canclimb and shotcount &lt;= 0 and y != o_player.y and ((y &lt; gr - 20) or (o_player.y &lt; gr - 20)) {
+if (y+10 &gt; o_player.y and canclimb and shotcount &lt;= 0 and y != o_player.y and ((y &lt; gr - 20) or (o_player.y &lt; gr - 20))) {
     building = instance_place(x,y+8,oBuilding)
     if instance_exists(building) and point_distance(x,1,o_player.x,1) &lt; 170  {
         
-        vsp = 0
+        vsp = clamp(vsp,-999,0)
+        //if vsp &lt;= 0 { vsp = 0 }
         y -= climbspeed
         if !place_meeting(x,y,oRoof_top) { sprite_index = sprite_climb }
         if sprite_index = sprite_climb {with (building) { if random(32) &lt; 1 { y += .001 }}}

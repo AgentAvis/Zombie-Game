@@ -27,6 +27,8 @@
             <kind>1</kind>
             <string>x = 0
 y = 0
+ 
+static = false
 
 truex = x
 truey = y
@@ -103,7 +105,8 @@ room_Actual = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>        
+            <string>if static exit;  
+              
         if keyboard_check(vk_shift) {
             if keyboard_check(ord("1")) { ZM = 1 }
             if keyboard_check(ord("2")) { ZM = .5 }        
@@ -161,7 +164,7 @@ room_Actual = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>if static exit;
 
 //if instance_exists(o_player) { global.focus = o_player mode = 1}
 

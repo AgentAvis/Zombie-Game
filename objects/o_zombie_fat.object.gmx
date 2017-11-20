@@ -78,18 +78,19 @@ pukecount = 0
             <string>event_inherited();
 clamp(hsp,-2,2)
 
-if random(120*clamp(instance_number(o_zombie_fat)*.5,1,9999)) &lt; 1 { pukecount = 20}
+if random((room_speed*4)*clamp(instance_number(o_zombie_fat)*.5,1,9999)) &lt; 1 { pukecount = 6}
 
-if y = o_player.y { pukecount -= 5 }
-pukecount -= 1
+if y = o_player.y { pukecount -= 4 }
+
 
 //pukecount = clamp(pukecount,0,120)
 
 if pukecount &gt;= 0{
+    pukecount -= 1
     if point_distance(x,y-sprite_height+4,o_player.x,o_player.y-20) &lt; 300 {
         with (instance_create(x,y-sprite_height+4,oVomit)) {
-            repeat (3) {
-                motion_set_custom(random(5),point_direction(x,y-sprite_height+4,o_player.x,o_player.y-20)+random_range(-5,5))
+            repeat (irandom(3)) {
+                motion_set_custom(random_range(2,4)+1,point_direction(x,y-sprite_height+4,o_player.x,o_player.y-20)+random_range(-3,3))
             }
         }    
     }

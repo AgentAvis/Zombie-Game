@@ -36,6 +36,9 @@ image_speed = 0
 alpha = .75
 scale = 1
 
+hsp = 0
+vsp = 0
+
 mass = .35
 
 otherX = 0;
@@ -84,7 +87,7 @@ image_angle += 7
 vsp += global.grav * mass
 
 
-if point_distance(x,y,o_player.x,o_player.y-(sprite_get_width(s_player)/2)) &lt; 5 { instance_destroy() o_player.hp -- }
+if point_distance(x,y,o_player.x,o_player.y-(sprite_get_width(s_player)/2)) &lt; 5 { instance_destroy() o_player.hp -= .5 }
 
 x += hsp
 y += vsp
@@ -115,7 +118,9 @@ y += vsp
 draw_set_color(blood_color)
 
 draw_set_alpha(clamp(.75*image_alpha,.5,1))
-draw_circle_colour(x,y,3,blood_color,merge_color(blood_color,c_black,.5),false)
+//draw_circle_colour(x,y,3,blood_color,merge_color(blood_color,c_black,.5),false)
+rang = .21
+draw_sprite_ext(sprite_index,image_index,x,y,random_range(1-rang,1+rang),random_range(.9,1.1),image_angle,blood_color,image_alpha*.75)
 draw_set_alpha(1)
 
 if random(7) &lt; 1 {
@@ -123,7 +128,7 @@ if random(7) &lt; 1 {
     if(canDraw) and instance_exists(_floor) {
         if !surface_exists(_floor.blood_surf) { with (_floor) { blood_surf = surface_create(sprite_width,sprite_height) } }
         surface_set_target(_floor.blood_surf);
-        draw_sprite_ext(sprite_index,irandom(image_number),hitx, hity,image_xscale,image_yscale,random(360),blood_color,.75);
+        draw_sprite_ext(sprite_index,irandom(image_number),hitx, hity,image_xscale,image_yscale,random(360),blood_color,image_alpha*.5);
         image_xscale *= .9
         image_yscale *= .9
         image_alpha *= .8
