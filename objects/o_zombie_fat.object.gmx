@@ -126,7 +126,7 @@ if pukecount &gt;= 0 {
 draw_sprite_ext(sprite_index,type,x,y+hop,image_xscale,1*pukescale,image_angle,c_white,1);
 
 
-draw_text(x,y,string(pukecount))
+//draw_text(x,y,string(pukecount))
 
 </string>
           </argument>

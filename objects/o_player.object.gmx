@@ -129,7 +129,7 @@ oCamera.room_Actual = false;
     scr_movement();
     jump_speed = 2
     if grounded {
-        if keyboard_check(vk_space) { vsp -= jump_speed y -= clamp(jump_speed,3,50)}
+        if (jump_key) { vsp -= jump_speed y -= clamp(jump_speed,3,50)}
     }
 }
 

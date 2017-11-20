@@ -3,10 +3,15 @@ ammoMouseVar[argument3] = point_in_rectangle(window_x,window_y,argument0 - 4.1 *
 
 
 draw_set_color(c3);
+if(ammoMouseVar[argument3]){
+draw_set_color(c5);
+}
+
 if(selected[argument3]){
 scr_buy_ammo_buttons(1005,301,argument2,argument3);
 draw_set_color(c4);
 }
+
 draw_rectangle(argument0 - 4.1 * sprite_get_width(s_guns_ammo)/2,argument1 -  4.1 * sprite_get_height(s_guns_ammo)/2,argument0 + 4.1 * sprite_get_width(s_guns_ammo)/2,argument1 + 4.1 * sprite_get_height(s_guns_ammo)/2, false);
 draw_sprite_ext(s_guns_ammo,argument3,argument0,argument1,4.1,4.1,0,c_white,1);
 

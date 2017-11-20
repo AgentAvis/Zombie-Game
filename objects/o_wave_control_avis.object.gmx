@@ -72,6 +72,9 @@ z_little = 0
     basecount += 2.5
 }
 
+wave_time = 10 + floor(basecount);
+wave_time = clamp(wave_time,10,30);
+
 if zombie_current &lt;= 0 {
     wavetimer ++ //if there are no zombies, count up towards the next wave
 }
@@ -167,8 +170,15 @@ if draw_ui {
     draw_text_outlined(200,200,"secks: " + string(wavetimer/room_speed)  + " wave: " + string(wave) + " | basecount: " + string(basecount),c_white,c_black)
 
 }
-    if((wavetimer/room_speed) != 0){
-    draw_healthbar((window_get_width()/2) - 100,(window_get_height()/2) - 25,(window_get_width()/2) + 100,(window_get_height()/2) + 25,((wavetimer/room_speed)/10) * 100, c_black, c_green, c_green, 0 ,true, true);
+    if((!instance_exists(o_lifeform))){
+    draw_healthbar((window_get_width()/2) - 150,0,(window_get_width()/2) + 150,25,((wavetimer/room_speed)/wave_time) * 100, c_black, c_green, c_green, 0 ,true, true);
+    draw_set_halign(fa_center);
+    draw_set_valign(fa_middle);
+    draw_set_color(c_white);
+    draw_text_outlined(((window_get_width()/2) - 150) + 150,25/2,string_format(wave_time - (wavetimer/room_speed),2,0),c_white,c_black);
+    draw_set_halign(fa_left);
+    draw_set_valign(fa_top);
+    
     }
 </string>
           </argument>
