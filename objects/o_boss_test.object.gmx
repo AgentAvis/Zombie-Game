@@ -237,7 +237,6 @@ dir2 = angle_rotate_towards(dir2,target_dir,turnspeed);
 draw_sprite_ext(target_sprite,0,x,y - 52, 1, scale, dir2,c_white,1);
 
 
-draw_text(x,y -100, string(dir2) + " " + string(target_dir));
 
 </string>
           </argument>

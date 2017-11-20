@@ -40,6 +40,10 @@ bool = true;
 
 image_index = spr;
 
+scale = 1
+image_xscale = .85
+image_yscale = .85
+
 </string>
           </argument>
         </arguments>
@@ -92,6 +96,19 @@ scr_save_options();
 }
 
 image_index = spr;
+
+
+
+
+scale = lerp(scale,.85,.1)
+
+if(place_meeting(x,y,o_mouse)){
+    color = c_white;
+    scale = lerp(scale,1.25,.1)
+}
+
+image_xscale = scale;
+image_yscale = scale;
 </string>
           </argument>
         </arguments>

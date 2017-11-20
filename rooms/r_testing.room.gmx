@@ -71,7 +71,6 @@
     <instance objName="oRoof_top" x="976" y="336" name="inst_2DE52F56" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="object30" x="720" y="400" name="inst_2ABF88B8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oRoof_top" x="631" y="336" name="inst_7136CD54" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oRoof_top" x="727" y="336" name="inst_C65B0359" locked="0" code="" scaleX="5" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_apartment" x="528" y="400" name="inst_EEDCDFA5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oRoof_top" x="448" y="256" name="inst_BB71A356" locked="0" code="" scaleX="10" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_apartment" x="1152" y="400" name="inst_B80D0CE2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -114,7 +113,6 @@
     <instance objName="oLadder" x="976" y="256" name="inst_0E401E53" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oLadder" x="976" y="248" name="inst_EAC95658" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oLadder" x="1040" y="336" name="inst_C6E9FC75" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_boss_test" x="768" y="368" name="inst_F312FB00" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>-1</PhysicsWorld>
