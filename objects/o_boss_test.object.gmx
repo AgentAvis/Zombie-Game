@@ -47,7 +47,7 @@ damage = 6
 wealth = random_range(100,200)
 
 isBoss = true;
-name = "Rothnor - Consumer of the small";
+name = "Rothnor - Consumer of Flesh";
 
 
 
