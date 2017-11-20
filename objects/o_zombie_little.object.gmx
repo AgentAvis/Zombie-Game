@@ -52,7 +52,7 @@ sprite = s_zombie_little
 
 sprite_climb = s_zombie_little_climb
 
-blood_color = merge_color(c_red,c_green,.45)
+blood_color = c_red
 </string>
           </argument>
         </arguments>

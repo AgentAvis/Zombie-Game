@@ -52,11 +52,15 @@
       </sprites>
     </sprites>
     <sprites name="_environment">
+      <sprite>sprites\sRoof_top</sprite>
       <sprite>sprites\sLadder</sprite>
       <sprite>sprites\s_street</sprite>
       <sprites name="_buildings">
         <sprite>sprites\s_store</sprite>
         <sprite>sprites\s_apartments</sprite>
+        <sprite>sprites\s_garage</sprite>
+        <sprite>sprites\s_house_little_tall</sprite>
+        <sprite>sprites\s_house_little</sprite>
         <sprite>sprites\s_firehouse</sprite>
         <sprite>sprites\s_gas_station</sprite>
       </sprites>
@@ -89,7 +93,6 @@
       <sprite>sprites\s_explosion_1</sprite>
       <sprite>sprites\s_explosion_2</sprite>
     </sprites>
-    <sprite>sprites\sRoof_top</sprite>
     <sprites name="_menu">
       <sprite>sprites\s_title</sprite>
       <sprite>sprites\s_menu_buttons</sprite>
@@ -221,6 +224,10 @@
       <objects name="_buildings">
         <object>objects\oBuilding</object>
         <object>objects\o_shop</object>
+        <object>objects\o_house_little</object>
+        <object>objects\o_garage</object>
+        <object>objects\o_fire_house</object>
+        <object>objects\o_house_little_tall</object>
         <object>objects\o_apartment</object>
         <object>objects\object30</object>
         <object>objects\oLadder</object>

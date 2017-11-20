@@ -16,7 +16,7 @@
   <clearDisplayBuffer>-1</clearDisplayBuffer>
   <makerSettings>
     <isSet>-1</isSet>
-    <w>1016</w>
+    <w>1008</w>
     <h>600</h>
     <showGrid>0</showGrid>
     <showObjects>-1</showObjects>
@@ -27,8 +27,8 @@
     <deleteUnderlyingObj>0</deleteUnderlyingObj>
     <deleteUnderlyingTiles>-1</deleteUnderlyingTiles>
     <page>0</page>
-    <xoffset>1081</xoffset>
-    <yoffset>158</yoffset>
+    <xoffset>9794</xoffset>
+    <yoffset>2513</yoffset>
   </makerSettings>
   <backgrounds>
     <background visible="0" foreground="0" name="stars" x="0" y="0" htiled="-1" vtiled="0" hspeed="0" vspeed="0" stretch="0"/>
@@ -71,9 +71,6 @@
     <instance objName="oRoof_top" x="976" y="336" name="inst_2DE52F56" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="object30" x="720" y="400" name="inst_2ABF88B8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oRoof_top" x="631" y="336" name="inst_7136CD54" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_apartment" x="528" y="400" name="inst_EEDCDFA5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oRoof_top" x="448" y="256" name="inst_BB71A356" locked="0" code="" scaleX="10" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_apartment" x="1152" y="400" name="inst_B80D0CE2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_apartment" x="1520" y="400" name="inst_52C36363" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oLadder" x="608" y="392" name="inst_D4EBEF38" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oLadder" x="608" y="384" name="inst_33D9E635" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -88,12 +85,6 @@
     <instance objName="oLadder" x="608" y="312" name="inst_DBB26BD8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oLadder" x="608" y="304" name="inst_FBA3DBDA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oLadder" x="608" y="296" name="inst_D42192C7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oLadder" x="608" y="288" name="inst_B7051F04" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oLadder" x="608" y="280" name="inst_F8BC7251" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oLadder" x="608" y="272" name="inst_1E26D5A8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oLadder" x="608" y="264" name="inst_56F8C3C5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oLadder" x="608" y="256" name="inst_FF944D5D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oLadder" x="608" y="248" name="inst_E99461ED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oLadder" x="1040" y="352" name="inst_567A08AF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oLadder" x="1040" y="344" name="inst_28D5C12C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oLadder" x="1040" y="360" name="inst_CAECA419" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -114,6 +105,67 @@
     <instance objName="oLadder" x="976" y="248" name="inst_EAC95658" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oLadder" x="1040" y="336" name="inst_C6E9FC75" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_zombie_fat" x="824" y="200" name="inst_88D4CF97" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_fire_house" x="560" y="400" name="inst_14A7F79D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_garage" x="472" y="400" name="inst_1446F1A7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_house_little" x="1112" y="400" name="inst_9B4A5A35" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_house_little_tall" x="384" y="400" name="inst_5A9E92D2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_house_little_tall" x="256" y="400" name="inst_E0DC88FC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_house_little" x="336" y="400" name="inst_7D58CC51" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_apartment" x="128" y="400" name="inst_2F83F62D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_apartment" x="1712" y="400" name="inst_7C0D3097" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_apartment" x="1888" y="400" name="inst_F2C4701C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_house_little_tall" x="1168" y="400" name="inst_1E845973" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_house_little_tall" x="1320" y="400" name="inst_9AC508D6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_garage" x="1230" y="400" name="inst_88358285" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_house_little" x="1392" y="400" name="inst_727BCF02" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oRoof_top" x="512" y="304" name="inst_6330A376" locked="0" code="" scaleX="6" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oRoof_top" x="432" y="320" name="inst_91754DB7" locked="0" code="" scaleX="5" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oRoof_top" x="360" y="320" name="inst_56C210E3" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oRoof_top" x="312" y="352" name="inst_020764BB" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oRoof_top" x="232" y="320" name="inst_B5DA8041" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oRoof_top" x="48" y="256" name="inst_D2787AEB" locked="0" code="" scaleX="10.1333332061768" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oRoof_top" x="1088" y="352" name="inst_F835D5B7" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oRoof_top" x="1144" y="320" name="inst_C7F1E516" locked="0" code="" scaleX="7.875" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oRoof_top" x="1296" y="320" name="inst_932F8EEB" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oRoof_top" x="1368" y="352" name="inst_C8AA7821" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oRoof_top" x="1440" y="256" name="inst_FA2A880D" locked="0" code="" scaleX="10" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oRoof_top" x="1632" y="256" name="inst_8038D776" locked="0" code="" scaleX="10" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oRoof_top" x="1808" y="256" name="inst_2DA9DE9A" locked="0" code="" scaleX="10" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oLadder" x="280" y="392" name="inst_A11462A6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oLadder" x="280" y="384" name="inst_D8358412" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oLadder" x="280" y="376" name="inst_D372C7EE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oLadder" x="280" y="368" name="inst_4B557F49" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oLadder" x="280" y="360" name="inst_B278B93B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oLadder" x="280" y="352" name="inst_ADAB51F9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oLadder" x="280" y="344" name="inst_25F97406" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oLadder" x="280" y="336" name="inst_EB6C11CC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oLadder" x="280" y="328" name="inst_5EEBFC09" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oLadder" x="280" y="320" name="inst_B2B2B719" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oLadder" x="280" y="312" name="inst_94B9EAC2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oLadder" x="352" y="352" name="inst_36AAFC69" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oLadder" x="352" y="344" name="inst_EFAAD070" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oLadder" x="352" y="336" name="inst_31F385E9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oLadder" x="352" y="328" name="inst_AB0F6565" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oLadder" x="352" y="320" name="inst_6B2E1D97" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oLadder" x="352" y="312" name="inst_E0C56DD5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oLadder" x="1136" y="392" name="inst_5B32CCB3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oLadder" x="1136" y="384" name="inst_F35E3598" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oLadder" x="1136" y="376" name="inst_08225CDB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oLadder" x="1136" y="368" name="inst_B8502FA2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oLadder" x="1136" y="360" name="inst_99C43E2E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oLadder" x="1136" y="352" name="inst_8AC0A4C8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oLadder" x="1136" y="344" name="inst_F09BC18F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oLadder" x="1136" y="336" name="inst_BDB89BAA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oLadder" x="1136" y="328" name="inst_899320D0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oLadder" x="1136" y="320" name="inst_DECF21E6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oLadder" x="1136" y="312" name="inst_D7A8259E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oLadder" x="1360" y="392" name="inst_80445AC7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oLadder" x="1360" y="384" name="inst_E0E2E2B2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oLadder" x="1360" y="376" name="inst_E74F70BD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oLadder" x="1360" y="368" name="inst_EC0CCAA9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oLadder" x="1360" y="360" name="inst_FC12653A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oLadder" x="1360" y="352" name="inst_42F855B5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oLadder" x="1360" y="344" name="inst_A6CB1E70" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>-1</PhysicsWorld>
