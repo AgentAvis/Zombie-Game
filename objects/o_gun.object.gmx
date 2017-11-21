@@ -202,6 +202,7 @@ if(canFire and mouse_check_button(mb_left) and ammo[type] &gt; 0 and !reloading)
     
     if(!soundplayed){
     audio_sound_gain(sound,0.01,0);
+    audio_sound_pitch(sound,random_range(.9,1.1));
     audio_play_sound_at(sound, x, y, 0, 100, 300, 1, false, 2);
     soundplayed = true;
     }
