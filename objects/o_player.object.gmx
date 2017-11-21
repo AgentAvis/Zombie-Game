@@ -105,6 +105,13 @@ mode = 1;
 //Turns back on zooming that I turned off for menus
 oCamera.room_Actual = false;
 
+
+
+//Audio
+audio_listener_orientation(0,1,0,0,0,1);
+audio_falloff_set_model(audio_falloff_exponent_distance);
+
+
 </string>
           </argument>
         </arguments>
@@ -213,6 +220,8 @@ if(keyboard_check_pressed(ord('M')) and healthkits &gt; 0){
 //y += vsp * global.timescale 
 oldladder = ladder
 
+
+audio_listener_position(x, y, (oCamera.ZM) * 100);
 
 
 

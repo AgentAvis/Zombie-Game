@@ -10,6 +10,7 @@ if(spr == 1){
     knockback = .7;
     offsetX = 11;
     offsetY = 9;
+    sound = revolver;
     scr_check_expansion(1);
 }
 //Uzi
@@ -23,6 +24,7 @@ if(spr == 0){
     knockback = .5;
     offsetX = 12;
     offsetY = 10;
+    sound = rifle_2;
     scr_check_expansion(0);
 }
 //SawnOff
@@ -36,6 +38,7 @@ if(spr == 2){
     knockback = .8;
     offsetX = 10;
     offsetY = 10;
+    sound = shotgun_with_click;
     scr_check_expansion(2);
 }
 //Ak47
@@ -49,6 +52,7 @@ if(spr == 3){
     knockback = .6;
     offsetX = 10;
     offsetY = 8;
+    sound = rifle;
     scr_check_expansion(3)
 }
 //Double Barrel
@@ -62,6 +66,7 @@ if(spr == 4){
     knockback = .9;
     offsetX = 6;
     offsetY = 10;
+    sound = shotgun_no_click;
     scr_check_expansion(4);
 }
 
@@ -76,5 +81,6 @@ if(spr == 5){
     knockback = .7;
     offsetX = 9;
     offsetY = 9;
+    sound = glock;
     scr_check_expansion(1);
 }

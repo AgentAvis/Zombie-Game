@@ -25,7 +25,25 @@
   <NewExtensions>
     <extension index="0">extensions\Gradual Turret Turn</extension>
   </NewExtensions>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sounds name="_guns">
+      <sounds name="_potential">
+        <sound>sound\revolver</sound>
+        <sound>sound\rifle</sound>
+        <sound>sound\shotgun_with_click</sound>
+        <sound>sound\shotgun_no_click</sound>
+        <sound>sound\glock</sound>
+        <sound>sound\rifle_2</sound>
+      </sounds>
+    </sounds>
+    <sounds name="_zombies">
+      <sound>sound\zombie1</sound>
+      <sound>sound\zombie2</sound>
+      <sound>sound\zombie3</sound>
+      <sound>sound\zombie4</sound>
+      <sound>sound\zombie5</sound>
+    </sounds>
+  </sounds>
   <sprites name="sprites">
     <sprites name="_player">
       <sprite>sprites\s_player</sprite>

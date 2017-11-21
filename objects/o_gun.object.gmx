@@ -98,6 +98,10 @@ bulletsFired = 0;
 reloading = false;
 
 
+//Gun Sound
+sound = revolver;
+soundplayed = false;
+
 
 </string>
           </argument>
@@ -122,6 +126,7 @@ reloading = false;
           <argument>
             <kind>1</kind>
             <string>canFire = true;
+soundplayed = false;
 
 </string>
           </argument>
@@ -194,6 +199,13 @@ canFire = true;
 
 //Firing the gun
 if(canFire and mouse_check_button(mb_left) and ammo[type] &gt; 0 and !reloading){
+    
+    if(!soundplayed){
+    audio_sound_gain(sound,0.01,0);
+    audio_play_sound_at(sound, x, y, 0, 100, 300, 1, false, 2);
+    soundplayed = true;
+    }
+    
     bulletsFired++;
     if(bulletsFired &gt; clipSize){
     bulletsFired = 0;

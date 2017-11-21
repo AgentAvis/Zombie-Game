@@ -97,6 +97,12 @@ sprite = sNull_lifeform
 back_sprite = sNull_lifeform
 
 hashpbar = false
+
+//Zombie_Sounds
+playsSound = true;
+s_emit = audio_emitter_create();
+audio_emitter_falloff(s_emit,150,600,1);
+alarm[1] = room_speed * irandom_range(35,65);
 </string>
           </argument>
         </arguments>
@@ -137,6 +143,57 @@ with (instance_create(x,y,o_zombie_dead)) {
     mass = other.mass
     
 }
+
+audio_emitter_free(s_emit);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(playsSound){
+    var uno = irandom_range(0,4);
+    var snd = noone;
+    if(uno == 0){
+    snd = zombie1;
+    }
+    if(uno == 1){
+    snd = zombie2;
+    }
+    if(uno == 2){
+    snd = zombie3;
+    }
+    if(uno == 3){
+    snd = zombie4;
+    }
+    if(uno == 4){
+    snd = zombie5;
+    }
+    
+    /*
+    audio_sound_pitch(snd,random_range(-5,5));
+    audio_play_sound_at(snd, x, y, 0, 50, 150, 3, false, 1);
+    */
+    audio_emitter_pitch(s_emit, random_range(-2,2));
+    audio_play_sound_on(s_emit, snd, false, 1);
+}
+alarm[1] = room_speed * irandom_range(35,65);
 </string>
           </argument>
         </arguments>
@@ -188,6 +245,8 @@ alarm[0] = attackSpeed;
 explodeamt -= 1
 explodeamt = clamp(explodeamt,0,1000)
 
+//Sound
+audio_emitter_position(s_emit,x,y,0);
 
 if hops {
     hop += hopspeed
