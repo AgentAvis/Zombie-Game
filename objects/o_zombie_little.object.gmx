@@ -31,7 +31,7 @@ maxHp = 12;
 //Set the distance it 'sees' the player
 sight = 2000;
 
-walk_spd = random_range(0.7,.8);
+walk_spd = random_range(1,1.3);
 
 attackSpeed = room_speed * .3; //attacks per second essentially
 
