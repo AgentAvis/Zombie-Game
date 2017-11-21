@@ -130,6 +130,7 @@ draw_text(0,100,"(" + string(xx) + "," + string(yy) + ")" + string(ss) + " " + s
 
 draw_set_color(c1);
 draw_rectangle(990,104,1566 , 862 , false);
+draw_sprite_area(990,104,1566, 862, s_area_test);
 draw_set_color(c5);
 draw_rectangle(996,186,1395,382,false);
 scr_buy_ammo(1035,224,.25,1);

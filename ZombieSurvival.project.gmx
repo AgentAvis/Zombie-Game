@@ -121,7 +121,7 @@
         <sprite>sprites\options_check</sprite>
       </sprites>
     </sprites>
-    <sprite>sprites\sprite35</sprite>
+    <sprite>sprites\s_area_test</sprite>
     <sprite>sprites\sprite43</sprite>
   </sprites>
   <backgrounds name="background">
@@ -219,6 +219,7 @@
       <script>scripts\draw_text_font.gml</script>
       <script>scripts\draw_boss_health_bar.gml</script>
       <script>scripts\draw_text_outlined.gml</script>
+      <script>scripts\draw_sprite_area.gml</script>
     </scripts>
     <scripts name="_saving">
       <script>scripts\scr_save_options.gml</script>
