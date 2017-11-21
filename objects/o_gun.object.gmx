@@ -207,7 +207,8 @@ if(canFire and mouse_check_button(mb_left) and ammo[type] &gt; 0 and !reloading)
     reloading = true;
     exit;
     }
-
+    
+    //o_wave_control_avis.basecount++;
         
     if(!soundplayed){
     audio_sound_gain(sound,0.01,0);

@@ -33,7 +33,7 @@ wave = 0
 delay = 20
 delaytimer = 0
 
-wave_time = 10 //seconds
+wave_time = 5 //seconds
 
 zombie_current = 0 //how many zombies are there right now
 
@@ -73,17 +73,19 @@ z_little = 0
 }
 
 wave_time = 10 + floor(basecount);
-wave_time = clamp(wave_time,10,30);
+wave_time = clamp(wave_time,5,30);
 
 if zombie_current &lt;= 0 {
     wavetimer ++ //if there are no zombies, count up towards the next wave
 }
 
 if wavetimer &gt; room_speed * wave_time {
-
+    
     p = instance_create(x,y,wave_draw);
     p.count = true;
     p.num = wave;
+    
+    
 
     //setup how many of each zomb you want
     z_normal = (clamp(floor(basecount*.75),0,50))
@@ -95,6 +97,24 @@ if wavetimer &gt; room_speed * wave_time {
     
     //zombie_current should be equal to zombie_max at this point
     zombie_current = instance_number(o_lifeform) + zombie_max
+    
+    if(wave = 14){
+    zombie_max = 1;
+    zombie_current = 0;
+    z_normal = 0;
+    z_fat = 0;
+    z_little = 0;
+    instance_create(o_spawn_1.x,o_spawn_1.y,o_boss_test);
+    }
+    
+    if(wave = 29){
+    zombie_max = 1;
+    zombie_current = 0;
+    z_normal = 0;
+    z_fat = 0;
+    z_little = 0;
+    instance_create(o_spawn_1.x,o_spawn_1.y,o_ufo_boss);
+    }
     
     //reset the timer
     wavetimer = 0
