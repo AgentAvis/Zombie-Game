@@ -8,7 +8,8 @@ draw_set_color(c4);
 if(mouse_check_button_pressed(mb_left) and o_player.money >= argument3){
 adding = true;
 whichExpansion = argument2;
-o_player.agumentprice = argument3;
+o_player.augmentprice = argument3;
+
 }
 }
 draw_rectangle(argument0 - 3.84 * sprite_get_width(s_expansion_UI)/2,argument1 - 3.84 * sprite_get_height(s_expansion_UI)/2,argument0 + 3.84 * sprite_get_width(s_expansion_UI)/2,argument1 + 3.84 * sprite_get_height(s_expansion_UI)/2, false);
