@@ -189,11 +189,11 @@ adding = false;
 }
 }
 
-scr_buy_extension(1442,453,1,250,"Laser Attachment","Increases the accuracy of your guns");
-scr_buy_extension(1442 + 78,453,2,400,"Tacti-Cool Scope","A sick nasty looking scope that improves your aim");
+scr_buy_extension(1442,453,1,250,"Laser Attachment","Makes it easier to hit things.");
+scr_buy_extension(1442 + 78,453,2,400,"Tacti-Cool Scope","A sick nasty looking scope that improves your aim and lets you look farther.");
 
 scr_buy_extension(1442,453 + 77,3,50,"Silencer, barely Know 'er","Adds a silencer to your gun that can quiet your shots and prevent you from alerting the horde. Also adds small accuracy bonus.");
-scr_buy_extension(1442 + 78,453 + 77,4,95,"Slippy Bullets","So, get this, we cover the bullets in oil and it makes them go faster. This makes them hit and do more damage or something like that.");
+scr_buy_extension(1442 + 78,453 + 77,4,95,"Zombonium Bullet Coating","Coats bullets with a special alloy that posesses anti-zombie properties. Melts through zombie flesh.");
 scr_buy_extension(1442 + 78,453 + 77 + 77,5,2500,"Explosive Bullets","Fuck shit up.");
 
 scr_buy_medkits(1477,286,4.26,20);

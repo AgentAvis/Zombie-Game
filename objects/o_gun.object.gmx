@@ -247,7 +247,7 @@ if(canFire and mouse_check_button(mb_left) and ammo[type] &gt; 0 and !reloading)
     p.explosive = hasExploseive
     p.knockback = knockback;
     if(hasClip){
-    p.dmg = p.dmg * 1.5;
+        p.dmg = p.dmg * 2;
     }
     //Set a force
     var xforce = lengthdir_x(5, p.dir);
@@ -421,13 +421,16 @@ if hasSilencer {
 if hasScope {
     sprite_set_offset(s_guns_scope, offsetX, offsetY);
     draw_sprite_ext(s_guns_scope,spr,x,y + 1,image_xscale,image_yscale,image_angle,c_white,1);
-    acScope = 0.4;
+    acScope = 0.5;
+    zoom_allow = 3
+    //if hasLaser { zoom_allow = 4 }
 }else{
+    zoom_allow = 2
     acScope = 0;
 }
 if hasClip {
-    sprite_set_offset(s_guns_clip, offsetX, offsetY);
-    draw_sprite_ext(s_guns_clip,spr,x,y + 1,image_xscale,image_yscale,image_angle,c_white,1);
+    //sprite_set_offset(s_guns_clip, offsetX, offsetY);
+    //draw_sprite_ext(s_guns_clip,spr,x,y + 1,image_xscale,image_yscale,image_angle,c_white,1);
 }
 
 //draw_healthbar(x,y,x + 100,y + 10,(reload/reloadTime) * 100, c_black,c_yellow,c_yellow,0,true,true);

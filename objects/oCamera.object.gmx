@@ -27,6 +27,9 @@
             <kind>1</kind>
             <string>x = 0
 y = 0
+
+globalvar zoom_allow;
+zoom_allow = 2
  
 static = false
 
@@ -118,8 +121,8 @@ room_Actual = true;
 
         if (room != r_menu) and (room != rInit) {
         
-            if mouse_wheel_up() { ZM_big += 1 }
-            if mouse_wheel_down() { ZM_big -= 1 }
+            if mouse_wheel_up() { ZM_big -= 1 }
+            if mouse_wheel_down() { ZM_big += 1 }
             
             //if mouse_wheel_up() { ZM -= unit }
             //if mouse_wheel_down() { ZM += unit }
@@ -130,18 +133,22 @@ room_Actual = true;
         //if ZM_big &gt; 4 { ZM_big = 1 }
         //if ZM_big &lt; 1 { ZM_big = 4 }
          
-        ZM_big = clamp(ZM_big,1,4)
+        ZM_big = clamp(ZM_big,1,zoom_allow)
         
-        if ZM_big = 1 { ZM = 1 }        
-        if ZM_big = 2 { ZM = .5 }  
-        if ZM_big = 3 { ZM = .25 }          
-        if ZM_big = 4 { ZM = .125 }      
+        if ZM_big = 4 { ZM = 1 }        
+        if ZM_big = 3 { ZM = .5 }  
+        if ZM_big = 2 { ZM = .25 }          
+        if ZM_big = 1 { ZM = .125 }      
         ZM_real = lerp(ZM_real,ZM,.1)    
         if(!room_Actual){
-        view_wview[0] = browser_width * clamp(ZM_real,.125,1)
-        view_hview[0] = browser_height * clamp(ZM_real,.125,1)
+            view_wview[0] = browser_width * clamp(ZM_real,.125,1)
+            view_hview[0] = browser_height * clamp(ZM_real,.125,1)
         }
-        surface_resize(application_surface,browser_width,browser_height)
+        //surface_resize(application_surface,browser_width,browser_height)
+        surface_resize( application_surface, browser_width*(ZM_real*4), browser_height*(ZM_real*4));
+
+        
+        
 </string>
           </argument>
         </arguments>
