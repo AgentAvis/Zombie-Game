@@ -72,6 +72,7 @@ hasGun[1,0] = true;
 acSilence = 0.1;
 acLaser = 0.3;
 acScope = 0.4;
+acDmg = 0;
 
 //Has attachment
 hasLaser = false;
@@ -184,6 +185,13 @@ var mousedir = point_direction(x,y,mouse_x,mouse_y);
 //Always draw above the player
 depth = o_player.depth - 1;
 
+//Checks if the player hasClip then modifies accuracy value
+if(hasClip){
+acDmg = 1;
+}else{
+acDmg = 0;
+}
+
 
 //Reloading
 if(reloading){
@@ -233,11 +241,14 @@ if(canFire and mouse_check_button(mb_left) and ammo[type] &gt; 0 and !reloading)
     //Create an instance of bullet
     p = instance_create(x + barrel_x,y + barrel_y,o_bullet);
     //Set that bullets variables
-    p.dir = mousedir + (accuracy * random_range(1 - acSilence - acLaser - acScope,-1 + acSilence + acLaser + acScope));
+    p.dir = mousedir + (accuracy * random_range(1 - acSilence - acLaser - acScope - acDmg,-1 + acSilence + acLaser + acScope + acDmg));
     p.dmg = dmg;
     p.shake = shake;
     p.explosive = hasExploseive
-    p.knockback = knockback
+    p.knockback = knockback;
+    if(hasClip){
+    p.dmg = p.dmg * 1.5;
+    }
     //Set a force
     var xforce = lengthdir_x(5, p.dir);
     var yforce = lengthdir_y(5, p.dir);

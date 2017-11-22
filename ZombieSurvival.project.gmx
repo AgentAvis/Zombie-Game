@@ -110,6 +110,9 @@
       <sprite>sprites\s_guns_gui</sprite>
       <sprite>sprites\s_guns_ammo</sprite>
       <sprite>sprites\s_expansion_UI</sprite>
+      <sprites name="_player_death_retry">
+        <sprite>sprites\player_death_buttons</sprite>
+      </sprites>
     </sprites>
     <sprites name="_equipmen">
       <sprite>sprites\s_medkit</sprite>
@@ -312,6 +315,7 @@
       <object>objects\oDj</object>
       <objects name="_UI">
         <object>objects\o_shop_gui</object>
+        <object>objects\o_player_buttons</object>
       </objects>
       <objects name="_wave_system">
         <object>objects\o_wave_control_avis</object>
