@@ -75,7 +75,7 @@ blood_color = c_purple
             <string>if(y &lt; 0) or !organic{
 exit
 }
-repeat (irandom_range(1,5))
+repeat (irandom_range(1,3))
 with (instance_create(x,y,o_blood_drop)) {
     blood_color = other.blood_color
     motion_set_custom(random_range(1,3),random(360))
@@ -146,6 +146,7 @@ with (o_lifeform) {
         //hitid = temp_hitid
         hp -= me.dmg
         shotcount += 15
+        xsquish = .8
         hsp += (sign(me.hsp)*me.knockback/k_r)
         _die = true
         other.blood_color = blood_color

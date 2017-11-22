@@ -31,6 +31,9 @@ moving = false
 globalvar occupied;
 occupied = false;
 
+xsquish = 1
+ysquish = 1
+
 dead = false
 
 grounded = false
@@ -50,6 +53,8 @@ maxHp = 100;
 
 hop = 0
 hopspeed = 0
+
+oldgrounded = false
 
 money = 0;
 mass = 1
@@ -137,7 +142,9 @@ audio_falloff_set_model(audio_falloff_exponent_distance);
             <string>if hp &lt;= 0 {
     if !dead { vsp = -1 }
     dead = true
-    with (instance_create(x,y,o_blood_drop)) { motion_set_custom(random(2),random(360)) }
+    if random (3) &lt; 1 {
+        with (instance_create(x,y,o_blood_drop)) { motion_set_custom(random(2),random(360)) }
+    }
     sprite_index = s_player_dead
     apply_speeds_and_gravity();
     if grounded { hsp *= .75 }
@@ -363,8 +370,8 @@ draw_text(0,0,"(" + string(xx) + "," + string(yy) + ")" + string(eB[0,0]));
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,image_index,x,y+hop,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-//draw_text(x,y - 32,"$" + string(money));
+            <string>draw_sprite_ext(sprite_index,image_index,x,y+hop,image_xscale,image_yscale*clamp(ysquish,.9,1),image_angle,image_blend,image_alpha);
+//draw_text(x,y - 32,"$: " + string(money));
 </string>
           </argument>
         </arguments>

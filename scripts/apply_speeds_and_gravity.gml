@@ -1,3 +1,4 @@
+oldgrounded = grounded
 grounded = false // am i on the ground
 
 if y >= gr {
@@ -35,3 +36,5 @@ if !grounded { //if we aren't on the ground, check for roof collisions
 x += hsp * global.timescale
 y += vsp * global.timescale
 
+
+if ((oldgrounded = false) and (grounded = true)) { ysquish = .75 } else { ysquish = lerp(ysquish,1,.1) }

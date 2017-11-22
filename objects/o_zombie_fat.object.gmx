@@ -31,6 +31,7 @@ maxHp = 125;
 //Set the distance it 'sees' the player
 sight = 2000;
 
+pukescale = 1
 blood_color = c_red
 
 walk_spd = random_range(0.4,0.5);
@@ -78,20 +79,18 @@ pukecount = 0
             <string>event_inherited();
 clamp(hsp,-2,2)
 
-if random((room_speed*4)*clamp(instance_number(o_zombie_fat)*.5,1,9999)) &lt; 1 { pukecount = 6}
-
-if y = o_player.y { pukecount -= 4 }
+if (random((room_speed*5)*clamp(instance_number(o_zombie_fat)*.65,1,9999)) &lt; 1 ) and y != o_player.y { pukecount = random_range(3,9) play_puke_sound() }
 
 
 //pukecount = clamp(pukecount,0,120)
 
-if pukecount &gt;= 0{
+pukescale = 1
+if pukecount &gt; 0{
+    pukescale = .75random_range(.75,1)
     pukecount -= 1
     if point_distance(x,y-sprite_height+4,o_player.x,o_player.y-20) &lt; 300 {
         with (instance_create(x,y-sprite_height+4,oVomit)) {
-            repeat (irandom(3)) {
-                motion_set_custom(random_range(2,4)+1,point_direction(x,y-sprite_height+4,o_player.x,o_player.y-20)+random_range(-3,3))
-            }
+            motion_set_custom(random_range(1,4),point_direction(x,y-sprite_height+4,o_player.x,o_player.y-20)+random_range(-3,3))
         }    
     }
 }
@@ -119,11 +118,8 @@ if pukecount &gt;= 0{
           <argument>
             <kind>1</kind>
             <string>event_inherited();
-pukescale = 1
-if pukecount &gt;= 0 {
-    pukescale = .75//random_range(.75,1.25)
-}
-draw_sprite_ext(sprite_index,type,x,y+hop,image_xscale,1*pukescale,image_angle,c_white,1);
+
+draw_sprite_ext(sprite_index,type,x,y+hop,image_xscale*xsquish,1*pukescale*ysquish,image_angle,c_white,1);
 
 
 //draw_text(x,y,string(pukecount))

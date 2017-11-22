@@ -99,7 +99,7 @@ blood_color = c_red
           <argument>
             <kind>1</kind>
             <string>event_inherited();
-draw_sprite_ext(sprite_index,type,x,y+hop,image_xscale,1,image_angle,c_white,1);
+draw_sprite_ext(sprite_index,type,x,y+hop,image_xscale*xsquish,1*ysquish,image_angle,c_white,1);
 </string>
           </argument>
         </arguments>

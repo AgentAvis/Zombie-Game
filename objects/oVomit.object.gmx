@@ -87,7 +87,7 @@ image_angle += 7
 vsp += global.grav * mass
 
 
-if point_distance(x,y,o_player.x,o_player.y-(sprite_get_width(s_player)/2)) &lt; 5 { instance_destroy() o_player.hp -= .5 }
+if point_distance(x,y,o_player.x,o_player.y-(sprite_get_width(s_player)/2)) &lt; 5 { instance_destroy() o_player.hp -= .75 }
 
 x += hsp
 y += vsp

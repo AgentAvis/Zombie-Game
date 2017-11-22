@@ -30,6 +30,12 @@ vsp = 0
 y -= 18/2
 motion_set_custom(random_range(0,1.25),random(360))
 grounded = false
+
+xsquish = 1
+ysquish = 1
+
+oldgrounded = false
+
 </string>
           </argument>
         </arguments>

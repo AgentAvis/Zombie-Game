@@ -37,11 +37,19 @@
       </sounds>
     </sounds>
     <sounds name="_zombies">
-      <sound>sound\zombie1</sound>
-      <sound>sound\zombie2</sound>
-      <sound>sound\zombie3</sound>
-      <sound>sound\zombie4</sound>
-      <sound>sound\zombie5</sound>
+      <sounds name="Moans">
+        <sound>sound\zombie4</sound>
+        <sound>sound\zombie1</sound>
+        <sound>sound\zombie3</sound>
+        <sound>sound\zombie5</sound>
+        <sound>sound\zombie2</sound>
+      </sounds>
+      <sounds name="Barf">
+        <sound>sound\aPuke1</sound>
+        <sound>sound\aPuke2</sound>
+        <sound>sound\aPuke3</sound>
+        <sound>sound\aPuke4</sound>
+      </sounds>
     </sounds>
   </sounds>
   <sprites name="sprites">
@@ -224,6 +232,9 @@
     <scripts name="_saving">
       <script>scripts\scr_save_options.gml</script>
       <script>scripts\scr_load_options.gml</script>
+    </scripts>
+    <scripts name="Sound">
+      <script>scripts\play_puke_sound.gml</script>
     </scripts>
     <script>scripts\check_guns.gml</script>
     <script>scripts\angle_rotate_towards.gml</script>

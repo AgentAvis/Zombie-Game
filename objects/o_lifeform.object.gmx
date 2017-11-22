@@ -27,8 +27,12 @@
             <kind>1</kind>
             <string>phys = false
 
+xsquish = 1
+ysquish = 1
+
 organic = true //do i bleed
 
+oldgrounded = false
 grounded = false //am i on the ground? purely an initialization variable, dont change this plz thx
 
 blood_color = c_red
@@ -125,13 +129,13 @@ alarm[1] = room_speed * irandom_range(35,65);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>repeat (irandom_range(5,20))
-with (instance_create(x,y,o_blood_drop)) {
-    blood_color = other.blood_color
-    motion_set_custom(random_range(2,6),random(360))
-    
+            <string>repeat (irandom_range(6,10)) {
+    with (instance_create(x,y,o_blood_drop)) {
+        blood_color = other.blood_color
+        motion_set_custom(random_range(2,6),random(360))
+        
+    }
 }
-
 with (instance_create(x,y,o_zombie_dead)) {
 
     sprite_index = other.sprite_index
@@ -241,6 +245,8 @@ alarm[0] = attackSpeed;
           <argument>
             <kind>1</kind>
             <string>scr_enemy_walk();
+
+xsquish = lerp(xsquish,1,.1)
 
 explodeamt -= 1
 explodeamt = clamp(explodeamt,0,1000)
