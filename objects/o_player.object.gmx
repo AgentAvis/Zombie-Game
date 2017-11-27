@@ -31,6 +31,8 @@ moving = false
 globalvar occupied;
 occupied = false;
 
+blood_color = c_red
+
 xsquish = 1
 ysquish = 1
 

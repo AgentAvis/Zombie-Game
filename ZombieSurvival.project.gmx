@@ -33,6 +33,7 @@
         <sound>sound\shotgun_with_click</sound>
         <sound>sound\shotgun_no_click</sound>
         <sound>sound\glock</sound>
+        <sound>sound\aPew</sound>
         <sound>sound\rifle_2</sound>
       </sounds>
     </sounds>
@@ -62,6 +63,9 @@
       <sprite>sprites\s_zombies_2</sprite>
       <sprite>sprites\s_zombies_fat</sprite>
       <sprite>sprites\s_zombies_3</sprite>
+      <sprite>sprites\s_pink_boy</sprite>
+      <sprite>sprites\s_pink_boy_climb</sprite>
+      <sprite>sprites\s_enemy_gun_1</sprite>
       <sprite>sprites\s_zombie_little_climb</sprite>
       <sprite>sprites\s_zombies_3_climb</sprite>
       <sprite>sprites\s_zombies_4</sprite>
@@ -72,7 +76,6 @@
       <sprite>sprites\s_zombie_little</sprite>
       <sprites name="_bosses">
         <sprite>sprites\s_boss_test</sprite>
-        <sprite>sprites\ufo_boss</sprite>
         <sprite>sprites\rothnor_head</sprite>
         <sprite>sprites\rothnor_head_open</sprite>
       </sprites>
@@ -134,6 +137,8 @@
     </sprites>
     <sprite>sprites\s_area_test</sprite>
     <sprite>sprites\sprite43</sprite>
+    <sprite>sprites\sLazer</sprite>
+    <sprite>sprites\sprite59</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\stars</background>
@@ -241,6 +246,7 @@
     </scripts>
     <script>scripts\check_guns.gml</script>
     <script>scripts\angle_rotate_towards.gml</script>
+    <script>scripts\angle_approach.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_bold</font>
@@ -273,6 +279,7 @@
           <object>objects\o_gun</object>
           <objects name="_bullet">
             <object>objects\o_bullet</object>
+            <object>objects\o_bullet_enemy</object>
           </objects>
         </objects>
         <objects name="_camera">
@@ -293,16 +300,18 @@
           <object>objects\o_zombie_dead</object>
           <object>objects\o_zombie_normal</object>
           <object>objects\o_zombie_little</object>
+          <object>objects\o_pink_boy</object>
+          <object>objects\oGun_boy</object>
           <object>objects\o_zombie_fat</object>
         </objects>
         <objects name="_gore">
           <object>objects\o_blood_drop</object>
           <object>objects\oVomit</object>
-          <object>objects\oLaser</object>
         </objects>
         <objects name="_bosses">
           <object>objects\o_boss_test</object>
           <object>objects\oPart</object>
+          <object>objects\oLazer</object>
           <object>objects\o_ufo_boss</object>
           <object>objects\o_rothnor_head</object>
         </objects>

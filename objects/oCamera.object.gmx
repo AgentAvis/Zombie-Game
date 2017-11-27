@@ -145,7 +145,7 @@ room_Actual = true;
             view_hview[0] = browser_height * clamp(ZM_real,.125,1)
         }
         //surface_resize(application_surface,browser_width,browser_height)
-        surface_resize( application_surface, browser_width*(ZM_real*4), browser_height*(ZM_real*4));
+        surface_resize( application_surface, browser_width, browser_height);
 
         
         
