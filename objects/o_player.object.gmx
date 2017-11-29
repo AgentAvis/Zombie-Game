@@ -245,6 +245,10 @@ oldladder = ladder
 
 audio_listener_position(x, y, (oCamera.ZM) * 100);
 
+if(keyboard_check_pressed(ord('U'))){
+flash(99,c_white,0.5);
+}
+
 
 
 </string>

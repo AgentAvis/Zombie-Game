@@ -112,10 +112,16 @@ back_sprite = sNull_lifeform
 hashpbar = false
 
 //Zombie_Sounds
+playsSound = false;
+
+playSoundVariance = irandom_range(0,100);
+precentage = clamp(instance_number(oLifeForm),15,85)
+if(playSoundVariance &lt; 15){
 playsSound = true;
+}
 s_emit = audio_emitter_create();
 audio_emitter_falloff(s_emit,150,600,1);
-alarm[1] = room_speed * irandom_range(35,65);
+alarm[1] = room_speed * irandom_range(4,6);
 </string>
           </argument>
         </arguments>

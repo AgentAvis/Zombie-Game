@@ -236,6 +236,7 @@
       <script>scripts\draw_boss_health_bar.gml</script>
       <script>scripts\draw_text_outlined.gml</script>
       <script>scripts\draw_sprite_area.gml</script>
+      <script>scripts\flash.gml</script>
     </scripts>
     <scripts name="_saving">
       <script>scripts\scr_save_options.gml</script>
@@ -289,6 +290,9 @@
       <objects name="_graphics">
         <objects name="_parallax">
           <object>objects\o_parallax</object>
+        </objects>
+        <objects name="_flash">
+          <object>objects\o_flash</object>
         </objects>
       </objects>
       <objects name="_debug_test">
