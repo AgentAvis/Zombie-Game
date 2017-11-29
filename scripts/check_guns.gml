@@ -31,7 +31,7 @@ if(spr == 0){
 if(spr == 2){
     clipSize = 1;
     reloadTime = room_speed *.5;
-    dmg = random_range(10,25);
+    dmg = irandom_range(5,10);
     accuracy = 7;
     firerate = 0.1;
     shake = 0.2;
@@ -45,7 +45,7 @@ if(spr == 2){
 if(spr == 3){
     clipSize = 32;
     reloadTime = 0//room_speed * 1;
-    dmg = 18;
+    dmg = 12;
     accuracy = 8;
     firerate = 0.1;
     shake = 0.3;
@@ -59,7 +59,7 @@ if(spr == 3){
 if(spr == 4){
     clipSize = 2;
     reloadTime = room_speed * 1;
-    dmg = 48;
+    dmg = 25;
     accuracy = 5;
     firerate = .5;
     shake = 1;
