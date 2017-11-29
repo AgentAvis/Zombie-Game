@@ -51,6 +51,10 @@
         <sound>sound\aPuke3</sound>
         <sound>sound\aPuke4</sound>
       </sounds>
+      <sounds name="Player">
+        <sound>sound\sOop3</sound>
+        <sound>sound\sOop4</sound>
+      </sounds>
     </sounds>
   </sounds>
   <sprites name="sprites">
@@ -139,6 +143,7 @@
     <sprite>sprites\sprite43</sprite>
     <sprite>sprites\sLazer</sprite>
     <sprite>sprites\sprite59</sprite>
+    <sprite>sprites\s_Rhoth_die</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\stars</background>
@@ -313,6 +318,7 @@
           <object>objects\oVomit</object>
         </objects>
         <objects name="_bosses">
+          <object>objects\o_boss_test_die</object>
           <object>objects\o_boss_test</object>
           <object>objects\oPart</object>
           <object>objects\oLazer</object>

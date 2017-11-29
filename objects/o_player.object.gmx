@@ -106,6 +106,9 @@ augmentprice = 0;
 //GUI SCALE
 GUISCALE = window_get_width()/1600;
 
+oldhp = 1
+waittime = 0
+
 global.focus = o_player;
 with(oCamera){
 mode = 1;
@@ -232,6 +235,18 @@ hp = clamp(hp,-100,100);
 if(keyboard_check_pressed(ord('M')) and healthkits &gt; 0){
     hp += 20;
     healthkits--;
+}
+
+if hp != oldhp and waittime &lt;= 0 {
+    
+    soundid = irandom(1)
+    if soundid = 0 { sound = sOop3 }
+    if soundid = 1 { sound = sOop4 } 
+    audio_play_sound(sound, 1, false);
+    waittime = 20
+    oldhp = hp
+} else {
+    waittime --
 }
 
 
