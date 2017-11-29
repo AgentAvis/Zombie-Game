@@ -38,6 +38,8 @@ attackSpeed = room_speed * .3; //attacks per second essentially
 //For determining appearance
 type = irandom_range(0,image_number);
 
+pitch = 1.4
+
 mass = .75
 
 damage = 1

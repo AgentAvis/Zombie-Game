@@ -31,6 +31,7 @@ charge = 0
 dojump = false
 
 landing = false
+pitch = 1
 
 chase = true //do i chase the player :?
 flee = false //do i run from the player if they get too close?
@@ -113,6 +114,8 @@ hashpbar = false
 
 //Zombie_Sounds
 playsSound = false;
+moantimer = 0
+domoan = false
 
 playSoundVariance = irandom_range(0,100);
 precentage = clamp(instance_number(o_lifeform),15,85)
@@ -122,6 +125,13 @@ playsSound = true;
 s_emit = audio_emitter_create();
 audio_emitter_falloff(s_emit,150,600,1);
 alarm[1] = room_speed * irandom_range(4,6);
+
+
+
+
+c = false
+waittime = 5
+
 </string>
           </argument>
         </arguments>
@@ -169,79 +179,6 @@ audio_emitter_free(s_emit);
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="1">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if(playsSound){
-    var uno = irandom_range(0,4);
-    var snd = noone;
-    if(uno == 0){
-    snd = zombie1;
-    }
-    if(uno == 1){
-    snd = zombie2;
-    }
-    if(uno == 2){
-    snd = zombie3;
-    }
-    if(uno == 3){
-    snd = zombie4;
-    }
-    if(uno == 4){
-    snd = zombie5;
-    }
-    
-    /*
-    audio_sound_pitch(snd,random_range(-5,5));
-    audio_play_sound_at(snd, x, y, 0, 50, 150, 3, false, 1);
-    */
-    audio_emitter_pitch(s_emit, random_range(-2,2));
-    audio_play_sound_on(s_emit, snd, false, 1);
-}
-alarm[1] = room_speed * irandom_range(35,65);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>canHit = true;
-alarm[0] = attackSpeed;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -259,7 +196,12 @@ alarm[0] = attackSpeed;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//if chase {
+            <string>if !c {
+    oldhp = hp
+    c = true 
+}
+
+//if chase {
     scr_enemy_walk();
 //}
 /*
@@ -271,6 +213,49 @@ with (o_lifeform) {
     }
 }
 */
+
+if (random((room_speed*3)*(clamp(instance_number(o_lifeform)*.75,3,40))) &lt; 1) {    
+    //if(playsSound){
+        var uno = irandom_range(0,3);
+        var snd = noone;
+        if(uno == 0){
+        snd = zombie1;
+        }
+        if(uno == 1){
+        snd = zombie2;
+        }
+        if(uno == 2){
+        snd = zombie4;
+        }
+        if(uno == 3){
+        snd = zombie5;
+        }
+        
+        /*
+        audio_sound_pitch(snd,random_range(-5,5));
+        audio_play_sound_at(snd, x, y, 0, 50, 150, 3, false, 1);
+        */
+        audio_emitter_gain(s_emit,.1)
+        audio_emitter_pitch(s_emit, pitch + random_range(-.1,.1));//aaa
+        
+        audio_play_sound_on(s_emit, snd, false, 1);
+    //}
+    //alarm[1] = room_speed * irandom_range(35,65);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 xsquish = lerp(xsquish,1,.1)
 
@@ -339,6 +324,21 @@ if grounded {
     //hsp = clamp(hsp,-walk_spd,walk_spd)
     if abs(hsp) &gt; walk_spd { hsp *= .9 }
 } 
+
+
+if hp &lt; oldhp and waittime &lt;= 0 {
+    
+    soundid = irandom(1)
+    if soundid = 0 { osound = sOop3 }
+    if soundid = 1 { osound = sOop4 } 
+    sound = audio_play_sound(osound, 1, false);
+    audio_sound_gain(sound,.05r,0)
+    audio_sound_pitch(sound,(((pitch) + random_range(-.1,.1))))
+    waittime = 20
+    oldhp = hp
+} else {
+    waittime --
+}
 
 </string>
           </argument>

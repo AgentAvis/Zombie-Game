@@ -31,6 +31,8 @@ maxHp = 125;
 //Set the distance it 'sees' the player
 sight = 2000;
 
+pitch = .8
+
 pukescale = 1
 blood_color = c_red
 
