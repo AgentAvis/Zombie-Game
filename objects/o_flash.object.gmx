@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-400</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,14 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>spr = 0;
-image_speed = 0;
+            <string>alph = 1;
+color = c_white;
+time_actual = 1;
+time = time_actual/60;
 
-scale = 1
-image_xscale = .85
-image_yscale = .85
 
-x = window_get_width()/2;
 
 </string>
           </argument>
@@ -56,28 +54,18 @@ x = window_get_width()/2;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>window_x = window_mouse_get_x();
-window_y = window_mouse_get_y();
+            <string>window_width = window_get_width();
+window_height = window_get_height();
 
-color = c_gray;
+draw_set_alpha(alph);
+draw_set_color(color);
+draw_rectangle(0,y,window_width,window_height,false);
+draw_set_alpha(1);
+alph -= time;
 
-scale = lerp(scale,.85,.1)
-
-if(point_in_rectangle(window_x,window_y,x - sprite_get_width(player_death_buttons)/2, y  - sprite_get_height(player_death_buttons)/2,x + sprite_get_width(player_death_buttons)/2, y + sprite_get_height(player_death_buttons)/2)){
-    color = c_white;
-    scale = lerp(scale,1.25,.1)
-    if mouse_check_button_pressed(mb_any) {
-        
-        if spr = 0 { room_goto(r_testing); }
-        if spr = 1 { game_end(); }
-        
-        
-    }   
+if(alph &lt;0){
+instance_destroy();
 }
-
-
-
-draw_sprite_ext(player_death_buttons,spr,x,y,scale,scale,0,color,1);
 </string>
           </argument>
         </arguments>
