@@ -81,7 +81,7 @@ slimer = 0
 MC = false
 oldmode = mode
 
-shakemag = 10
+shakemag = 0
 
 room_Actual = true;
 
@@ -108,7 +108,9 @@ room_Actual = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if static exit;  
+            <string>//shakemag = 0
+
+if static exit;  
               
         if keyboard_check(vk_shift) {
             if keyboard_check(ord("1")) { ZM = 1 }

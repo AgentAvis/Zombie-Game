@@ -31,6 +31,8 @@ moving = false
 globalvar occupied;
 occupied = false;
 
+flat = 1 //used for getting shushed
+
 blood_color = c_red
 
 xsquish = 1
@@ -141,7 +143,10 @@ audio_falloff_set_model(audio_falloff_exponent_distance);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if hp &lt;= 0 {
+            <string>flat = lerp(flat,1,.03)
+
+
+if hp &lt;= 0 {
     if !dead { 
     vsp = -1 
     p = instance_create(x,(window_get_height()/2) + sprite_get_height(player_death_buttons) + 10, o_player_buttons);
@@ -380,7 +385,7 @@ draw_text(0,0,"(" + string(xx) + "," + string(yy) + ")" + string(eB[0,0]));
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,image_index,x,y+hop,image_xscale,image_yscale*clamp(ysquish,.9,1),image_angle,image_blend,image_alpha);
+            <string>draw_sprite_ext(sprite_index,image_index,x,y+hop,image_xscale,image_yscale*flat*clamp(ysquish,.9,1),image_angle,image_blend,image_alpha);
 //draw_text(x,y - 32,"$: " + string(money));
 </string>
           </argument>

@@ -1,5 +1,6 @@
 oldgrounded = grounded
 grounded = false // am i on the ground
+roof = noone
 
 if y >= gr {
     vsp = 0 y = gr // i am on or under the ground, stop me
@@ -22,6 +23,7 @@ if !grounded { //if we aren't on the ground, check for roof collisions
                     if y > other.y+9 {
                         //we're over half way under, just fall
                     } else {
+                        roof = other.moma;
                         //snap us onto the roof and cancel out all vsp
                         vsp = 0
                         y = other.y+8
@@ -37,4 +39,4 @@ x += hsp * global.timescale
 y += vsp * global.timescale
 
 
-if ((oldgrounded = false) and (grounded = true)) { ysquish = .75 } else { ysquish = lerp(ysquish,1,.1) }
+if ((oldgrounded = false) and (grounded = true)) { ysquish = .75 landing = true } else { landing = false ysquish = lerp(ysquish,1,.1) }

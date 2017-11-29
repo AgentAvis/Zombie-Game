@@ -187,7 +187,7 @@ depth = o_player.depth - 1;
 
 //Checks if the player hasClip then modifies accuracy value
 if(hasClip){
-acDmg = 1;
+acDmg = -2;
 }else{
 acDmg = 0;
 }
@@ -205,8 +205,16 @@ canFire = true;
 
 }
 
+
+caanshoot = false
 //Firing the gun
-if(canFire and mouse_check_button(mb_left) and ammo[type] &gt; 0 and !reloading){
+if (hasExploseive) {
+    if (ammo[type] &gt; 10) { caanshoot = true } 
+} else {
+    if (ammo[type] &gt; 0) { caanshoot = true }
+}
+
+if(canFire and mouse_check_button(mb_left) and (caanshoot) and !reloading){
 
     
     bulletsFired++;
@@ -248,6 +256,7 @@ if(canFire and mouse_check_button(mb_left) and ammo[type] &gt; 0 and !reloading)
     p.knockback = knockback;
     if(hasClip){
         p.dmg = p.dmg * 2;
+        
     }
     //Set a force
     var xforce = lengthdir_x(5, p.dir);
@@ -258,7 +267,22 @@ if(canFire and mouse_check_button(mb_left) and ammo[type] &gt; 0 and !reloading)
            }
     }
     //Decrease the ammo
-    ammo[type]--;
+    
+    
+    if (hasExploseive) {
+        ammo[type]-= 10;
+    } else {
+        ammo[type]--;
+    }
+
+    
+    
+    
+    
+    
+    
+    
+    
     //Set the alarm for the fire rate
     alarm[0] = firerate * room_speed;
     //Set can fire to false
@@ -429,6 +453,7 @@ if hasScope {
     acScope = 0;
 }
 if hasClip {
+    //acDmg = 1
     //sprite_set_offset(s_guns_clip, offsetX, offsetY);
     //draw_sprite_ext(s_guns_clip,spr,x,y + 1,image_xscale,image_yscale,image_angle,c_white,1);
 }

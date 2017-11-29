@@ -135,6 +135,15 @@ if shooting {
     draw_line_width(x,y,x + lengthdir_x(lengo,image_angle),y + lengthdir_y(lengo,image_angle),sizo/2)
     draw_set_color(c_white);
     draw_line_width(x,y,x + lengthdir_x(lengo,image_angle),y + lengthdir_y(lengo,image_angle),sizo/3)
+    if collision_line(x,y,x + lengthdir_x(lengo,image_angle),y + lengthdir_y(lengo,image_angle),o_player,true,true) {
+        o_player.hp -= .75;
+        repeat (1) {
+            with (instance_create(o_player.x,o_player.y,o_blood_drop)) {
+                motion_set_custom(random(2),random(360))
+            }
+        }
+    }
+    
 }
 
 draw_self()

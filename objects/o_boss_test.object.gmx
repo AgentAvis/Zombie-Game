@@ -26,25 +26,31 @@
           <argument>
             <kind>1</kind>
             <string>event_inherited();
-hp = 3000;
-maxHp = 3000;
+hp = 6500;
+maxHp = 5000;
 //Set the distance it 'sees' the player
 sight = 2000;
 
+roof = noone
+
+landed = false
+
+yscale = 1
+
 blood_color = merge_color(c_red,c_green,.75)
 
-walk_spd = random_range(0.3,0.4);
+walk_spd = .85;
 
 attackSpeed = room_speed * .5; //attacks per second essentially
 
 //For determining appearance
 type = irandom_range(0,image_number);
 
-mass = 10
+mass = 1
 k_r = 1000;
 damage = 6
 
-wealth = random_range(100,200)
+wealth = 35
 
 isBoss = true;
 name = "Rothnor - Consumer of Flesh";
@@ -54,7 +60,7 @@ name = "Rothnor - Consumer of Flesh";
 hops = false;
 global.focus = id;
 alarm[0] = room_speed * 3;
-image_speed = 0.05;
+image_speed = 0.1;
 with(oCamera){
 mousemode = false;
 }
@@ -169,6 +175,64 @@ mousemode = true;
             <kind>1</kind>
             <string>event_inherited();
 clamp(hsp,-2,2)
+dyscale = 1
+
+image_speed = (hsp / walk_spd)* 0.1
+
+if landing and speed &lt; 1 {
+    shake_screen(20,20)
+    dd = point_distance(x,y,o_player.x,o_player.y)
+    if place_meeting(x,y,o_player) {
+        o_player.hp -= 50;
+        o_player.flat = .1
+    } else {
+        o_player.flat = 1
+    }
+    with (o_lifeform) {
+        if id != other.id {
+            shotcount += 15
+            if grounded {
+                y -= 5
+                vsp = -1
+            }
+        }
+    }
+    if dd &lt; 40 and o_player.flat != .1 {
+       o_player.vsp = -((dd/40)*3)
+       o_player.y -= 10
+    }
+
+    smosh = random_range(4,6)
+    if instance_exists(roof) {
+        roof.y += smosh;
+        y += smosh;
+    }
+    roof = noone
+}
+
+//if o_player.y &lt; y {
+    if random(room_speed*7.5) &lt; 1 and !dojump and grounded {
+        dojump = true
+    }
+    if !grounded { dojump = false charge = 0 }
+    
+    if dojump {
+        charge ++
+        dyscale = 1-((charge / (room_speed*3))/2.5)
+        
+        if charge &gt; room_speed * 3 {
+            dojump = false
+            charge = 0
+            dyscale = 2
+            yscale = 1
+            y -= 5
+            vsp = -clamp(((y-o_player.y)/200)*8,4.5,6.2)
+        
+        }
+    }
+
+//}
+yscale = lerp(yscale,dyscale,.1)
 </string>
           </argument>
         </arguments>
@@ -192,7 +256,7 @@ clamp(hsp,-2,2)
           <argument>
             <kind>1</kind>
             <string>//event_inherited();
-draw_sprite_ext(sprite_index,image_index,x,y+hop,image_xscale,1,1,c_white,1);
+draw_sprite_ext(sprite_index,image_index,x,y+hop,image_xscale*xsquish,yscale*ysquish,1,c_white,1);
 var target_dir = point_direction(x, y - 52, o_player.x, o_player.y);
 var turnspeed = 1;
 
@@ -219,13 +283,17 @@ if(canpuke){
     if(dir2 = 90){
         target_sprite = rothnor_head_open;
         canpuke = false;
-        alarm[2] = room_speed * 1;
+        alarm[2] = room_speed * 5;
+        repeat (irandom(10)) {
+            with (instance_create(x,y-(sprite_height/2),oVomit)) {
+                motion_set_custom(random_range(1,4),90+random_range(-13,13))
+            }
+        }
         repeat(3){
             p = instance_create(x, y-52,o_zombie_little)
             with(p){
                 motion_set_custom(3+random_range(-.5,1.5),90+random_range(-10,10));
             }
-
         }
     }
 }
@@ -235,7 +303,7 @@ dir2 = angle_rotate_towards(dir2,target_dir,turnspeed);
 
 
 
-draw_sprite_ext(target_sprite,0,x,y - 52, 1, scale, dir2,c_white,1);
+draw_sprite_ext(target_sprite,0,x,y - (52*yscale*ysquish), 1, scale, dir2,c_white,1);
 
 
 

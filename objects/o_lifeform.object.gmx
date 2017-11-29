@@ -27,6 +27,11 @@
             <kind>1</kind>
             <string>phys = false
 
+charge = 0
+dojump = false
+
+landing = false
+
 chase = true //do i chase the player :?
 flee = false //do i run from the player if they get too close?
 
@@ -48,6 +53,7 @@ maxHp = 100;
 ammount = 0;
 
 //Set the distance it 'sees' the player
+//NOTE THIS WAS DISABLED A WHILE AGO
 sight = 1000;
 
 //Set the speed of the enemy
@@ -259,6 +265,7 @@ with (o_lifeform) {
     }
 }
 */
+
 xsquish = lerp(xsquish,1,.1)
 
 explodeamt -= 1
