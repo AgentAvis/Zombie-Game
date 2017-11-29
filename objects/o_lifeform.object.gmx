@@ -115,7 +115,7 @@ hashpbar = false
 playsSound = false;
 
 playSoundVariance = irandom_range(0,100);
-precentage = clamp(instance_number(oLifeForm),15,85)
+precentage = clamp(instance_number(o_lifeform),15,85)
 if(playSoundVariance &lt; 15){
 playsSound = true;
 }
