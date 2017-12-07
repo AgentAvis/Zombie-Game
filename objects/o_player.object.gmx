@@ -86,6 +86,7 @@ uioffset = 0//how much is the ui being offset at, used to make it sliiide
 for(i = 0; i &lt; o_gun.image_number; i++){
 for(b = 0; b &lt; 2; b++){
 eB[i,b] = false;
+SA[i,b] = 0;
 }
 }
 expansion_width = sprite_get_width(s_expansion_UI)/2;

@@ -50,10 +50,6 @@
         <sound>sound\aPuke3</sound>
         <sound>sound\aPuke4</sound>
       </sounds>
-      <sounds name="Player">
-        <sound>sound\sOop3</sound>
-        <sound>sound\sOop4</sound>
-      </sounds>
       <sound>sound\aZombie_hurt</sound>
     </sounds>
     <sound>sound\aWheeew</sound>

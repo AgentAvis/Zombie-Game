@@ -18,8 +18,16 @@ draw_set_color(c4);
 if(o_shop_gui.adding == true and mouse_check_button_pressed(mb_left) and o_shop_gui.whichExpansion != o_gun.expansion[argument2,0] and o_gun.expansion[argument2,1] != o_shop_gui.whichExpansion){
 o_gun.expansion[argument2,0] = o_shop_gui.whichExpansion;
 o_player.money -= augmentprice;
+o_player.SA[argument2,0] = augmentprice * 0.5;
 o_shop_gui.adding = false;
 }
+
+if(o_shop_gui.adding == false and mouse_check_button_pressed(mb_right) and o_shop_gui.visible == true){
+o_player.money += o_player.SA[argument2,0];
+o_gun.expansion[argument2,0] = 0;
+o_player.SA[argument2,0] = 0;
+}
+
 }
 //Slot 1
 draw_rectangle(250 + argument0 - 3.28 * sprite_get_width(s_expansion_UI)/2, 31 + argument1 - 3.28 * sprite_get_height(s_expansion_UI)/2,250 + argument0 + 3.28 * sprite_get_width(s_expansion_UI)/2, 31 + argument1 + 3.28 * sprite_get_height(s_expansion_UI)/2,false);
@@ -31,8 +39,16 @@ draw_set_color(c4);
 if(o_shop_gui.adding == true and mouse_check_button_pressed(mb_left) and o_shop_gui.whichExpansion != o_gun.expansion[argument2,1] and o_gun.expansion[argument2,0] != o_shop_gui.whichExpansion){
 o_gun.expansion[argument2,1] = o_shop_gui.whichExpansion;
 o_player.money -= augmentprice;
+o_player.SA[argument2,1] = augmentprice * 0.5;
 o_shop_gui.adding = false;
 }
+
+if(o_shop_gui.adding == false and mouse_check_button_pressed(mb_right) and o_shop_gui.visible == true){
+o_gun.expansion[argument2,1] = 0;
+o_player.money += o_player.SA[argument2,1];
+o_player.SA[argument2,1] = 0;
+}
+
 }
 //Slot 2
 draw_rectangle(250 + 72 + argument0 - 3.28 * sprite_get_width(s_expansion_UI)/2, 31 + argument1 - 3.28 * sprite_get_height(s_expansion_UI)/2,250 + 72 + argument0 + 3.28 * sprite_get_width(s_expansion_UI)/2, 31 + argument1 + 3.28 * sprite_get_height(s_expansion_UI)/2,false);
