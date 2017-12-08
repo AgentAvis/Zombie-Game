@@ -138,6 +138,7 @@
     </sprites>
     <sprite>sprites\s_area_test</sprite>
     <sprite>sprites\sprite43</sprite>
+    <sprite>sprites\sDumps</sprite>
     <sprite>sprites\sLazer</sprite>
     <sprite>sprites\sprite59</sprite>
     <sprite>sprites\s_Rhoth_die</sprite>
@@ -265,6 +266,7 @@
       </objects>
       <objects name="_buildings">
         <object>objects\oBuilding</object>
+        <object>objects\o_Dumps</object>
         <object>objects\o_shop</object>
         <object>objects\o_house_little</object>
         <object>objects\o_garage</object>

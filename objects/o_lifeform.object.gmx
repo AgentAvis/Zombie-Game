@@ -329,11 +329,11 @@ if grounded {
 if hp &lt; oldhp and waittime &lt;= 0 {
     
     soundid = irandom(1)
-    if soundid = 0 { osound = sOop3 }
-    if soundid = 1 { osound = sOop4 } 
-    sound = audio_play_sound(osound, 1, false);
-    audio_sound_gain(sound,.05,0)
-    audio_sound_pitch(sound,(((pitch) + random_range(-.1,.1))))
+    //if soundid = 0 { osound = sOop3 }
+    //if soundid = 1 { osound = sOop4 } 
+    //sound = audio_play_sound(osound, 1, false);
+    //audio_sound_gain(sound,.05,0)
+    //audio_sound_pitch(sound,(((pitch) + random_range(-.1,.1))))
     waittime = 20
     oldhp = hp
 } else {
