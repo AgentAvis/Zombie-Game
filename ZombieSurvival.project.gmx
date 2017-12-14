@@ -244,6 +244,8 @@
     <scripts name="_saving">
       <script>scripts\scr_save_options.gml</script>
       <script>scripts\scr_load_options.gml</script>
+      <script>scripts\scr_autosave.gml</script>
+      <script>scripts\scr_autoload.gml</script>
     </scripts>
     <scripts name="Sound">
       <script>scripts\play_puke_sound.gml</script>

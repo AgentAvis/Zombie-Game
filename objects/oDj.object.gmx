@@ -42,8 +42,11 @@ instance_create(x,y,oCamera)
 
 global.debug = false;
 
-globalvar GUISCALE;
-GUISCALE = window_get_width()/1600;
+globalvar GUISCALE_X;
+GUISCALE_X = window_get_width()/1600;
+
+globalvar GUISCALE_Y;
+GUISCALE_Y = window_get_height()/900;
 
 
 //Setting the options
@@ -63,6 +66,7 @@ scr_load_options();
 if(fullscreen == 1){
 window_set_fullscreen(true);
 }
+
 
 
 laststring = ""
@@ -129,6 +133,9 @@ if keyboard_check(vk_shift) and keyboard_check_pressed(ord("C")) {
     
     laststring = str
 }
+
+GUISCALE_X = window_get_width()/1600;
+GUISCALE_Y = window_get_height()/900;
 </string>
           </argument>
         </arguments>

@@ -126,6 +126,9 @@ audio_listener_orientation(0,1,0,0,0,1);
 audio_falloff_set_model(audio_falloff_exponent_distance);
 
 
+if(global.loading){
+scr_autoload();
+}
 </string>
           </argument>
         </arguments>
@@ -263,8 +266,9 @@ oldladder = ladder
 audio_listener_position(x, y, (oCamera.ZM) * 100);
 
 if(keyboard_check_pressed(ord('U'))){
-flash(99,c_white,0.5);
+scr_autosave();
 }
+
 
 
 
@@ -305,7 +309,7 @@ if((inventory_open) or (o_shop_gui.visible)){
     doffset = 0
     alph_target = .9;
 } else {
-    doffset = -600
+    doffset = -600 * GUISCALE_Y
     //uioffset = -400
     alph_target = 0;
 }
@@ -316,10 +320,10 @@ alph = lerp(alph,alph_target,0.03);
 
 draw_set_alpha(alph);
 draw_set_color(c3);
-draw_rectangle(20,104 + uioffset,122,208 + uioffset,false);
-draw_sprite_ext(s_medkit,0,44 + 12,168 + uioffset,2.96,2.96,0,c_white,1);
+draw_rectangle(20 * GUISCALE_X,(104 + uioffset) * GUISCALE_Y,122 * GUISCALE_X,(208 + uioffset) * GUISCALE_Y,false);
+draw_sprite_ext(s_medkit,0,(44 + 12) * GUISCALE_X,(168 + uioffset) * GUISCALE_Y,2.96 * GUISCALE_X,2.96 * GUISCALE_Y,0,c_white,1);
 draw_set_color(c_black);
-draw_text(84,162 + uioffset,"x" + string(healthkits));
+draw_text(84 * GUISCALE_X,(162 + uioffset) * GUISCALE_Y,"x" + string(healthkits));
 
 
 if(o_gun.hasGun[1,0]){
@@ -350,33 +354,33 @@ draw_set_alpha(1);
 
 
 
-draw_healthbar(124,29,470 , 51 , (hp/maxHp) * 100, c_black, c_red, c_green, 0, true, false);
+draw_healthbar(124 * GUISCALE_X,29 * GUISCALE_Y,470 * GUISCALE_X , 51 * GUISCALE_Y , (hp/maxHp) * 100, c_black, c_red, c_green, 0, true, false);
 
 draw_set_color(c_black);
 
-draw_sprite(s_ui_base,0,0,0);
-draw_sprite_ext(s_dollar_bill,0,147,63,1.18,1.18,1,c_white,1);
+draw_sprite_ext(s_ui_base,0,0,0,1 * GUISCALE_X, 1 * GUISCALE_Y,0,c_white,1);
+draw_sprite_ext(s_dollar_bill,0,147 * GUISCALE_X,63 * GUISCALE_Y,1.18 * GUISCALE_X,1.18 * GUISCALE_Y,0,c_white,1);
 
 draw_set_color(c_black);
-draw_text(191,65,"$" + string(money));
+draw_text(191 * GUISCALE_X,65 * GUISCALE_Y,"$" + string(money));
 draw_set_color(c_white);
 //draw_text(0,0,"(" + string(xx) + "," + string(yy) + ")" + string(ss));
-draw_sprite_ext(s_guns,o_gun.spr,321,71,4.04,4.04,1,c_white,1);
+draw_sprite_ext(s_guns,o_gun.spr,321 * GUISCALE_X,71 * GUISCALE_Y,4.04 * GUISCALE_X,4.04 * GUISCALE_Y,1,c_white,1);
 
 
 draw_set_color(c_yellow)
-draw_text(321+88,71-10,"|||");
+draw_text((321+88) * GUISCALE_X,(71-10) * GUISCALE_Y,"|||");
 
 draw_set_color(c_white)
-draw_text(321+88+string_width("|||"),71-10,": " + string(o_gun.ammo[o_gun.type]));
+draw_text((321+88+string_width("|||")) * GUISCALE_X,(71-10) * GUISCALE_Y,": " + string(o_gun.ammo[o_gun.type]));
 
 
 scr_make_gui();
 
 
 draw_set_color(c_black)
-draw_circle(70,70,64,false);
-draw_sprite_ext(s_player,image_index,71,68+((18*6.5)/2),6.5,6.5,1,c_white,1);
+draw_circle(70 * GUISCALE_X,70 * GUISCALE_Y,64 * GUISCALE_X,false);
+draw_sprite_ext(s_player,image_index,71 * GUISCALE_X,(68+((18*6.5)/2)) * GUISCALE_Y,6.5 * GUISCALE_X,6.5 * GUISCALE_Y,0,c_white,1);
 draw_set_color(c_white)
 
 draw_text(0,0,"(" + string(xx) + "," + string(yy) + ")" + string(eB[0,0]));

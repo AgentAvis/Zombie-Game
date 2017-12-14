@@ -64,6 +64,8 @@ if(place_meeting(x,y,o_mouse)){
     if mouse_check_button_pressed(mb_any) {
         
         if spr = 0 { room_goto(r_testing); }
+        if spr = 1 { room_goto(r_testing);
+                    global.loading = true; }
         if spr = 2 { room_goto(r_options); }
         if spr = 3 { game_end(); }
         
