@@ -213,14 +213,14 @@ if place_meeting(x,y,oLadder) {
     
     if keyboard_check(ord("W")) {
         up = true
-        y -= 2.5
+        y -= (2.5)/2
         wasonladder = true
         vsp = 0
         //hsp = 0
     }
     if keyboard_check(ord("S")) {  
         up = true
-        y += 1
+        y += (2.5)/2
         wasonladder = true
         vsp = 0
         //hsp = 0

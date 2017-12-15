@@ -3,7 +3,7 @@
 if(spr == 1){
     clipSize = 6;
     reloadTime = 0//room_speed * 1;
-    dmg = 15;
+    dmg = 10;
     accuracy = 3;
     firerate = .4;
     shake = 0.5;

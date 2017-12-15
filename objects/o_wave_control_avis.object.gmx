@@ -89,9 +89,9 @@ if wavetimer &gt; room_speed * wave_time {
     
 
     //setup how many of each zomb you want
-    z_normal = (clamp(floor(basecount*.75),0,50))
-    z_fat = (clamp(floor(basecount*.2),0,20))
-    z_little = (clamp(floor(basecount*1),1,20))
+    z_normal = (clamp(floor(basecount*.75),0,50)) //max cap 30
+    z_fat = (clamp(floor(basecount*.2),0,20)) //max cap 8
+    z_little = (clamp(floor(basecount*1),1,20)) //max cap 40
     
     //add each zomb into the zombie_max
     zombie_max = z_normal + z_fat + z_little//instance_number(o_lifeform)
@@ -99,7 +99,7 @@ if wavetimer &gt; room_speed * wave_time {
     //zombie_current should be equal to zombie_max at this point
     zombie_current = instance_number(o_lifeform) + zombie_max
     
-    if(wave = 14){
+    if(wave = 10){
     zombie_max = 1;
     zombie_current = 0;
     z_normal = 0;
@@ -108,7 +108,7 @@ if wavetimer &gt; room_speed * wave_time {
     instance_create(o_spawn_1.x,o_spawn_1.y,o_boss_test);
     }
     
-    if(wave = 24){
+    if(wave = 20){
     zombie_max = 1;
     zombie_current = 0;
     z_normal = 0;
@@ -140,11 +140,15 @@ delaytimer ++
 if delaytimer &gt; delay {
     delaytimer = 0
     //spawn fat zombs
+    if wave &lt; 5 { z_fat = 0 } //no fat boys till wave 5
+    if wave &lt; 2 { z_normal = 0 } //no fat boys till wave 5
+    
     if z_fat &gt;= 1 {
         z_fat --
         instance_create(o_spawn_1.x,o_spawn_1.y,o_zombie_fat)
         instance_create(o_spawn_2.x,o_spawn_2.y,o_zombie_fat)       
     }
+    
     //if the fat zombs are done spawning, and we need to spawn reg zombs, spawn them
     if z_normal &gt;= 1 and z_fat &lt; 1{
         z_normal --
