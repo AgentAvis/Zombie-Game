@@ -1,4 +1,4 @@
-//ScGlow(x,y,alpha,radius,color)
+///ScGlow(x,y,alpha,radius,color)
 
 var xxxx = argument0 + 1;
 var yyyy = (argument1 + 1);

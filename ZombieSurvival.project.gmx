@@ -41,6 +41,7 @@
       <sounds name="Moans">
         <sound>sound\zombie4</sound>
         <sound>sound\zombie1</sound>
+        <sound>sound\aZombie_hurt</sound>
         <sound>sound\zombie5</sound>
         <sound>sound\zombie2</sound>
       </sounds>
@@ -50,7 +51,11 @@
         <sound>sound\aPuke3</sound>
         <sound>sound\aPuke4</sound>
       </sounds>
-      <sound>sound\aZombie_hurt</sound>
+      <sounds name="bites">
+        <sound>sound\aBite1</sound>
+        <sound>sound\aBite2</sound>
+        <sound>sound\aBite3</sound>
+      </sounds>
     </sounds>
     <sound>sound\aWheeew</sound>
   </sounds>
@@ -142,6 +147,7 @@
     <sprite>sprites\sLazer</sprite>
     <sprite>sprites\sprite59</sprite>
     <sprite>sprites\s_Rhoth_die</sprite>
+    <sprite>sprites\sBite</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\stars</background>
@@ -306,6 +312,7 @@
       </objects>
       <objects name="_enemies">
         <object>objects\o_lifeform</object>
+        <object>objects\oBite</object>
         <objects name="_regular">
           <object>objects\o_zombie_dead</object>
           <object>objects\o_zombie_normal</object>

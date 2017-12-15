@@ -27,6 +27,8 @@
             <kind>1</kind>
             <string>phys = false
 
+hitcharge = 0
+
 charge = 0
 dojump = false
 
@@ -201,18 +203,7 @@ audio_emitter_free(s_emit);
     c = true 
 }
 
-//if chase {
-    scr_enemy_walk();
-//}
-/*
-with (o_lifeform) {
-    if id != other.id {
-        if x &gt; other.x - 4 and x &lt; other.x + 4 {
-            if x &gt; other.x { hsp += .1 } else { hsp -= .1 }          
-        }
-    }
-}
-*/
+scr_enemy_walk();
 
 if (random((room_speed*3)*(clamp(instance_number(o_lifeform)*.75,3,40))) &lt; 1) {    
     //if(playsSound){
@@ -242,18 +233,6 @@ if (random((room_speed*3)*(clamp(instance_number(o_lifeform)*.75,3,40))) &lt; 1)
     //}
     //alarm[1] = room_speed * irandom_range(35,65);
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -289,11 +268,30 @@ instance_destroy();
 if(canHit){
     if point_distance(x,y,o_player.x,o_player.y) &lt; 6 {
         o_player.hp -= damage;
+        with (o_player) {
+            motion_add_custom(.1,random(360))
+        }
+        motion_add_custom(.4,random(360))
         //ex_camera_set_flash_color("main",c_red);
         //ex_camera_flash("main",0.5,15);
         //ex_camera_shake("main",4,1,0,3);
         canHit = false;
+        Sid = irandom(2)
+        if Sid = 0 { snd = aBite1 }
+        if Sid = 1 { snd = aBite2 }
+        if Sid = 2 { snd = aBite3 }        
+        audio_emitter_gain(s_emit,.1)
+        audio_emitter_pitch(s_emit, (pitch -.1));//aaa
+        audio_play_sound_on(s_emit, snd, false, 1);
+        with (instance_create(x,y-(sprite_get_height(sprite_index)-3),oBite)) {
+            depth = other.depth - 1
+            hsp = other.hsp
+            vsp = other.vsp
+        }
     }
+} else {
+    hitcharge ++
+    if hitcharge &gt;= attackSpeed { hitcharge = 0 canHit = true }
 }
 
 shotcount --
@@ -393,6 +391,7 @@ if(!isBoss) and hashpbar {
 var wid = sprite_get_width(sprite_index)
 draw_healthbar(x - wid/2, y - sprite_height - 4, x + wid/2, y - sprite_height - 2, (hp/maxHp) * 100, c_black, c_red, c_green, 1, true, false);
 }
+
 </string>
           </argument>
         </arguments>

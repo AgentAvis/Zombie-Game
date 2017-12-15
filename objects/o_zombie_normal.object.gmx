@@ -33,14 +33,14 @@ sight = 2000;
 
 walk_spd = random_range(0.8,0.9);
 
-attackSpeed = room_speed * .5; //attacks per second essentially
+attackSpeed = room_speed * 1.5; //attacks per second essentially
 
 //For determining appearance
 type = irandom_range(0,image_number);
 
 mass = 1
 
-damage = 1
+damage = 5
 
 canclimb = true
 

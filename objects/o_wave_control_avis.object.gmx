@@ -66,15 +66,15 @@ z_little = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if keyboard_check_pressed(ord('L')) { 
+            <string>wave_time = 10 + floor(basecount);
+wave_time = clamp(wave_time,5,25);
+
+if keyboard_check_pressed(ord('L')) { 
     wave ++ //debug comand used to force advance the wave by one
-    wavetimer = 0
+    wavetimer = wave_time * room_speed
     basecount += 1
     
 }
-
-wave_time = 10 + floor(basecount);
-wave_time = clamp(wave_time,5,25);
 
 if zombie_current &lt;= 0 {
     wavetimer ++ //if there are no zombies, count up towards the next wave
