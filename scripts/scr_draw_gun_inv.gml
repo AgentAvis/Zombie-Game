@@ -76,7 +76,7 @@ draw_rectangle((argument0 + 376) * GUISCALE_X, (argument1 + 22) * GUISCALE_Y, (a
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 draw_set_color(c_black);
-draw_text((argument0 + 376 + 10) * GUISCALE_X, (argument1 + 22 + 10) * GUISCALE_Y, "$");
+draw_text_transformed((argument0 + 376 + 10) * GUISCALE_X, (argument1 + 22 + 10) * GUISCALE_Y, "$",GUISCALE_X,GUISCALE_Y,0);
 draw_set_color(c3);
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);

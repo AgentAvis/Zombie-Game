@@ -15,6 +15,6 @@ draw_rectangle((argument0 - argument2 * sprite_get_width(s_medkit)/2) * GUISCALE
 draw_sprite_ext(s_medkit,0,argument0 * GUISCALE_X,argument1 * GUISCALE_Y,argument2 * GUISCALE_X,argument2 * GUISCALE_Y,0,c_white,1);
 draw_set_color(c_black);
 draw_set_halign(fa_center);
-draw_text(argument0 * GUISCALE_X,(argument1 - 34) * GUISCALE_Y,"$" + string(argument3));
+draw_text_transformed(argument0 * GUISCALE_X,(argument1 - 34) * GUISCALE_Y,"$" + string(argument3), GUISCALE_X,GUISCALE_Y,0);
 draw_set_halign(fa_left);
 

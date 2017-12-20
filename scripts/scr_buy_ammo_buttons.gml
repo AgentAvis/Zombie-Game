@@ -6,7 +6,7 @@ ammoButton[2] = point_in_rectangle(window_x,window_y,(argument0 + 300) * GUISCAL
 draw_set_color(c_black);
 //1X
 draw_set_halign(fa_center);
-draw_text((argument0 + (width/2)) * GUISCALE_X,(argument1 - 20) * GUISCALE_Y,"10x");
+draw_text_transformed((argument0 + (width/2)) * GUISCALE_X,(argument1 - 20) * GUISCALE_Y,"10x", GUISCALE_X,GUISCALE_Y,0);
 draw_set_halign(fa_left);
 draw_set_color(c3);
 if(ammoButton[0]){
@@ -23,7 +23,7 @@ draw_rectangle(argument0 * GUISCALE_X, argument1 * GUISCALE_Y, (argument0 + widt
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 draw_set_color(c_black);
-draw_text((argument0 + (width/2)) * GUISCALE_X, (argument1 + (height/2)) * GUISCALE_Y, "$" + string(argument2 * 10));
+draw_text_transformed((argument0 + (width/2)) * GUISCALE_X, (argument1 + (height/2)) * GUISCALE_Y, "$" + string(argument2 * 10), GUISCALE_X,GUISCALE_Y,0);
 draw_set_color(c3);
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
@@ -31,7 +31,7 @@ draw_set_valign(fa_top);
 //50X
 draw_set_color(c_black);
 draw_set_halign(fa_center);
-draw_text((argument0+ 150 + (width/2)) * GUISCALE_X,(argument1 - 20) * GUISCALE_Y,"50x");
+draw_text_transformed((argument0+ 150 + (width/2)) * GUISCALE_X,(argument1 - 20) * GUISCALE_Y,"50x", GUISCALE_X,GUISCALE_Y,0);
 draw_set_halign(fa_left);
 draw_set_color(c3);
 if(ammoButton[1]){
@@ -50,7 +50,7 @@ draw_rectangle((argument0 + 150) * GUISCALE_X, argument1 * GUISCALE_Y, (argument
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 draw_set_color(c_black);
-draw_text((argument0 + 150 + (width/2)) * GUISCALE_X, (argument1 + (height/2)) * GUISCALE_Y, "$" + string(argument2 * 50));
+draw_text_transformed((argument0 + 150 + (width/2)) * GUISCALE_X, (argument1 + (height/2)) * GUISCALE_Y, "$" + string(argument2 * 50), GUISCALE_X,GUISCALE_Y,0);
 draw_set_color(c3);
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
@@ -58,7 +58,7 @@ draw_set_valign(fa_top);
 //100X
 draw_set_color(c_black);
 draw_set_halign(fa_center);
-draw_text((argument0+ 300 + (width/2)) * GUISCALE_X,(argument1 - 20) * GUISCALE_Y,"100x");
+draw_text_transformed((argument0+ 300 + (width/2)) * GUISCALE_X,(argument1 - 20) * GUISCALE_Y,"100x", GUISCALE_X,GUISCALE_Y,0);
 draw_set_halign(fa_left);
 draw_set_color(c3);
 if(ammoButton[2]){
@@ -77,7 +77,7 @@ draw_rectangle((argument0 + 300) * GUISCALE_X, argument1 * GUISCALE_Y, (argument
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 draw_set_color(c_black);
-draw_text((argument0 + 300 + (width/2)) * GUISCALE_X, (argument1 + (height/2)) * GUISCALE_Y, "$" + string(argument2 * 100));
+draw_text_transformed((argument0 + 300 + (width/2)) * GUISCALE_X, (argument1 + (height/2)) * GUISCALE_Y, "$" + string(argument2 * 100), GUISCALE_X,GUISCALE_Y,0);
 draw_set_color(c3);
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);

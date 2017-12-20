@@ -139,8 +139,8 @@ scr_buy_ammo(1195,224,3,2);
 scr_buy_ammo(1275,224,2,3);
 scr_buy_ammo(1355,224,6,4);
 draw_set_font(fnt_big);
-draw_text(1002 * GUISCALE_X,129 * GUISCALE_Y,"Ammo:");
-draw_text((987 + 11) * GUISCALE_X,(284 + 102) * GUISCALE_Y,"Weapon: ");
+draw_text_transformed(1002 * GUISCALE_X,129 * GUISCALE_Y,"Ammo:", GUISCALE_X,GUISCALE_Y,0);
+draw_text_transformed((987 + 11) * GUISCALE_X,(284 + 102) * GUISCALE_Y,"Weapon: ", GUISCALE_X,GUISCALE_Y,0);
 draw_set_font(base);
 
 var test = 423;
