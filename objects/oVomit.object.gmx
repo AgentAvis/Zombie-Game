@@ -70,7 +70,9 @@ blood_color = merge_color(c_green,c_orange,random(1))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>_floor = instance_place(x,y,o_street)
+            <string>if global.pause { exit;}
+
+_floor = instance_place(x,y,o_street)
 time ++
 if time &gt; room_speed * 5 { instance_destroy() }
 
@@ -122,6 +124,8 @@ draw_set_alpha(clamp(.75*image_alpha,.5,1))
 rang = .21
 draw_sprite_ext(sprite_index,image_index,x,y,random_range(1-rang,1+rang),random_range(.9,1.1),image_angle,blood_color,image_alpha*.75)
 draw_set_alpha(1)
+
+if global.pause { exit;}
 
 if random(7) &lt; 1 {
     

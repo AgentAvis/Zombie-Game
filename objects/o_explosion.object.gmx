@@ -61,7 +61,9 @@ c = false
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if !c {
+            <string>
+
+if !c {
     image_xscale = (radius/98)
     image_yscale = (radius/98)   
 }

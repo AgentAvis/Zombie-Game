@@ -198,7 +198,9 @@ audio_emitter_free(s_emit);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if !c {
+            <string>if global.pause { exit;}
+
+if !c {
     oldhp = hp
     c = true 
 }
@@ -361,7 +363,7 @@ if hp &lt; oldhp and waittime &lt;= 0 {
           <argument>
             <kind>1</kind>
             <string>if(isBoss){
-draw_boss_health_bar(32,25,name, 100);
+    draw_boss_health_bar(32,25,name, 100);
 }
 </string>
           </argument>

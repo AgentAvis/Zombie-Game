@@ -131,7 +131,9 @@ audio_emitter_free(s_emit);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>target_sprite = rothnor_head;
+            <string>//if global.pause { exit;}
+
+target_sprite = rothnor_head;
 alarm[1] = room_speed * 4;
 </string>
           </argument>
@@ -155,7 +157,9 @@ alarm[1] = room_speed * 4;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>canpuke = true;
+            <string>//if global.pause { exit;}
+
+canpuke = true;
 
 </string>
           </argument>
@@ -179,7 +183,9 @@ alarm[1] = room_speed * 4;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.focus = o_player;
+            <string>//if global.pause { exit;}
+
+global.focus = o_player;
 with(oCamera){
 mousemode = true;
 }
@@ -207,8 +213,12 @@ mousemode = true;
           <argument>
             <kind>1</kind>
             <string>event_inherited();
+
+if global.pause { exit;}
+
 clamp(hsp,-2,2)
 dyscale = 1
+
 
 image_speed = (hsp / walk_spd)* 0.1
 

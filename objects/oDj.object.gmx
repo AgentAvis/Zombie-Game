@@ -34,6 +34,9 @@ gr = 400; //where is the ground at
 global.termvel = 6
 global.epilepsy = false
 
+global.pause = false
+
+
 global.fuckwithjosh = false
 
 randomize()
@@ -96,6 +99,7 @@ laststring = ""
 
 if keyboard_check(vk_shift) and keyboard_check_pressed(ord("C")) {
     str = get_string("Type in your cheats here yo",laststring);
+    if str = "pause" { global.pause = !global.pause } //gives pistol
     if str = "staticcam" { with (oCamera) { static = !static } }
     if str = "boyswillbeboys" { repeat ( 50 ) { with instance_create(o_player.x+random_range(-100,100),o_player.y - 200,o_zombie_little) { vsp = random(30) }}} //gives you 5,000$
     if str = "makeitrain" { repeat ( 1000 ) { with instance_create(o_player.x+random_range(-100,100),o_player.y - 200,o_dollar) { vsp = random(30) }}} //gives you 5,000$

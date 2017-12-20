@@ -69,7 +69,10 @@ instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>_floor = noone
+            <string>
+if global.pause { exit;}
+
+_floor = noone
 if random(3) &lt; 1 { _floor = instance_place(x,y,o_street) }
 
 time ++
@@ -119,6 +122,8 @@ draw_set_color(blood_color)
 draw_set_alpha(.25*image_alpha)
 draw_circle_colour(x,y,3,blood_color,merge_color(blood_color,c_black,.5),false)
 draw_set_alpha(1)
+
+if global.pause { exit;}
 
 if(canDraw) and instance_exists(_floor) {
     if !surface_exists(_floor.blood_surf) { with (_floor) { blood_surf = surface_create(sprite_width,sprite_height) } }

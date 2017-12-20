@@ -56,7 +56,7 @@ mass = .1; //light, has to do with gravity
             <kind>1</kind>
             <string>event_inherited()
 
-if !grounded { image_angle += 4 hsp *= .75}
+if !grounded and !global.pause{ image_angle += 4 hsp *= .75}
 
 
 //if(!grounded){

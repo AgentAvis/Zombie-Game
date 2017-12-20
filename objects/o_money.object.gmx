@@ -58,7 +58,9 @@ oldgrounded = false
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>following = false
+            <string>if global.pause { exit;}
+
+following = false
 if point_distance(x,y,o_player.x,o_player.y-(18/2)) &lt; 20 {
     motion_add_custom(.2,point_direction(x,y,o_player.x,o_player.y-(18/2)))
         if point_distance(x,y,o_player.x,o_player.y-(18/2)) &lt; 4 {

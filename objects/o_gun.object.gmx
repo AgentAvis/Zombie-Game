@@ -175,7 +175,9 @@ y = o_player.y + o_player.hop-(18/2);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if o_player.dead exit;
+            <string>if global.pause { exit;}
+
+if o_player.dead exit;
 if(!occupied){
 
 

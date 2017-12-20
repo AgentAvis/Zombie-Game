@@ -52,7 +52,9 @@ pooptimer = 3
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (!instance_exists(o_ufo_boss)) or ( !instance_exists(o_player) ) { instance_destroy() exit }
+            <string>if global.pause { exit;}
+
+if (!instance_exists(o_ufo_boss)) or ( !instance_exists(o_player) ) { instance_destroy() exit }
 
 timer ++;
 

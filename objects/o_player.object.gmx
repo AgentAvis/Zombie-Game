@@ -151,8 +151,9 @@ scr_autoload();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>flat = lerp(flat,1,.03)
+            <string>if global.pause { exit;}
 
+flat = lerp(flat,1,.03)
 
 if hp &lt;= 0 {
     if !dead { 

@@ -198,6 +198,8 @@ mousemode = true;
             <string>//event_inherited();
 
 
+if global.pause { exit;}
+
 if(hp &lt;= 0){
     repeat (irandom(10)) {
         instance_create(x,y,o_coin)

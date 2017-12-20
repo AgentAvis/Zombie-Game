@@ -55,7 +55,9 @@ timer = random(room_speed * 2)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if !instance_exists(mom) { instance_destroy() exit }
+            <string>if global.pause { exit;}
+
+if !instance_exists(mom) { instance_destroy() exit }
 
 x = mom.x
 y = mom.y - 7
