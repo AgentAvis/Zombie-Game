@@ -129,6 +129,8 @@ audio_falloff_set_model(audio_falloff_exponent_distance);
 if(global.loading){
 scr_autoload();
 }
+
+instance_create(x,y,o_pause);
 </string>
           </argument>
         </arguments>
@@ -151,7 +153,12 @@ scr_autoload();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.pause { exit;}
+            <string>if(keyboard_check_pressed(ord('P'))){
+global.pause = !global.pause;
+o_pause.vis = !o_pause.vis;
+}
+
+if global.pause { exit;}
 
 flat = lerp(flat,1,.03)
 
@@ -269,6 +276,7 @@ audio_listener_position(x, y, (oCamera.ZM) * 100);
 if(keyboard_check_pressed(ord('U'))){
 scr_autosave();
 }
+
 
 
 

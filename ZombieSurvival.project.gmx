@@ -122,6 +122,10 @@
       <sprites name="_player_death_retry">
         <sprite>sprites\player_death_buttons</sprite>
       </sprites>
+      <sprites name="_pausing">
+        <sprite>sprites\s_paused</sprite>
+        <sprite>sprites\s_quit</sprite>
+      </sprites>
     </sprites>
     <sprites name="_equipmen">
       <sprite>sprites\s_medkit</sprite>
@@ -369,6 +373,9 @@
             <object>objects\o_parallax_option</object>
           </objects>
         </objects>
+      </objects>
+      <objects name="_pause">
+        <object>objects\o_pause</object>
       </objects>
     </objects>
   </objects>

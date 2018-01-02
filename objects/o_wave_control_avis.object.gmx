@@ -66,7 +66,11 @@ z_little = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>wave_time = 10 + floor(basecount);
+            <string>if(global.pause){
+exit;
+}
+
+wave_time = 10 + floor(basecount);
 wave_time = clamp(wave_time,5,25);
 
 if keyboard_check_pressed(ord('L')) { 
